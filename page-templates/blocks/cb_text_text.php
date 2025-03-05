@@ -6,7 +6,7 @@ if (!is_block_region_applicable()) {
 <section class="text_text">
     <div class="container">
         <div class="text_text__parallax">
-            <?=wp_get_attachment_image(get_field('image'),'medium',false,['class' => 'text_text__parallax_image', 'data-parallax' => ''])?>
+            <?=wp_get_attachment_image(get_field('image'),'full',false,['class' => 'text_text__parallax_image', 'data-parallax' => ''])?>
         </div>
         <div class="row">
             <div class="col-md-6 p-5">
