@@ -1,53 +1,27 @@
 {
-    "key": "group_6748d99d24711",
-    "title": "CB Title \/ Text",
+    "key": "group_cb_text_image",
+    "title": "CB Text Image",
     "fields": [
         {
-            "key": "field_6748d99d3c7ac",
-            "label": "CB Title \/ Text",
+            "key": "field_cb_text_image_title",
+            "label": "CB Text Image",
             "name": "",
             "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
             "message": "",
-            "new_lines": "wpautop",
-            "esc_html": 0
+            "esc_html": 0,
+            "new_lines": "wpautop"
         },
         {
-            "key": "field_6748d9b13c7ad",
-            "label": "Region",
-            "name": "region",
-            "aria-label": "",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "region",
-            "add_term": 0,
-            "save_terms": 0,
-            "load_terms": 0,
-            "return_format": "id",
-            "field_type": "checkbox",
-            "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "multiple": 0,
-            "allow_null": 0,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_6748d9c33c7ae",
+            "key": "field_67c8448a952c6",
             "label": "Title",
             "name": "title",
             "aria-label": "",
@@ -68,7 +42,7 @@
             "append": ""
         },
         {
-            "key": "field_6748d9c83c7af",
+            "key": "field_67c84493952c7",
             "label": "Content",
             "name": "content",
             "aria-label": "",
@@ -87,6 +61,49 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_67c8449b952c8",
+            "label": "Link",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67c844a6952c9",
+            "label": "Image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "thumbnail"
         }
     ],
     "location": [
@@ -94,7 +111,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cb-title-text"
+                "value": "acf\/cb-text-image"
             }
         ]
     ],
@@ -107,5 +124,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732827603
+    "modified": 1741178039
 }

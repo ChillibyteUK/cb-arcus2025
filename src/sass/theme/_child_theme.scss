@@ -6,6 +6,10 @@
 @import "blocks/blocks";
 
 
+body {
+    background-color: #f6f6f6;
+}
+
 
 @media (min-width:992px) {
     .cols-lg-2 {

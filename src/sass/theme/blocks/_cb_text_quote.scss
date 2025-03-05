@@ -1,0 +1,68 @@
+.text_quote {
+    .container {
+        background-color: white;
+        border-bottom: 1px solid var(--col-grey-400);
+
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 886.32 1117.89'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: url(%23linear-gradient); %7D .cls-1, .cls-2 %7B stroke-width: 0px; %7D .cls-3 %7B opacity: .65; %7D .cls-2 %7B fill: url(%23linear-gradient-2); %7D %3C/style%3E%3ClinearGradient id='linear-gradient' x1='508.54' y1='1177.94' x2='90.82' y2='-265.9' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23e3e8f0'/%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='linear-gradient-2' x1='627.4' y1='1143.56' x2='209.68' y2='-300.29' xlink:href='%23linear-gradient'/%3E%3C/defs%3E%3Cg class='cls-3'%3E%3Cpath id='Fill-7' class='cls-1' d='m423.64,632.91c41,172.95,42.79,341.08,12.97,484.98h109.1c18.01-129.54,11.67-275.09-23.58-424.2C452.94,401.46,206.68,107.27,13.04,0c182.23,100.88,341.6,341.32,410.6,632.91'/%3E%3Cpolyline id='Fill-9' class='cls-2' points='886.32 365.55 671.69 376.32 757.48 407.82 0 647.9 53.26 779.59 764.34 424.89 724.95 508.01 886.32 365.55'/%3E%3C/g%3E%3C/svg%3E");
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: 100% 200%;
+    }
+
+    .row {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__text {
+        max-width: 79ch;
+    }
+    &__quote-container {
+        margin-top: 3rem;
+        padding: 3rem 3rem 4rem 3rem;
+        height: 100%;
+        position: relative;
+
+        border-top: 1px solid var(--col-grey-400);
+        @media (min-width:768px) {
+            border-top: none;
+            border-left: 1px solid var(--col-grey-400);
+        }
+        display: flex;
+        justify-content: space-beween;
+        flex-direction: column;
+        box-sizing: border-box;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23bb322a; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
+            aspect-ratio: 6 / 5;
+            width: 40px;
+        }
+        &::before {
+            top: 0;
+            left: 0;
+        }
+        &::after {
+            bottom: 0;
+            right: 1rem;
+        }
+
+    }
+    &__quote {
+        font-size: var(--fs-800);
+        font-family: var(--ff-heading);
+        font-weight: var(--fw-500);
+        font-style: italic;
+        color: var(--col-red-400);
+        padding-bottom: 1rem;
+    }
+    &__attribution {
+        font-size: var(--fs-300);
+        padding-bottom: 1rem;
+    }
+}
+
+

@@ -1,0 +1,8 @@
+.video_hero {
+    height: 600px;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+    margin-bottom: calc(var(--nav-offset-top) * -1 + var(--nav-height))
+}

@@ -1,0 +1,27 @@
+.split_title_banner {
+    .container {
+        color: white;
+        display: grid;
+        @media (min-width:768px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        font-size: var(--fs-999);
+        font-family: var(--ff-heading);
+        font-weight: var(--fw-800);
+        font-style: normal;
+    }
+    &__left,
+    &__right {
+        padding-inline: 1rem;
+        padding-block: 3rem 1rem;
+    }
+    &__left {
+        background-color: var(--col-blue-400);
+        @media (min-width:768px) {
+            text-align: end;
+        }
+    }
+    &__right {
+        background-color: var(--col-red-400);
+    }
+}

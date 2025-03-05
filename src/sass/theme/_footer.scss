@@ -2,7 +2,7 @@
   background-color: var(--col-blue-400);
   color: white;
 
-  font-size: var(--button-text);
+  font-size: var(--fs-300);
 
   &__menu {
     ul {
@@ -46,7 +46,7 @@
 
   &__title,
   &__phone {
-    font-size: var(--font-large-text);
+    font-size: var(--fs-500);
   }
   &__address {
     line-height: 2;
@@ -54,6 +54,6 @@
   }
 
   .colophon {
-    font-size: var(--font-mouse-text);
+    font-size: var(--fs-200);
   }
 }

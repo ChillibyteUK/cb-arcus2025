@@ -4,6 +4,7 @@
 //   once: true
 // });
 
+/*
 (function() {
   // Hide header on scroll
   var doc = document.documentElement;
@@ -84,3 +85,29 @@
 //       }
 //   });
 })();
+*/
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const parallaxImages = document.querySelectorAll("[data-parallax]");
+
+    function updateParallax() {
+        parallaxImages.forEach(image => {
+            let rect = image.parentElement.getBoundingClientRect();
+            let speed = 0.2; // Adjust this for more or less effect
+            let containerHeight = image.parentElement.offsetHeight;
+
+            // Calculate correct parallax offset to prevent gaps
+            let offset = (rect.top - window.innerHeight * 0.5) * speed;
+
+            // Ensure the image fully covers the container and does not create gaps
+            if (Math.abs(offset) < containerHeight * 0.5) {
+                image.style.transform = `translateY(${offset}px)`;
+            }
+        });
+
+        requestAnimationFrame(updateParallax);
+    }
+
+    updateParallax(); // Ensure correct positioning before first scroll
+});

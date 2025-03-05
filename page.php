@@ -11,7 +11,7 @@ if (check_page_permissions() == false) {
     exit;
 }
 ?>
-<main id="main" class="pt-5 mt-5">
+<main id="main">
     <?php
     the_post();
     the_content();

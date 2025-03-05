@@ -100,7 +100,6 @@ session_start();
             "email": "---"
         }
     </script>
-
 </head>
 
 <body <?php body_class(); ?>
@@ -119,33 +118,57 @@ session_start();
         }
     }
     ?>
-    <header id="wrapper-navbar" class="fixed-top p-0">
-        <nav class="navbar navbar-expand-lg p-0">
-            <div class="container-xl py-4 nav-top align-items-center">
-                <div class="text-lg-center logo-container"><a href="/" class="logo" aria-label=""></a></div>
-                <div class="button-container d-lg-none">
-                    <button class="navbar-toggler mt-2" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+    <div class="header">
+        <div class="logo-container"><a href="/" class="logo" aria-label=""></a></div>
+        <div class="nav-holder"></div>
+        <div class="header-end"></div>
+    </div>
 
-                <div class="collapse navbar-collapse" id="navbar">
-                    <?php
-                    wp_nav_menu(
-                        array(
-                            'theme_location'  => 'primary_nav',
-                            'container_class' => 'w-100',
-                            // 'container_id'    => 'primaryNav',
-                            'menu_class'      => 'navbar-nav justify-content-end gap-4 w-100',
-                            'fallback_cb'     => '',
-                            'depth'           => 3,
-                            'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-                        )
-                    );
-                    ?>
+    <header class="wrapper-navbar">
+        <div class="container px-0">
+            <nav class="navbar navbar-expand-lg py-0">
+                <div class="container nav-top align-items-center">
+                    
+                    <div class="button-container d-lg-none">
+                        <button class="navbar-toggler mt-2" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location'  => 'primary_nav',
+                                'container_class' => 'w-100',
+                                // 'container_id'    => 'primaryNav',
+                                'menu_class'      => 'navbar-nav justify-content-around gap-4 w-100',
+                                'fallback_cb'     => '',
+                                'depth'           => 3,
+                                'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+                            )
+                        );
+                        ?>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
     </header>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var navbar = document.querySelector(".wrapper-navbar");
+            var initialOffset = navbar.offsetTop;
+
+            window.addEventListener("scroll", function () {
+                if (window.scrollY >= initialOffset) {
+                    navbar.classList.add("fixed");
+                } else {
+                    navbar.classList.remove("fixed");
+                }
+            });
+        });
+    </script>

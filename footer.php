@@ -60,6 +60,7 @@ defined('ABSPATH') || exit;
             </div>
         </div>
 </footer>
+<div class="spacer" style="height:100vh"></div>
 <?php wp_footer(); ?>
 </body>
 

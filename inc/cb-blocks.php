@@ -2,6 +2,83 @@
 function acf_blocks()
 {
     if (function_exists('acf_register_block_type')) {
+
+        acf_register_block_type(array(
+            'name'                => 'cb_text_text', 
+            'title'               => __('CB Text Text'), 
+            'category'            => 'layout',
+            'icon'                => 'cover-image', 
+            'render_template'    => 'page-templates/blocks/cb_text_text.php', 
+            'mode'                => 'edit',
+            'supports'            => array('mode' => false, 'anchor' => true, 'className' => true),
+        ));
+
+
+        acf_register_block_type(array(
+            'name'                => 'cb_text_image', 
+            'title'               => __('CB Text Image'), 
+            'category'            => 'layout',
+            'icon'                => 'cover-image', 
+            'render_template'    => 'page-templates/blocks/cb_text_image.php', 
+            'mode'                => 'edit',
+            'supports'            => array('mode' => false, 'anchor' => true, 'className' => true),
+        ));
+
+
+        acf_register_block_type(array(
+            'name'                => 'cb_quote_image_bg', 
+            'title'               => __('CB Quote Image BG'), 
+            'category'            => 'layout',
+            'icon'                => 'cover-image', 
+            'render_template'    => 'page-templates/blocks/cb_quote_image_bg.php', 
+            'mode'                => 'edit',
+            'supports'            => array('mode' => false, 'anchor' => true, 'className' => true),
+        ));
+
+
+        acf_register_block_type(array(
+            'name'                => 'cb_title_text', 
+            'title'               => __('CB Title Text'), 
+            'category'            => 'layout',
+            'icon'                => 'cover-image', 
+            'render_template'    => 'page-templates/blocks/cb_title_text.php', 
+            'mode'                => 'edit',
+            'supports'            => array('mode' => false, 'anchor' => true, 'className' => true),
+        ));
+
+
+        acf_register_block_type(array(
+            'name'                => 'cb_text_quote', 
+            'title'               => __('CB Text Quote'), 
+            'category'            => 'layout',
+            'icon'                => 'cover-image', 
+            'render_template'    => 'page-templates/blocks/cb_text_quote.php', 
+            'mode'                => 'edit',
+            'supports'            => array('mode' => false, 'anchor' => true, 'className' => true),
+        ));
+
+
+        acf_register_block_type(array(
+            'name'                => 'cb_split_title_banner', 
+            'title'               => __('CB Split Title Banner'), 
+            'category'            => 'layout',
+            'icon'                => 'cover-image', 
+            'render_template'    => 'page-templates/blocks/cb_split_title_banner.php', 
+            'mode'                => 'edit',
+            'supports'            => array('mode' => false, 'anchor' => true, 'className' => true),
+        ));
+
+
+        acf_register_block_type(array(
+            'name'                => 'cb_video_hero', 
+            'title'               => __('CB Video Hero'), 
+            'category'            => 'layout',
+            'icon'                => 'cover-image', 
+            'render_template'    => 'page-templates/blocks/cb_video_hero.php', 
+            'mode'                => 'edit',
+            'supports'            => array('mode' => false, 'anchor' => true, 'className' => true),
+        ));
+
         acf_register_block_type(array(
             'name'                => 'cb_title_text',
             'title'                => __('CB Title/Text'),
@@ -55,7 +132,7 @@ function modify_core_add_container($attributes, $content)
     ob_start();
     // $class = $block['className'];
 ?>
-    <div class="container-xl">
+    <div class="container">
         <?= $content ?>
     </div>
 <?php

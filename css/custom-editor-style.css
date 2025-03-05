@@ -1,7 +1,7 @@
 @charset "UTF-8";
 :root {
   /* Colours */
-  --hsl-dark: 0 0% 20%;
+  --hsl-dark: 0 0% 14%;
   --col-dark: hsl(var(--hsl-dark));
   --hsl-light: 0 0% 98%;
   --col-light: hsl(var(--hsl-light));
@@ -9,21 +9,24 @@
   --col-blue-400: hsl(var(--hsl-blue-400));
   --hsl-blue-100: 205 14% 68%;
   --col-blue-100: hsl(var(--hsl-blue-100));
+  --hsl-red-400: 3 63% 45%;
+  --col-red-400: hsl(var(--hsl-red-400));
+  --hsl-grey-400: 215 11% 30%;
+  --col-grey-400: hsl(var(--hsl-grey-400));
   /* Font Sizes */
   /* Larger sizes */
-  --font-h1: 9.167rem; /* 146.67px */
-  --font-h2: 7.633rem; /* 122.13px */
-  --font-h3: 6.364rem; /* 101.83px */
-  --font-h4: 5.321rem; /* 85.13px */
-  --font-h5: 3.692rem; /* 59.08px */
+  --fs-999: 3.583rem;
+  --fs-900: 2.986rem;
+  --fs-800: 2.488rem;
+  --fs-700: 2.074rem;
+  --fs-600: 1.728rem;
+  --fs-550: 1.44rem;
+  --fs-500: 1.2rem;
+  --fs-400: 1rem;
+  --fs-300: 0.833rem;
+  --fs-200: 0.694rem;
   /* Highlights */
-  --font-larger-highlight: 4.429rem; /* 70.87px */
-  --font-smaller-highlight: 3.078rem; /* 49.24px */
   /* Normal & small text */
-  --font-large-text: 0.667rem; /* 10.67px */
-  --font-blog-heading: 0.833rem; /* 13.33px */
-  --font-button-text: 0.556rem; /* 8.89px */
-  --font-mouse-text: 0.463rem; /* 7.41px */
   /* Font Families */
   --ff-body: "Barlow", Tahoma, Geneva, Verdana, sans-serif;
   --ff-heading: "MetaSerif", Tahoma, Geneva, Verdana, sans-serif;
@@ -37,6 +40,8 @@
   /* Site General */
   --h-top: 90px;
   --h-top-desktop: 125px;
+  --nav-height: 54.3px;
+  --nav-offset-top: 300px;
 }
 
 #complianceModal {

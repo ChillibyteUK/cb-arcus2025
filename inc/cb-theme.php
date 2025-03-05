@@ -201,40 +201,34 @@ function cb_theme_enqueue()
 add_action('wp_enqueue_scripts', 'cb_theme_enqueue');
 
 
-function add_custom_menu_item($items, $args)
-{
-    if ($args->theme_location == 'primary_nav') {
-        $new_item = '<li class="menu-item menu-item-type-post_tyep menu-item-object-page nav-item"><a href="' . esc_url(home_url('/search/')) . '" class="nav-link" title="Search"><span class="icon-search"></span></a></li>';
-        $items .= $new_item;
-    }
+// function add_custom_menu_item($items, $args)
+// {
+//     if ($args->theme_location == 'primary_nav') {
+//         $new_item = '<li class="menu-item menu-item-type-post_tyep menu-item-object-page nav-item"><a href="' . esc_url(home_url('/search/')) . '" class="nav-link" title="Search"><span class="icon-search"></span></a></li>';
+//         $items .= $new_item;
+//     }
 
-    return $items;
-}
-add_filter('wp_nav_menu_items', 'add_custom_menu_item', 10, 2);
+//     return $items;
+// }
+// add_filter('wp_nav_menu_items', 'add_custom_menu_item', 10, 2);
 
 
 // check block region
 
 function is_block_region_applicable()
 {
-
-    // Start the session if not already started
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
 
-    // Get the region stored in the session variable
     $session_region = isset($_SESSION['region']) ? $_SESSION['region'] : null;
 
-    // Bail early if no session region is set
     if (!$session_region) {
         return false;
     }
 
-    // Get the selected regions from the ACF field
     $block_regions = get_field('region');
 
-    // Bail early if no regions are selected for the block
     if (empty($block_regions)) {
         return false;
     }
@@ -256,11 +250,11 @@ function is_block_region_applicable()
         }
     }
 
-    // echo '<br><hr>BLOCK REGIONS: ' . print_r($block_regions, 1) . '<br>';
-    // echo 'BLOCK SLUGS: ' . print_r($block_slugs, 1) . '<br>';
-    // echo 'SESSION REGION: ' . $session_region;
+    if (in_array('all-regions', $block_slugs, true)) {
+        return true;
+    }
+    
 
-    // Check if the session region matches any of the block regions
     return in_array($session_region, $block_slugs, true);
 }
 
