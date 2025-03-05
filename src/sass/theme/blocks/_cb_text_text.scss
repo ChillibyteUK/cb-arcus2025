@@ -23,4 +23,13 @@
         background-color: white;
         position: relative;
     }
+
+    &__right {
+        border-top: 1px solid var(--col-grey-400);
+        @media (min-width:768px) {
+            border-top: none;
+            border-left: 1px solid var(--col-grey-400);
+        }
+    }
+
 }

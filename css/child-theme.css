@@ -22130,6 +22130,15 @@ header .dropdown.current-menu-item::after {
   background-color: white;
   position: relative;
 }
+.text_text__right {
+  border-top: 1px solid var(--col-grey-400);
+}
+@media (min-width: 768px) {
+  .text_text__right {
+    border-top: none;
+    border-left: 1px solid var(--col-grey-400);
+  }
+}
 
 body {
   background-color: #f6f6f6;

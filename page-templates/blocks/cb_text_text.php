@@ -9,24 +9,24 @@ if (!is_block_region_applicable()) {
             <?=wp_get_attachment_image(get_field('image'),'full',false,['class' => 'text_text__parallax_image', 'data-parallax' => ''])?>
         </div>
         <div class="row">
-            <div class="col-md-6 p-5">
+            <div class="col-md-6 p-5 text_text__left">
             <h2><?= get_field('title_left') ?></h2>
                 <div class="mb-5"><?= get_field('content_left') ?></div>
                 <?php
-                if (!empty(get_field('cta_left'))) {
-                    $l = get_field('cta_left');
+                if (!empty(get_field('link_left'))) {
+                    $l = get_field('link_left');
                     ?>
                 <a href="<?=$l['url']?>" target="<?=$l['target']?>" class="button"><?=$l['title']?></a>
                     <?php
                 }
                 ?>
             </div>
-            <div class="col-md-6 p-5">
+            <div class="col-md-6 p-5 text_text__right">
                 <h2><?= get_field('title_right') ?></h2>
                 <div class="mb-5"><?= get_field('content_right') ?></div>
                 <?php
-                if (!empty(get_field('cta_right'))) {
-                    $l = get_field('cta_right');
+                if (!empty(get_field('link_right'))) {
+                    $l = get_field('link_right');
                     ?>
                 <a href="<?=$l['url']?>" target="<?=$l['target']?>" class="button"><?=$l['title']?></a>
                     <?php
