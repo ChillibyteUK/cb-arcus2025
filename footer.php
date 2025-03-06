@@ -5,16 +5,17 @@ defined('ABSPATH') || exit;
 <div id="footer-top"></div>
 <footer class="footer py-5">
     <div class="container-xl">
-        <div class="row pb-4">
-            <div class="col-md-3">
+        <img src="<?=get_stylesheet_directory_uri()?>/img/arcus-logo--wo.svg" alt="Arcus Invest" class="footer__logo">
+        <div class="row pb-5">
+            <div class="col-lg-3">
                 <?= wp_nav_menu(array('theme_location' => 'footer_menu1', 'container_class' => 'footer__menu')) ?>
             </div>
-            <div class="col-md-9">
-                <div class="footer__addresses">
-                    <div class="footer__addresses--label">
-                        Offices
-                    </div>
-                    <div class="footer__office">
+            <div class="col-lg-9">
+                <div class="footer__addresses--label">
+                    Offices
+                </div>
+                <div class="row footer__addresses">
+                    <div class="col-md-4 footer__office mb-4">
                         <?php
                         if ($uk = get_field('uk_address', 'option')) {
                         ?>
@@ -25,7 +26,7 @@ defined('ABSPATH') || exit;
                         }
                         ?>
                     </div>
-                    <div class="footer__office">
+                    <div class="col-md-4 footer__office mb-4">
                         <?php
                         if ($jp = get_field('jp_address', 'option')) {
                         ?>
@@ -36,7 +37,7 @@ defined('ABSPATH') || exit;
                         }
                         ?>
                     </div>
-                    <div class="footer__office">
+                    <div class="col-md-4 footer__office mb-4">
                         <?php
                         if ($my = get_field('my_address', 'option')) {
                         ?>
@@ -56,11 +57,11 @@ defined('ABSPATH') || exit;
                 &copy; <?= date('Y') ?> Arcus Investment Limited. Authorised and regulated by the <a href="https://www.fca.org.uk/" target="_blank">Financial Conduct Authority</a> in the United Kingdom.
             </div>
             <div>
-                CB
+                <a href="https://www.chillibyte.co.uk/" rel="nofollow noopener" target="_blank" class="cb"
+                title="Digital Marketing by Chillibyte"></a>
             </div>
         </div>
 </footer>
-<div class="spacer" style="height:100vh"></div>
 <?php wp_footer(); ?>
 </body>
 

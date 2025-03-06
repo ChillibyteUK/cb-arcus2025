@@ -1,6 +1,6 @@
 <section class="latest_insights">
-    <div class="container py-5">
-        <div class="latest_insights__inner p-5">
+    <div class="container pt-2 pb-5 px-0">
+        <div class="latest_insights__inner p-5 mb-5">
             <div class="latest_insights__title">
                 <h2>Insights</h2>
             </div>
@@ -14,13 +14,13 @@
                     $q->the_post();
                     ?>
                 <div class="col-md-4">
-                    <div class="latest_insights__card">
+                    <a class="latest_insights__card" href="<?=get_the_permalink()?>">
                         <?=get_the_post_thumbnail($q->ID,'large',['class' => 'latest_insights__image'])?>
                         <h3><?=get_the_title()?></h3>
                         <div class="latest_insights__intro">
                             <?=wp_trim_words(get_the_content(),30)?>
                         </div>
-                    </div>
+                    </a>
                 </div>
                     <?php
                 }

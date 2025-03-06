@@ -1,10 +1,10 @@
 .latest_insights {
     .container {
         background-color: white;
-        border-left: 1px solid var(--col-grey-400);
         min-height: 500px;
     }
     &__inner {
+        border-left: 1px solid var(--col-grey-400);
         display: grid;
         grid-template-columns: 100px auto;
         gap: 2rem;
@@ -34,7 +34,14 @@
 
     &__card {
         display: grid;
-
+        text-decoration: none;
+        color: var(--col-dark);
+        &:hover {
+            color: var(--col-dark);
+            h3 {
+                color: var(--col-red-400);
+            }
+        }
     }
     &__image {
         width: 75%;
@@ -48,6 +55,7 @@
         font-size: var(--fs-550);
         font-family: var(--ff-body);
         position: relative;
+        transition: color var(--transition);
         &::before {
             content: "";
             display: block;
