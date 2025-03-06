@@ -35,12 +35,20 @@ body {
     font-size: var(--fs-200);
 }
 
-.container-xl > .container-xl {
+.wp-block-group {
+    @extend .container;
+    background-color: white;
+    padding: 3rem;
+    & .container {
+        padding-inline: 0;
+    }
+}
+.container > .container {
     padding-inline: 0;
 }
 
 .yoast-breadcrumbs {
-    @extend .container-xl;
+    @extend .container;
     @extend .mb-4;
     font-size: var(--fs-300);
 }

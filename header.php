@@ -102,7 +102,7 @@ session_start();
     </script>
 </head>
 
-<body <?php body_class(); ?>
+<body <?php body_class(is_front_page() ? 'homepage' : ''); ?>>
     <?php understrap_body_attributes(); ?>>
     <?php
     do_action('wp_body_open');

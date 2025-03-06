@@ -1,0 +1,9 @@
+.translucent_text {
+    .container {
+        background-color: hsl(0 0 0 / 0.6);
+        color: white;
+    }
+    &__content {
+        max-width: 79ch;
+    }
+}

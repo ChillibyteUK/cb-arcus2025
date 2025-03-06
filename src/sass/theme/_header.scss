@@ -44,13 +44,20 @@
 }
 
 
+:not(.homepage) header {
+    --_nav-offset: var(--nav-offset-top);
+}
+.homepage header {
+    --_nav-offset: var(--nav-offset-top--hp);
+}
+
 header {
     
     &.wrapper-navbar {
         position: absolute;
         left: 0;
         right: 0;
-        top: var(--nav-offset-top);
+        top: var(--_nav-offset);
         &.fixed {
             position: fixed;
             top: 0;

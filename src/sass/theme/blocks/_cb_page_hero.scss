@@ -1,0 +1,17 @@
+:not(.homepage) .page_hero {
+    --_nav-offset: var(--nav-offset-top);
+    --_page-offset: var(--page-offset-top);
+}
+.homepage .page_hero {
+    --_nav-offset: var(--nav-offset-top--hp);
+
+    --_page-offset: var(--page-offset-top);
+}
+.page_hero {
+    height: 600px;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+    z-index: -1;
+    margin-bottom: calc(var(--_page-offset) * -1 + var(--nav-height));
+}

@@ -1,0 +1,38 @@
+.team {
+    .filters {
+        list-style: none;
+        padding-inline-start: 0;
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        cursor: pointer;
+        font-size: var(--fs-400);
+        font-weight: var(--fw-700);
+    }
+
+    .active {
+        color: var(--col-red-400);
+    }
+
+    .person {
+        &__image {
+            aspect-ratio: 1;
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+        }
+        &__name {
+            font-family: var(--ff-heading);
+            font-weight: var(--fw-700);
+            font-size: var(--fs-550);
+            color: var(--col-blue-200);
+        }
+        &__role {
+            font-size: var(--fs-400);
+            margin-bottom: 0.5rem;
+            color: var(--col-gold-400);
+        }
+        &__bio {
+            font-size: var(--fs-400);
+        }
+    }
+}

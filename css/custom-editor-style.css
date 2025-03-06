@@ -7,10 +7,14 @@
   --col-light: hsl(var(--hsl-light));
   --hsl-blue-400: 215 68% 16%;
   --col-blue-400: hsl(var(--hsl-blue-400));
+  --hsl-blue-200: 213 17% 41%;
+  --col-blue-200: hsl(var(--hsl-blue-200));
   --hsl-blue-100: 205 14% 68%;
   --col-blue-100: hsl(var(--hsl-blue-100));
   --hsl-red-400: 3 63% 45%;
   --col-red-400: hsl(var(--hsl-red-400));
+  --hsl-gold-400: 32 42% 61%;
+  --col-gold-400: hsl(var(--hsl-gold-400));
   --hsl-grey-400: 213 17% 41%;
   --col-grey-400: hsl(var(--hsl-grey-400));
   /* Font Sizes */
@@ -41,7 +45,10 @@
   --h-top: 90px;
   --h-top-desktop: 125px;
   --nav-height: 54.3px;
-  --nav-offset-top: 300px;
+  --nav-offset-top--hp: 330px;
+  --nav-offset-top: 230px;
+  --page-offset-top: 400px;
+  --page-offset-top--hp: 400px;
 }
 
 #complianceModal {
