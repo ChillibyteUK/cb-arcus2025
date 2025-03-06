@@ -18,12 +18,13 @@
                         <?=get_the_post_thumbnail($q->ID,'large',['class' => 'latest_insights__image'])?>
                         <h3><?=get_the_title()?></h3>
                         <div class="latest_insights__intro">
-                            <?=wp_trim_words(get_the_content(),30)?>
+                            <?=get_field('post_excerpt',get_the_ID()) ?: wp_trim_words(get_the_content(),30)?>
                         </div>
                     </a>
                 </div>
                     <?php
                 }
+                wp_reset_postdata();
                 ?>
             </div>
         </div>
