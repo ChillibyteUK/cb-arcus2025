@@ -21791,9 +21791,29 @@ header.wrapper-navbar.fixed {
   /* background-color: white; Change if needed */
   z-index: 1020;
 }
+header.wrapper-navbar.fixed .navbar-icon {
+  opacity: 0;
+}
+header.wrapper-navbar .container {
+  position: relative;
+}
 header .navbar {
   background-color: white;
   min-height: var(--nav-height);
+}
+header .navbar-icon {
+  width: 60px;
+  height: 100px;
+  background-color: var(--col-red-400);
+  position: absolute;
+  top: 0;
+  left: -60px;
+  transition: opacity var(--transition);
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  text-align: center;
+  padding: 0.5rem 0.75rem;
 }
 header a.nav-link {
   color: var(--col-dark);

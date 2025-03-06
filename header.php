@@ -126,6 +126,38 @@ session_start();
 
     <header class="wrapper-navbar">
         <div class="container px-0">
+            <div class="navbar-icon">
+            <?php
+            $icons = [
+                'default' => 'icon--arcus.svg',
+                'home' => 'icon--home.svg',
+                'insight' => 'icon--insight.svg',
+                'team' => 'icon--team.svg',
+            ];
+
+            $current_page = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+
+            switch (true) {
+                case $current_page === '': // Home Page
+                    $icon = $icons['home'];
+                    break;
+                
+                case str_starts_with($current_page, 'insights'): // Insights page and sub-pages
+                    $icon = $icons['insight'];
+                    break;
+                
+                case $current_page === 'team': // Team Page
+                    $icon = $icons['team'];
+                    break;
+                
+                default: // Default Icon
+                    $icon = $icons['default'];
+                    break;
+            }
+
+            echo '<img src="' . get_stylesheet_directory_uri() . '/img/' . $icon . '">';
+            ?>
+            </div>
             <nav class="navbar navbar-expand-lg py-0">
                 <div class="container nav-top align-items-center">
                     
