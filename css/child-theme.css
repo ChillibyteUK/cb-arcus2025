@@ -47,8 +47,8 @@
   --nav-height: 54.3px;
   --nav-offset-top--hp: 330px;
   --nav-offset-top: 230px;
-  --page-offset-top: 400px;
-  --page-offset-top--hp: 400px;
+  --page-offset-top: 370px;
+  --page-offset-top--hp: 270px;
 }
 
 #complianceModal {
@@ -21946,11 +21946,11 @@ header .dropdown.current-menu-item::after {
 }
 
 :not(.homepage) .video_hero {
-  --_nav-offset: var(--nav-offset-top);
+  --_page-offset: var(--page-offset-top);
 }
 
 .homepage .video_hero {
-  --_nav-offset: var(--nav-offset-top--hp);
+  --_page-offset: var(--page-offset-top--hp);
 }
 
 .video_hero {
@@ -21960,7 +21960,7 @@ header .dropdown.current-menu-item::after {
   object-fit: cover;
   position: relative;
   z-index: -1;
-  margin-bottom: calc(var(--_nav-offset) * -1 + var(--nav-height));
+  margin-bottom: calc(var(--_page-offset) * -1 + var(--nav-height));
 }
 
 .split_title_banner .container, .split_title_banner .yoast-breadcrumbs, .split_title_banner .wp-block-group {
