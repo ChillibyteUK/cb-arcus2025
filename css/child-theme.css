@@ -21959,6 +21959,14 @@ header .dropdown.current-menu-item::after {
   z-index: -1;
   margin-bottom: calc(var(--_page-offset) * -1 + var(--nav-height));
 }
+.video_hero img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
 
 .split_title_banner .container, .split_title_banner .yoast-breadcrumbs, .split_title_banner .wp-block-group {
   color: white;
@@ -22313,6 +22321,14 @@ header .dropdown.current-menu-item::after {
   position: relative;
   z-index: -1;
   margin-bottom: calc(var(--_page-offset) * -1 + var(--nav-height));
+}
+.page_hero img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  width: 100%;
+  height: 100%;
 }
 
 .translucent_text .container, .translucent_text .yoast-breadcrumbs, .translucent_text .wp-block-group {
