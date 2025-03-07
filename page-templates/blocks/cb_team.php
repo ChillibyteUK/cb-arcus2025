@@ -14,9 +14,12 @@ if (!empty($otax) && !is_wp_error($otax)) {
     }
 }
 
+$excluded_team = get_term_by('slug', 'leadership', 'team');
+
 $ttax = get_terms([
-    'taxonomy' => 'team',
+    'taxonomy'   => 'team',
     'hide_empty' => false,
+    'exclude'    => [$excluded_team->term_id],
 ]);
 
 if (!empty($ttax) && !is_wp_error($ttax)) {
@@ -28,10 +31,19 @@ if (!empty($ttax) && !is_wp_error($ttax)) {
 ?>
 </ul>
 <?php
-$people = new WP_Query(array(
-    'post_type' => 'people',
-    'posts_per_page' => -1
-));
+$people = new WP_Query([
+    'post_type'      => 'people',
+    'posts_per_page' => -1,
+    'tax_query'      => [
+        [
+            'taxonomy' => 'team',
+            'field'    => 'term_id',
+            'terms'    => $excluded_team ? $excluded_team->term_id : [],
+            'operator' => 'NOT IN', // Exclude posts with this term
+        ]
+    ],
+]);
+
 
 ?>
 <div class="row g-5 people-list">
@@ -60,7 +72,10 @@ $people = new WP_Query(array(
         $offices = !empty($offices) ? '(' . implode(', ', $offices) . ')' : null;
         ?>
         <div class="col-md-4 person<?= esc_attr($team_classes . $office_classes) ?>">
-            <?=get_the_post_thumbnail(get_the_ID(),'large',['class' => 'person__image'])?>
+            <?= has_post_thumbnail() 
+                ? get_the_post_thumbnail(get_the_ID(), 'large', ['class' => 'person__image', 'alt' => get_the_title()])
+                : '<img src="' . esc_url(get_stylesheet_directory_uri() . '/img/img-default.png') . '" class="person__image" alt="">';
+            ?>
             <div class="person__name"><?=get_the_title()?></div>
             <div class="person__role"><?=get_field('role',get_the_ID())?> <?=$offices?></div>
             <div class="person__bio"><?=get_the_content()?></div>
