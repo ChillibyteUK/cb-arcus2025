@@ -1,0 +1,23 @@
+.two_col_people {
+    .person {
+        &__image {
+            aspect-ratio: 1;
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+        }
+        &__name {
+            font-family: var(--ff-heading);
+            font-weight: var(--fw-700);
+            font-size: var(--fs-600);
+            color: var(--col-blue-200);
+        }
+        &__role {
+            font-size: var(--fs-400);
+            margin-bottom: 0.5rem;
+            color: var(--col-gold-400);
+        }
+        &__bio {
+            font-size: var(--fs-400);
+        }
+    }
+}

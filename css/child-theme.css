@@ -22326,6 +22326,27 @@ header .dropdown.current-menu-item::after {
   max-width: 79ch;
 }
 
+.two_col_people .person__image {
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+.two_col_people .person__name {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-700);
+  font-size: var(--fs-600);
+  color: var(--col-blue-200);
+}
+.two_col_people .person__role {
+  font-size: var(--fs-400);
+  margin-bottom: 0.5rem;
+  color: var(--col-gold-400);
+}
+.two_col_people .person__bio {
+  font-size: var(--fs-400);
+}
+
 body {
   background-color: #f6f6f6;
 }
