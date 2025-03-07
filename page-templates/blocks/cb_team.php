@@ -3,8 +3,6 @@
         <ul class="filters mb-4">
             <li class="filter-btn" data-filter="all">All</li>
 <?php
-$offices = [];
-
 $otax = get_terms([
     'taxonomy' => 'office',
     'hide_empty' => false,
@@ -51,17 +49,20 @@ $people = new WP_Query(array(
             }
         }
 
+        $offices = [];
         $office_classes = '';
         if (!empty($office_terms) && !is_wp_error($office_terms)) {
             foreach ($office_terms as $office) {
                 $office_classes .= ' office-' . esc_attr($office->slug);
             }
+            $offices = wp_list_pluck($office_terms, 'name');
         }
+        $offices = !empty($offices) ? '(' . implode(', ', $offices) . ')' : null;
         ?>
         <div class="col-md-4 person<?= esc_attr($team_classes . $office_classes) ?>">
             <?=get_the_post_thumbnail(get_the_ID(),'large',['class' => 'person__image'])?>
             <div class="person__name"><?=get_the_title()?></div>
-            <div class="person__role"><?=get_field('role',get_the_ID())?> (OFFICE)</div>
+            <div class="person__role"><?=get_field('role',get_the_ID())?> <?=$offices?></div>
             <div class="person__bio"><?=get_the_content()?></div>
         </div>
         <?php
