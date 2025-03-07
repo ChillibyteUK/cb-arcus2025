@@ -22327,7 +22327,7 @@ header .dropdown.current-menu-item::after {
 }
 
 .two_col_people .person__image {
-  aspect-ratio: 1;
+  aspect-ratio: 4/3;
   -o-object-fit: cover;
   object-fit: cover;
   margin-bottom: 0.5rem;
