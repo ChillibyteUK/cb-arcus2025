@@ -10,11 +10,11 @@
                 }
                 $offices = !empty($offices) ? '(' . implode(', ', $offices) . ')' : null;
                 ?>
-            <div class="col-md-6 person">
-                <?=get_the_post_thumbnail($p,'large',['class' => 'person__image'])?>
-                <div class="person__name"><?=get_the_title($p)?></div>
-                <div class="person__role"><?=get_field('role',$p)?> <?=$offices?></div>
-                <div class="person__bio"><?=get_the_content(null, false, $p)?></div>
+            <div class="col-md-6 colperson">
+                <?=get_the_post_thumbnail($p, 'large', ['class' => 'colperson__image'])?>
+                <div class="colperson__name"><?=get_the_title($p)?></div>
+                <div class="colperson__role"><?=get_field('role', $p)?> <?=$offices?></div>
+                <div class="colperson__bio"><?=get_the_content(null, false, $p)?></div>
             </div>
                 <?php
             }
