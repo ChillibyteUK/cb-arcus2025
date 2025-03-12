@@ -3,89 +3,49 @@
 defined('ABSPATH') || exit;
 
 $page_for_posts = get_option('page_for_posts');
-$bg = get_the_post_thumbnail_url($page_for_posts, 'full');
+$bg = get_the_post_thumbnail($page_for_posts, 'full');
 
 get_header();
 ?>
-<main id="main" class="theme--blue">
-    <section class="hero hero--short" data-parallax="scroll"
-        data-image-src="<?= get_the_post_thumbnail_url(get_option('page_for_posts'), 'full') ?>">
-        <div class="container-bg bg--left">
-            <div class="container-xl pe-0">
-                <div class="hero__content">
-                    <h1 data-aos="fade-right">Reports &amp; News</h1>
-                </div>
-            </div>
+<main id="main">
+    <div class="page_hero">
+        <?=$bg?>
+    </div>
+    <section class="translucent_text--light">
+        <div class="container p-5">
+            <h1>Insights</h1>
+            <div class="translucent_text__content"><?=get_the_content(null, false, $page_for_posts)?></div>
         </div>
     </section>
-
-    <div class="container-xl py-5">
-        <?php
-        if (get_the_content(null, false, $page_for_posts)) {
-            echo '<div class="mb-5">' . get_the_content(null, false, $page_for_posts) . '</div>';
-        }
-
-        /*
-        $cats = get_categories(array('exclude' => array(32)));
-        ?>
-        <div class="filters mb-4">
+    <section class="latest_insights">
+        <div class="container bg--white p-5">
+            <div class="row w-100">
             <?php
-        echo '<button class="btn btn-outline-primary active me-2 mb-2" data-filter="*">All</button>';
-        foreach ($cats as $cat) {
-            echo '<button class="btn btn-outline-primary me-2 mb-2" data-filter=".' . cbslugify($cat->name) . '">' . $cat->cat_name . '</button>';
-        }
-        ?>
-        </div>
-        <?php
-        */
-        ?>
-        <div class="row w-100" id="newsGrid">
-            <?php
-            while (have_posts()) {
-                the_post();
-                $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                if (!$img) {
-                    $img = get_stylesheet_directory_uri() . '/img/default-blog.jpg';
-                }
-                $cats = get_the_category();
-                $category = wp_list_pluck($cats, 'name');
-                $flashcat = cbslugify($category[0]);
-                $catClass = implode(' ', array_map('cbslugify', $category));
-                $category = implode(', ', $category);
-
-                if (has_category('event')) {
-                    $the_date = get_field('start_date', get_the_ID());
-                } else {
-                    $the_date = get_the_date('jS F, Y');
-                }
-
-            ?>
-                <div
-                    class="grid_item col-lg-4 col-md-6 px-1 <?= $catClass ?>">
-                    <a href="<?= get_the_permalink() ?>"
-                        class="news_grid__item mb-2 mx-1"
-                        style="background-image:url(<?= $img ?>)"
-                        data-aos="fade">
-                        <div class="overlay <?= $catClass ?>"></div>
-                        <!-- div class="catflash <?= $catClass ?>">
-                    <?= $flashcat ?>
-            </div -->
-                        <h3><?= get_the_title() ?></h3>
-                        <div class="news_meta">
-                            <div class="news_meta__date">
-                                <?= get_the_date('j F Y') ?>
+                while (have_posts()) {
+                    the_post();
+                    $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                    if (!$img) {
+                        $img = get_stylesheet_directory_uri() . '/img/default-blog.jpg';
+                    }
+                    ?>
+                    <div class="col-md-4">
+                        <a class="latest_insights__card" href="<?=get_the_permalink()?>">
+                            <?=get_the_post_thumbnail($q->ID, 'large', ['class' => 'latest_insights__image'])?>
+                            <h3><?=get_the_title()?></h3>
+                            <div class="latest_insights__intro">
+                                <?=get_field('post_excerpt', get_the_ID()) ?: wp_trim_words(get_the_content(), 30)?>
                             </div>
-                        </div>
-                    </a>
-                </div>
-            <?php
-            }
-            ?>
+                        </a>
+                    </div>
+                    <?php
+                }
+?>
+            </div>
         </div>
         <!--        <div class="mt-5">
         <?php
         // numeric_posts_nav();
-        ?>
+?>
     </div>
     -->
     </div>

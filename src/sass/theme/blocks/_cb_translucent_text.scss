@@ -7,3 +7,12 @@
         max-width: 79ch;
     }
 }
+.translucent_text--light {
+    .container {
+        background-color: hsl(255 255 255 / 0.8);
+        color: var(--col-dark);
+    }
+    &__content {
+        max-width: 79ch;
+    }
+}

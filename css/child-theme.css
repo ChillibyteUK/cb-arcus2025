@@ -21617,6 +21617,10 @@ strong,
   background-color: var(--col-light);
 }
 
+.bg--white {
+  background-color: white;
+}
+
 .button {
   position: relative;
   display: inline-flex;
@@ -22336,6 +22340,14 @@ header .dropdown.current-menu-item::after {
   color: white;
 }
 .translucent_text__content {
+  max-width: 79ch;
+}
+
+.translucent_text--light .container, .translucent_text--light .yoast-breadcrumbs, .translucent_text--light .wp-block-group {
+  background-color: hsla(255deg, 100%, 100%, 0.8);
+  color: var(--col-dark);
+}
+.translucent_text--light__content {
   max-width: 79ch;
 }
 
