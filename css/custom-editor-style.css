@@ -17,6 +17,8 @@
   --col-gold-400: hsl(var(--hsl-gold-400));
   --hsl-grey-400: 213 14% 68%;
   --col-grey-400: hsl(var(--hsl-grey-400));
+  --hsl-grey-100: 60 3% 93%;
+  --col-grey-100: hsl(var(--hsl-grey-100));
   /* Font Sizes */
   /* Larger sizes */
   --fs-999: 3.583rem;

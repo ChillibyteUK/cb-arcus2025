@@ -20,3 +20,12 @@
 .bg--white {
   background-color: white;
 }
+
+.has-grey-100-background-color,
+.bg--grey-100 {
+  background-color: var(--col-grey-100);
+}
+
+.has-red-400-color {
+  color: var(--col-red-400);
+}
