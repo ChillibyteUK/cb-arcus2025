@@ -117,7 +117,7 @@ function display_compliance_modal()
     }
 
     $regions = get_compliance_regions();
-?>
+    ?>
     <style>
         #disclaimerText {
             max-height: 200px;
@@ -126,6 +126,13 @@ function display_compliance_modal()
             padding: 10px;
             margin-top: 10px;
             padding-bottom: 2rem;
+        }
+        .compliance-backdrop {
+            background-image: url(<?=get_stylesheet_directory_uri()?>/img/modal-bg.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom left;
+            opacity: 1 !important;
         }
     </style>
     <div class="modal fade" id="complianceModal" tabindex="-1" aria-labelledby="complianceModalLabel" aria-hidden="true">
@@ -147,20 +154,20 @@ function display_compliance_modal()
                         <select id="regionSelect" class="form-select">
                             <option value="">-- Select a country --</option>
                             <?php
-                            $regions = get_terms(array('taxonomy' => 'region', 'hide_empty' => false));
-                            foreach ($regions as $region) {
-                                // Fetch the 'countries' ACF field for the current term
-                                $countries = get_field('countries', 'region_' . $region->term_id);
+                                $regions = get_terms(array('taxonomy' => 'region', 'hide_empty' => false));
+    foreach ($regions as $region) {
+        // Fetch the 'countries' ACF field for the current term
+        $countries = get_field('countries', 'region_' . $region->term_id);
 
-                                // If 'countries' field exists, loop through its values
-                                if ($countries) {
-                                    $countries_array = explode("\n", $countries); // Split lines into an array
-                                    foreach ($countries_array as $country) {
-                                        echo '<option data-region="' . esc_attr($region->slug) . '">' . esc_html(trim($country)) . '</option>';
-                                    }
-                                }
-                            }
-                            ?>
+        // If 'countries' field exists, loop through its values
+        if ($countries) {
+            $countries_array = explode("\n", $countries); // Split lines into an array
+            foreach ($countries_array as $country) {
+                echo '<option data-region="' . esc_attr($region->slug) . '">' . esc_html(trim($country)) . '</option>';
+            }
+        }
+    }
+    ?>
                         </select>
                     </div>
                     <div id="step3" class="d-none">
@@ -173,7 +180,21 @@ function display_compliance_modal()
             </div>
         </div>
     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const complianceModal = document.getElementById('complianceModal');
 
+    complianceModal.addEventListener('show.bs.modal', function () {
+        setTimeout(() => {
+            document.querySelector('.modal-backdrop').classList.add('compliance-backdrop');
+        }, 10);
+    });
+
+    complianceModal.addEventListener('hidden.bs.modal', function () {
+        document.querySelector('.modal-backdrop')?.classList.remove('compliance-backdrop');
+    });
+});
+</script>
 <?php
 }
 add_action('wp_footer', 'display_compliance_modal');
