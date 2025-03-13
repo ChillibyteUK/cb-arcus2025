@@ -104,3 +104,16 @@ strong,
 // p:not([class]) {
 //     max-width: 70ch;
 // }
+
+.ff-body {
+  font-family: var(--ff-body);
+}
+
+.insights-title {
+  font-family: var(--ff-body);
+  color: var(--col-red-400);
+  font-size: var(--fs-900);
+  font-weight: var(--fw-800);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

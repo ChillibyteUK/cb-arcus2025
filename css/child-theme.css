@@ -21598,6 +21598,19 @@ strong,
   max-width: 65ch;
 }
 
+.ff-body {
+  font-family: var(--ff-body);
+}
+
+.insights-title {
+  font-family: var(--ff-body);
+  color: var(--col-red-400);
+  font-size: var(--fs-900);
+  font-weight: var(--fw-800);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 /* Colour Classes */
 .has-dark-color,
 .text--dark {
@@ -22268,13 +22281,13 @@ header .dropdown.current-menu-item::after {
   object-fit: cover;
   margin-bottom: 2rem;
 }
-.latest_insights h3, .latest_insights .h3 {
+.latest_insights__post-title {
   font-size: var(--fs-550);
   font-family: var(--ff-body);
   position: relative;
   transition: color var(--transition);
 }
-.latest_insights h3::before, .latest_insights .h3::before {
+.latest_insights__post-title::before {
   content: "";
   display: block;
   width: 2rem;

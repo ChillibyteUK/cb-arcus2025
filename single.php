@@ -10,7 +10,7 @@ $img = get_the_post_thumbnail(get_the_ID(), 'full');
     </div>
     <section class="translucent_text--light">
         <div class="container p-5">
-            <div class="has-red-400-color">Insights</div>
+            <div class="insights-title">Insights</div>
             <?php
             if (function_exists('yoast_breadcrumb')) {
                 yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
@@ -45,7 +45,7 @@ foreach ($blocks as $block) {
         </div>
     </div>
     <div class="container latest_insights has-grey-100-background-color p-5">
-        <div class="h2 mb-5">Further reading</div>
+        <div class="h3 mb-5">Further reading</div>
         <div class="row w-100">
             <?php
             $r = new WP_Query(array(
@@ -57,8 +57,8 @@ while ($r->have_posts()) {
     ?>
             <div class="col-md-4">
             <a class="latest_insights__card" href="<?=get_the_permalink()?>">
-                        <?=get_the_post_thumbnail($q->ID, 'large', ['class' => 'latest_insights__image'])?>
-                        <h3><?=get_the_title()?></h3>
+                        <?=get_the_post_thumbnail($r->ID, 'large', ['class' => 'latest_insights__image'])?>
+                        <h3 class="latest_insights__post-title"><?=get_the_title()?></h3>
                         <div class="latest_insights__intro">
                             <?=get_field('post_excerpt', get_the_ID()) ?: wp_trim_words(get_the_content(), 30)?>
                         </div>
