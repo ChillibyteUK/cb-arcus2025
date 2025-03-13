@@ -19,7 +19,7 @@ get_header();
     </section>
     <section class="latest_insights">
         <div class="container bg--white p-5">
-            <div class="row w-100">
+            <div class="row g-5 w-100">
             <?php
                 while (have_posts()) {
                     the_post();
@@ -40,14 +40,11 @@ get_header();
                     <?php
                 }
 ?>
+        <?php
+        understrap_pagination();
+?>
             </div>
         </div>
-        <!--        <div class="mt-5">
-        <?php
-        // numeric_posts_nav();
-?>
-    </div>
-    -->
     </div>
 </main>
 <?php
