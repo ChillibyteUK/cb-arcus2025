@@ -21649,8 +21649,9 @@ strong,
 .button {
   position: relative;
   display: inline-flex;
-  padding: 0.5rem 1rem 0.5rem 1.5rem;
-  min-width: 200px;
+  padding: 0.5rem calc(56px + 1.5rem) 0.5rem 1.5rem;
+  width: -moz-max-content;
+  width: max-content;
   border: 1px solid var(--col-red-400);
   text-decoration: none;
   font-weight: var(--fw-700);
@@ -22550,7 +22551,7 @@ body {
   padding-inline: 0;
 }
 
-.container > .container, .wp-block-group > .container, .container > .wp-block-group, .wp-block-group > .wp-block-group {
+.container .container, .wp-block-group .container, .container .wp-block-group, .wp-block-group .wp-block-group {
   padding-inline: 0;
 }
 
