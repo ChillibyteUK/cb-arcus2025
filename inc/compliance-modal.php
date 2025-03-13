@@ -34,7 +34,7 @@ add_action('wp_enqueue_scripts', 'enqueue_clear_session_script');
 // Function to enqueue modal scripts and styles
 function enqueue_compliance_modal_scripts()
 {
-    error_log('Compliance modal script enqueued.');
+    // error_log('Compliance modal script enqueued.');
 
     // Only enqueue if region session is not set
     if (!isset($_SESSION['region'])) {

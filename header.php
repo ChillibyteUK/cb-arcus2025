@@ -11,7 +11,10 @@
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -27,7 +30,7 @@ session_start();
     <?php
     if (!is_user_logged_in()) {
         if (get_field('ga_property', 'options')) {
-    ?>
+            ?>
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async
                 src="https://www.googletagmanager.com/gtag/js?id=<?= get_field('ga_property', 'options') ?>">
@@ -46,7 +49,7 @@ session_start();
         <?php
         }
         if (get_field('gtm_property', 'options')) {
-        ?>
+            ?>
             <!-- Google Tag Manager -->
             <script>
                 (function(w, d, s, l, i) {
@@ -70,15 +73,15 @@ session_start();
     <?php
         }
     }
-    if (get_field('google_site_verification', 'options')) {
-        echo '<meta name="google-site-verification" content="' . get_field('google_site_verification', 'options') . '" />';
-    }
-    if (get_field('bing_site_verification', 'options')) {
-        echo '<meta name="msvalidate.01" content="' . get_field('bing_site_verification', 'options') . '" />';
-    }
+if (get_field('google_site_verification', 'options')) {
+    echo '<meta name="google-site-verification" content="' . get_field('google_site_verification', 'options') . '" />';
+}
+if (get_field('bing_site_verification', 'options')) {
+    echo '<meta name="msvalidate.01" content="' . get_field('bing_site_verification', 'options') . '" />';
+}
 
-    wp_head();
-    ?>
+wp_head();
+?>
 
     <script type="application/ld+json">
         {
@@ -105,19 +108,19 @@ session_start();
 <body <?php body_class(is_front_page() ? 'homepage' : ''); ?>
     <?php understrap_body_attributes(); ?>>
     <?php
-    do_action('wp_body_open');
-    if (!is_user_logged_in()) {
-        if (get_field('gtm_property', 'options')) {
-    ?>
+do_action('wp_body_open');
+if (!is_user_logged_in()) {
+    if (get_field('gtm_property', 'options')) {
+        ?>
             <!-- Google Tag Manager (noscript) -->
             <noscript><iframe
                     src="https://www.googletagmanager.com/ns.html?id=<?= get_field('gtm_property', 'options') ?>"
                     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- End Google Tag Manager (noscript) -->
     <?php
-        }
     }
-    ?>
+}
+?>
     <div class="header">
         <div class="logo-container"><a href="/" class="logo" aria-label=""></a></div>
         <div class="nav-holder"></div>
@@ -128,35 +131,40 @@ session_start();
         <div class="container px-0">
             <div class="navbar-icon">
             <?php
-            $icons = [
-                'default' => 'icon--arcus.svg',
-                'home' => 'icon--home.svg',
-                'insight' => 'icon--insight.svg',
-                'team' => 'icon--team.svg',
-            ];
+        $icons = [
+            'default' => 'icon--arcus.svg',
+            'home' => 'icon--home.svg',
+            'insight' => 'icon--insight.svg',
+            'team' => 'icon--team.svg',
+            'strategy' => 'icon--strategy.svg',
+        ];
 
-            $current_page = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+$current_page = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
-            switch (true) {
-                case $current_page === '': // Home Page
-                    $icon = $icons['home'];
-                    break;
-                
-                case str_starts_with($current_page, 'insights'): // Insights page and sub-pages
-                    $icon = $icons['insight'];
-                    break;
-                
-                case $current_page === 'team': // Team Page
-                    $icon = $icons['team'];
-                    break;
-                
-                default: // Default Icon
-                    $icon = $icons['default'];
-                    break;
-            }
+switch (true) {
+    case $current_page === '': // Home Page
+        $icon = $icons['home'];
+        break;
 
-            echo '<img src="' . get_stylesheet_directory_uri() . '/img/' . $icon . '">';
-            ?>
+    case str_starts_with($current_page, 'insights'): // Insights page and sub-pages
+        $icon = $icons['insight'];
+        break;
+
+    case $current_page === 'team': // Team Page
+        $icon = $icons['team'];
+        break;
+
+    case $current_page === 'strategy': // Strategy Page
+        $icon = $icons['strategy'];
+        break;
+
+    default: // Default Icon
+        $icon = $icons['default'];
+        break;
+}
+
+echo '<img src="' . get_stylesheet_directory_uri() . '/img/' . $icon . '">';
+?>
             </div>
             <nav class="navbar navbar-expand-lg py-0">
                 <div class="container nav-top align-items-center">
@@ -171,18 +179,18 @@ session_start();
 
                     <div class="collapse navbar-collapse" id="navbar">
                         <?php
-                        wp_nav_menu(
-                            array(
-                                'theme_location'  => 'primary_nav',
-                                'container_class' => 'w-100',
-                                // 'container_id'    => 'primaryNav',
-                                'menu_class'      => 'navbar-nav justify-content-around gap-4 w-100',
-                                'fallback_cb'     => '',
-                                'depth'           => 3,
-                                'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-                            )
-                        );
-                        ?>
+            wp_nav_menu(
+                array(
+                                            'theme_location'  => 'primary_nav',
+                                            'container_class' => 'w-100',
+                                            // 'container_id'    => 'primaryNav',
+                                            'menu_class'      => 'navbar-nav justify-content-around gap-4 w-100',
+                                            'fallback_cb'     => '',
+                                            'depth'           => 3,
+                                            'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+                                        )
+            );
+?>
                     </div>
                 </div>
             </nav>

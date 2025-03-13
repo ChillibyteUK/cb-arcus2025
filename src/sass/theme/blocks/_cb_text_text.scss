@@ -1,9 +1,20 @@
 .text_text {
     position: relative;
 
+    &__background {
+        background-color: var(--col-grey-100);
+        border-top: 1px solid var(--col-grey-400);
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_2' data-name='Layer 2' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 981 561'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: url(%23linear-gradient-2); %7D .cls-2 %7B fill: none; %7D .cls-3 %7B opacity: .13; %7D .cls-4 %7B fill: url(%23linear-gradient); %7D .cls-5 %7B clip-path: url(%23clippath); %7D %3C/style%3E%3CclipPath id='clippath'%3E%3Crect class='cls-2' width='981' height='561'/%3E%3C/clipPath%3E%3ClinearGradient id='linear-gradient' x1='468.49' y1='1073.07' x2='50.77' y2='-370.78' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23000'/%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='0'/%3E%3C/linearGradient%3E%3ClinearGradient id='linear-gradient-2' x1='587.35' y1='1038.68' x2='169.63' y2='-405.17' xlink:href='%23linear-gradient'/%3E%3C/defs%3E%3Cg id='Main_Layout' data-name='Main Layout'%3E%3Cg class='cls-3'%3E%3Cg class='cls-5'%3E%3Cpath id='Fill-7' class='cls-4' d='M383.59,528.03c41,172.95,42.79,341.08,12.97,484.98h109.1c18.01-129.54,11.67-275.09-23.58-424.2C412.89,296.58,166.63,2.39-27.01-104.88,155.22-3.99,314.59,236.44,383.59,528.03'/%3E%3Cpolyline id='Fill-9' class='cls-1' points='846.27 260.67 631.64 271.45 717.43 302.95 -40.05 543.03 13.21 674.72 724.29 320.02 684.9 403.14 846.27 260.67'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-position: bottom left;
+        background-repeat: no-repeat;
+        background-size: 75%;
+    }
+
+
     &__parallax {
         position: absolute;
         height: 100%;
+        max-height: 300px;
         width: 60px;
         left: -60px;
         top: 0;
@@ -19,16 +30,21 @@
         transform: translateY(0);
         will-change: transform;
     }
+
     .container {
-        background-color: white;
         position: relative;
     }
-
-    &__right {
-        border-top: 1px solid var(--col-grey-400);
-        @media (min-width:768px) {
-            border-top: none;
-            border-left: 1px solid var(--col-grey-400);
+    
+    &:not(:has(.text_text__background)) {
+        .container {
+            background-color: white;
+        }
+        .text_text__right {
+            border-top: 1px solid var(--col-grey-400);
+            @media (min-width:768px) {
+                border-top: none;
+                border-left: 1px solid var(--col-grey-400);
+            }
         }
     }
 

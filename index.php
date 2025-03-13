@@ -13,7 +13,7 @@ get_header();
     </div>
     <section class="translucent_text--light">
         <div class="container p-5">
-            <h1 class="insights-title">Insights</h1>
+            <h1 class="insights-title mb-4">Insights</h1>
             <div class="translucent_text__content"><?=get_the_content(null, false, $page_for_posts)?></div>
         </div>
     </section>
@@ -30,7 +30,7 @@ get_header();
                     ?>
                     <div class="col-md-4">
                         <a class="latest_insights__card" href="<?=get_the_permalink()?>">
-                            <?=get_the_post_thumbnail($q->ID, 'large', ['class' => 'latest_insights__image'])?>
+                            <?=get_the_post_thumbnail(get_the_ID(), 'large', ['class' => 'latest_insights__image'])?>
                             <h3 class="latest_insights__post-title"><?=get_the_title()?></h3>
                             <div class="latest_insights__intro">
                                 <?=get_field('post_excerpt', get_the_ID()) ?: wp_trim_words(get_the_content(), 30)?>

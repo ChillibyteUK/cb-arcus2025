@@ -22,6 +22,28 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_67d2b16b96a5c",
+            "label": "Author",
+            "name": "author",
+            "aria-label": "",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -42,5 +64,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741270094
+    "modified": 1741861244
 }

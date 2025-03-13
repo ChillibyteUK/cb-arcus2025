@@ -27,13 +27,19 @@ $after;
     <div class="container p-5 bg--white">
         <div class="row">
             <div class="col-md-8">
-            <h1 class="h2"><?=get_the_title()?></h1>
+                <h1 class="h2"><?=get_the_title()?></h1>
                 <?php
-        $count = estimate_reading_time_in_minutes(get_the_content(), 200, true, true) ?? null;
-if ($count) {
-    echo $count;
-}
-
+            // no read time at the moment as the articles are very short
+            // $count = estimate_reading_time_in_minutes(get_the_content(), 200, true, true) ?? null;
+            // if ($count) {
+            //     echo $count;
+            // }
+?>
+                <div class="post_meta">
+                    <a class="post_meta__author" href="<?=get_author_posts_url(get_the_author_meta('ID'))?>"><?=get_the_author()?></a>
+                    <span class="post_meta__date"><?=get_the_date('jS F Y')?></span>
+                </div>
+                <?php
 foreach ($blocks as $block) {
     echo render_block($block);
 }
@@ -49,8 +55,8 @@ foreach ($blocks as $block) {
         <div class="row w-100">
             <?php
             $r = new WP_Query(array(
-                'posts_per_page' => 4,
-                'post__not_in' => array(get_the_ID())
+'posts_per_page' => 4,
+'post__not_in' => array(get_the_ID())
             ));
 while ($r->have_posts()) {
     $r->the_post();

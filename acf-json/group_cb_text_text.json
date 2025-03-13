@@ -64,7 +64,7 @@
             "label": "Content",
             "name": "content_left",
             "aria-label": "",
-            "type": "text",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -74,11 +74,11 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "allow_in_bindings": 1,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_67c854c657d69",
@@ -141,7 +141,7 @@
             "label": "Content",
             "name": "content_right",
             "aria-label": "",
-            "type": "text",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -151,11 +151,11 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "allow_in_bindings": 1,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_67c8563d57d6d",
@@ -176,7 +176,7 @@
         },
         {
             "key": "field_67c8565757d6f",
-            "label": "Image",
+            "label": "Presentation",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -217,6 +217,32 @@
             "mime_types": "",
             "allow_in_bindings": 0,
             "preview_size": "medium"
+        },
+        {
+            "key": "field_67d2dec431def",
+            "label": "Has Background",
+            "name": "has_background",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Yes": "Yes"
+            },
+            "default_value": [],
+            "return_format": "value",
+            "allow_custom": 0,
+            "allow_in_bindings": 0,
+            "layout": "vertical",
+            "toggle": 0,
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         }
     ],
     "location": [
@@ -237,5 +263,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741182580
+    "modified": 1741872856
 }

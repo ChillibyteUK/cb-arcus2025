@@ -33,6 +33,11 @@ body {
 
 #breadcrumbs {
     font-size: var(--fs-200);
+    a {
+        text-decoration: none;
+        font-weight: var(--fw-800);
+        color: var(--col-dark);
+    }
 }
 
 .wp-block-group {
@@ -47,10 +52,33 @@ body {
     padding-inline: 0;
 }
 
-.yoast-breadcrumbs {
-    @extend .container;
-    @extend .mb-4;
-    font-size: var(--fs-300);
+
+.post_meta {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    &__author {
+        font-weight: var(--fw-800);
+        text-decoration: none;
+        color: var(--col-dark);
+        &:hover {
+            color: var(--col-red-400);
+        }
+    }
+    &__date {
+        color: var(--col-gold-400);
+    }
+}
+
+.person_panel {
+    &__image {
+        margin-bottom: 1rem;
+    }
+    &__name {
+        font-size: var(--fs-500);
+        font-weight: var(--fw-800);
+        color: var(--col-dark);
+    }
 }
 
 
