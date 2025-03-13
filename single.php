@@ -55,7 +55,7 @@ foreach ($blocks as $block) {
         <div class="row w-100">
             <?php
             $r = new WP_Query(array(
-'posts_per_page' => 4,
+'posts_per_page' => 3,
 'post__not_in' => array(get_the_ID())
             ));
 while ($r->have_posts()) {
