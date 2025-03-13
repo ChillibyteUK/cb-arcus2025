@@ -89,8 +89,12 @@ h5,
 }
 strong,
 .fw-bold,
-.fw-500 {
-  font-weight: var(--fw-500);
+.fw-700 {
+  font-weight: var(--fw-700);
+}
+
+.has-medium-font-size {
+  font-size: var(--fs-500);
 }
 
 .text-balance {
