@@ -4,8 +4,9 @@ $l = get_field('link') ?? null;
 $f = get_field('file') ?? null;
 
 if ($f) {
+    $title = get_field('file_button_title') ?: 'Download';
     ?>
-<a href="<?=$f['url']?>" target="_blank" class="button">Download</a>
+<a href="<?=$f['url']?>" target="_blank" class="button"><?=$title?></a>
     <?php
 } else {
     ?>

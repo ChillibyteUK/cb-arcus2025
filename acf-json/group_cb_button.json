@@ -12,7 +12,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "20",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -30,7 +30,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "40",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -47,7 +47,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "40",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -57,6 +57,27 @@
             "max_size": "",
             "mime_types": "",
             "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67d403973d619",
+            "label": "File Button Title",
+            "name": "file_button_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -77,5 +98,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741877154
+    "modified": 1741947813
 }
