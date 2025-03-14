@@ -110,3 +110,15 @@
         }
     }
 }
+
+
+.pagination {
+    --bs-pagination-border-radius: 0;
+    --bs-pagination-active-color: white;
+    --bs-pagination-active-bg: var(--col-red-400);
+    --bs-pagination-active-border-color: var(--col-red-400);
+    --bs-pagination-disabled-color: var(--col-grey-400);
+    --bs-pagination-disabled-bg: white;
+    --bs-pagination-disabled-border-color: var(--col-grey-400);
+    font-weight: var(--fw-700);
+}
