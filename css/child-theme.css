@@ -21994,13 +21994,16 @@ header .dropdown.current-menu-item::after {
   z-index: -1;
   margin-bottom: calc(var(--_page-offset) * -1 + var(--nav-height));
 }
-.video_hero img {
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: center;
-  object-position: center;
+.video_hero video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 }
 
 .split_title_banner .container, .split_title_banner .wp-block-group {

@@ -21,9 +21,51 @@
             "new_lines": "wpautop"
         },
         {
-            "key": "field_67c7177511a42",
-            "label": "Image",
-            "name": "image",
+            "key": "field_67d40e8dd1d56",
+            "label": "Video MP4",
+            "name": "video_mp4",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "mp4",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67d40ed4d1d57",
+            "label": "Video Webm",
+            "name": "video_webm",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "webm",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_67d414487d50a",
+            "label": "Fallback Image",
+            "name": "fallback",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -44,7 +86,7 @@
             "max_size": "",
             "mime_types": "",
             "allow_in_bindings": 0,
-            "preview_size": "medium"
+            "preview_size": "thumbnail"
         }
     ],
     "location": [
@@ -65,5 +107,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741100941
+    "modified": 1741952134
 }
