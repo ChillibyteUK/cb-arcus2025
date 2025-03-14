@@ -29,11 +29,16 @@ $after;
             <div class="col-md-8">
                 <h1 class="h2"><?=get_the_title()?></h1>
                 <?php
-            // no read time at the moment as the articles are very short
-            // $count = estimate_reading_time_in_minutes(get_the_content(), 200, true, true) ?? null;
-            // if ($count) {
-            //     echo $count;
-            // }
+                if (get_field('post_excerpt')) {
+                    ?>
+                    <p class="fs-500"><?=get_field('post_excerpt')?></p>
+                    <?php
+                }
+// no read time at the moment as the articles are very short
+// $count = estimate_reading_time_in_minutes(get_the_content(), 200, true, true) ?? null;
+// if ($count) {
+//     echo $count;
+// }
 ?>
                 <div class="post_meta">
                     <a class="post_meta__author" href="<?=get_author_posts_url(get_the_author_meta('ID'))?>"><?=get_the_author()?></a>

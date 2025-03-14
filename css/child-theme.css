@@ -21590,6 +21590,7 @@ strong,
   font-weight: var(--fw-700);
 }
 
+.fs-500,
 .has-medium-font-size {
   font-size: var(--fs-500);
 }
