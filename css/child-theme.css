@@ -22586,18 +22586,18 @@ body {
   color: var(--col-dark);
 }
 
-.blog ul {
+ul.wp-block-list {
   list-style: none;
   padding-left: 0;
   margin-bottom: 2rem;
 }
-.blog ul li {
+ul.wp-block-list li {
   display: flex;
   align-items: flex-start;
   gap: 8px;
   margin-bottom: 0.25rem;
 }
-.blog ul li::before {
+ul.wp-block-list li::before {
   content: "";
   display: inline-block;
   width: 16px;
