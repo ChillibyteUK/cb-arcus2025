@@ -1,12 +1,21 @@
 <?php
-$mp4 = get_field('video_mp4') ?? null;
-$webm = get_field('video_webm') ?? null;
+$mp4 = get_field('video_mp4') ? get_field('video_mp4') : null;
+$webm = get_field('video_webm') ? get_field('video_webm') : null;
+$image = wp_get_attachment_image(get_field('fallback'), 'full', false, ['alt' => 'Video not supported']);
 ?>
 <div class="video_hero">
-    <video autoplay loop muted playsinline>
-        <source src="<?=$webm?>" type="video/webm">
-        <source src="<?=$mp4?>" type="video/mp4">
-        <?=wp_get_attachment_image(get_field('image'), 'full', false, ['alt' => 'Video not supported'])?>
-        Your browser does not support the video tag.
-    </video>
+    <?php if ($webm || $mp4) { ?>
+        <video autoplay loop muted playsinline>
+            <?php if ($webm) { ?>
+                <source src="<?= esc_url($webm); ?>" type="video/webm">
+            <?php } ?>
+            <?php if ($mp4) { ?>
+                <source src="<?= esc_url($mp4); ?>" type="video/mp4">
+            <?php } ?>
+            <?= $image; ?>
+            Your browser does not support the video tag.
+        </video>
+    <?php } else { ?>
+        <?= $image; ?>
+    <?php } ?>
 </div>
