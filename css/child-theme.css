@@ -21508,7 +21508,6 @@ readers do not read off random characters that represent icons */
   font-weight: 700;
   src: url("../fonts/barlow-v12-latin-700.woff2") format("woff2");
 }
-/* barlow-700 - latin */
 @font-face {
   font-display: swap;
   font-family: "MetaSerif";
@@ -22087,7 +22086,6 @@ header .dropdown.current-menu-item::after {
 .text_quote__quote-container::before, .text_quote__quote-container::after {
   content: "";
   position: absolute;
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23bb322a; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
   aspect-ratio: 6/5;
   width: 40px;
 }
@@ -22098,6 +22096,18 @@ header .dropdown.current-menu-item::after {
 .text_quote__quote-container::after {
   bottom: 0;
   right: 1rem;
+}
+.text_quote.text_quote__red .text_quote__quote {
+  color: var(--col-red-400);
+}
+.text_quote.text_quote__red .text_quote__quote-container::before, .text_quote.text_quote__red .text_quote__quote-container::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23bb322a; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
+}
+.text_quote.text_quote__gold .text_quote__quote {
+  color: var(--col-gold-400);
+}
+.text_quote.text_quote__gold .text_quote__quote-container::before, .text_quote.text_quote__gold .text_quote__quote-container::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23c59e70; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
 }
 .text_quote__quote {
   font-size: var(--fs-800);
@@ -22176,7 +22186,6 @@ header .dropdown.current-menu-item::after {
 .quote_image_bg__quote-container::before, .quote_image_bg__quote-container::after {
   content: "";
   position: absolute;
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23d9ba2e; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
   aspect-ratio: 6/5;
   width: 40px;
 }
@@ -22187,6 +22196,12 @@ header .dropdown.current-menu-item::after {
 .quote_image_bg__quote-container::after {
   bottom: 0;
   right: 1rem;
+}
+.quote_image_bg.quote_image_bg__gold .quote_image_bg__quote-container::before, .quote_image_bg.quote_image_bg__gold .quote_image_bg__quote-container::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23c59e70; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
+}
+.quote_image_bg.quote_image_bg__red .quote_image_bg__quote-container::before, .quote_image_bg.quote_image_bg__red .quote_image_bg__quote-container::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23bb322a; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
 }
 .quote_image_bg__quote {
   font-size: var(--fs-700);
@@ -22311,6 +22326,9 @@ header .dropdown.current-menu-item::after {
 .latest_insights__card:hover h3, .latest_insights__card:hover .h3 {
   color: var(--col-red-400);
 }
+.latest_insights__card:hover .latest_insights__image {
+  border-color: var(--col-gold-400);
+}
 .latest_insights__image {
   width: 75%;
   max-width: 250px !important;
@@ -22318,7 +22336,9 @@ header .dropdown.current-menu-item::after {
   border-radius: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  margin-bottom: 2rem;
+  border: 3px solid transparent;
+  transition: border-color var(--transition);
+  margin-bottom: 1rem;
 }
 .latest_insights__post-title {
   font-size: var(--fs-550);
@@ -22460,7 +22480,6 @@ header .dropdown.current-menu-item::after {
 .plain_quote__quote-container::before, .plain_quote__quote-container::after {
   content: "";
   position: absolute;
-  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23bb322a; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
   aspect-ratio: 6/5;
   width: 40px;
 }
@@ -22472,12 +22491,23 @@ header .dropdown.current-menu-item::after {
   bottom: 0;
   right: 1rem;
 }
+.plain_quote.plain_quote__red .plain_quote__quote {
+  color: var(--col-red-400);
+}
+.plain_quote.plain_quote__red .plain_quote__quote-container::before, .plain_quote.plain_quote__red .plain_quote__quote-container::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23bb322a; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
+}
+.plain_quote.plain_quote__gold .plain_quote__quote {
+  color: var(--col-gold-400);
+}
+.plain_quote.plain_quote__gold .plain_quote__quote-container::before, .plain_quote.plain_quote__gold .plain_quote__quote-container::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23c59e70; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
+}
 .plain_quote__quote {
   font-size: var(--fs-800);
   font-family: var(--ff-heading);
   font-weight: var(--fw-500);
   font-style: italic;
-  color: var(--col-red-400);
   padding-bottom: 1rem;
 }
 .plain_quote__attribution {
@@ -22531,6 +22561,37 @@ header .dropdown.current-menu-item::after {
 .two_col_text_feature .quote__attribution {
   font-size: var(--fs-300);
   padding-bottom: 1rem;
+}
+
+.contact_cards__card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+}
+.contact_cards__image {
+  width: 100%;
+  max-width: 200px !important;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-bottom: 2rem;
+}
+.contact_cards__name {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-600);
+  font-weight: var(--fw-800);
+}
+.contact_cards__email {
+  margin-bottom: 1rem;
+  position: relative;
+}
+.contact_cards__email::before {
+  position: relative;
+  content: "x";
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--color-primary);
 }
 
 body {

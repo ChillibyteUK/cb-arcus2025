@@ -35,7 +35,7 @@
         &::after {
             content: '';
             position: absolute;
-            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23d9ba2e; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
+            // background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23d9ba2e; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
             aspect-ratio: 6 / 5;
             width: 40px;
         }
@@ -47,8 +47,34 @@
             bottom: 0;
             right: 1rem;
         }
-
     }
+
+    &.quote_image_bg__gold {
+        // .quote_image_bg__quote {
+        //     color: var(--col-red-400);
+        // }
+        .quote_image_bg__quote-container {
+        &::before,
+        &::after {
+            @include quote-icon($quote-fill-gold);
+            // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill:%23bb322a; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
+        }
+        }
+    }
+    &.quote_image_bg__red {
+        // .quote_image_bg__quote {
+        //     color: var(--col-red-400);
+        // }
+        .quote_image_bg__quote-container {
+        &::before,
+        &::after {
+            @include quote-icon($quote-fill-red);
+            // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 58 49'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill:%23bb322a; stroke-width: 0px; %7D %3C/style%3E%3C/defs%3E%3Crect class='cls-1' width='24' height='49'/%3E%3Crect class='cls-1' x='34' width='24' height='49'/%3E%3C/svg%3E");
+        }
+        }
+    }
+
+
     &__quote {
         font-size: var(--fs-700);
         font-family: var(--ff-heading);

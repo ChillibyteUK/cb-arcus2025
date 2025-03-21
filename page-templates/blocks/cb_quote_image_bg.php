@@ -2,8 +2,10 @@
 if (!is_block_region_applicable()) {
     return;
 }
+$colour_field = get_field('colour');
+$colour = ($colour_field === 'Gold' || $colour_field === null) ? 'quote_image_bg__gold' : 'quote_image_bg__red';
 ?>
-<section class="quote_image_bg">
+<section class="quote_image_bg <?=$colour?>">
     <div class="container px-0">
         <?=wp_get_attachment_image(get_field('background'),'full',false,['class' => 'quote_image_bg__image'])?>
         <div class="row">

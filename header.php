@@ -137,6 +137,7 @@ if (!is_user_logged_in()) {
             'insight' => 'icon--insight.svg',
             'team' => 'icon--team.svg',
             'about' => 'icon--team.svg',
+            'contact' => 'icon--team.svg',
             'strategy' => 'icon--strategy.svg',
         ];
 
@@ -157,6 +158,10 @@ switch (true) {
 
     case $current_page === 'about-us': // About Page
         $icon = $icons['about'];
+        break;
+
+    case $current_page === 'contact': // Contact Page
+        $icon = $icons['contact'];
         break;
 
     case $current_page === 'strategy': // Strategy Page

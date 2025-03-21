@@ -156,6 +156,32 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_67dd2fc22ea36",
+            "label": "Colour",
+            "name": "colour",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Red": "Red",
+                "Gold": "Gold"
+            },
+            "default_value": "Red",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -176,5 +202,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741175649
+    "modified": 1742548944
 }

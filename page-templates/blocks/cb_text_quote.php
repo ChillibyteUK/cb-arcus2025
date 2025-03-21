@@ -1,4 +1,8 @@
-<section class="text_quote">
+<?php
+$colour_field = get_field('colour');
+$colour = ($colour_field === 'Red' || $colour_field === null) ? 'text_quote__red' : 'text_quote__gold';
+?>
+<section class="text_quote <?=$colour?>">
     <div class="container">
         <div class="row">
             <div class="col-md-7 col-lg-8 col-xl-9 p-5">

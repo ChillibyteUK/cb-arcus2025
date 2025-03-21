@@ -4,6 +4,17 @@ function acf_blocks()
     if (function_exists('acf_register_block_type')) {
 
         acf_register_block_type(array(
+            'name'                => 'cb_contact_cards', 
+            'title'               => __('CB Contact Cards'), 
+            'category'            => 'layout',
+            'icon'                => 'cover-image', 
+            'render_template'    => 'page-templates/blocks/cb_contact_cards.php', 
+            'mode'                => 'edit',
+            'supports'            => array('mode' => false, 'anchor' => true, 'className' => true),
+        ));
+
+
+        acf_register_block_type(array(
             'name'                => 'cb_text_video', 
             'title'               => __('CB Text Video'), 
             'category'            => 'layout',
