@@ -34,9 +34,7 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "people"
-            ],
+            "post_type": ["people"],
             "post_status": "",
             "taxonomy": "",
             "filters": "",

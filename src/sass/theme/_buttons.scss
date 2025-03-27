@@ -15,7 +15,7 @@
     isolation: isolate;
     z-index: 0;
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         right: 0;
         top: 0;
@@ -27,7 +27,7 @@
         z-index: -1;
     }
     &::after {
-        content: "• • •"; /* Placeholder for structure */
+        content: '• • •'; /* Placeholder for structure */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -71,7 +71,7 @@
     isolation: isolate;
     z-index: 0;
     &::before {
-        content: "";
+        content: '';
         position: absolute;
         right: 0;
         top: 0;
@@ -83,7 +83,7 @@
         z-index: -1;
     }
     &::after {
-        content: "• • •"; /* Placeholder for structure */
+        content: '• • •'; /* Placeholder for structure */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -110,7 +110,6 @@
         }
     }
 }
-
 
 .pagination {
     --bs-pagination-border-radius: 0;

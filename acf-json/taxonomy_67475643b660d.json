@@ -4,9 +4,7 @@
     "menu_order": 0,
     "active": true,
     "taxonomy": "region",
-    "object_type": [
-        "page"
-    ],
+    "object_type": ["page"],
     "advanced_configuration": 1,
     "import_source": "",
     "import_date": "",

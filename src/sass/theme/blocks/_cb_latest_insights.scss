@@ -63,7 +63,7 @@
         position: relative;
         transition: color var(--transition);
         &::before {
-            content: "";
+            content: '';
             display: block;
             width: 2rem;
             height: 1rem;

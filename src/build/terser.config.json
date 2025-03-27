@@ -1,6 +1,5 @@
 {
-    "parse": {
-    },
+    "parse": {},
     "compress": {
         "booleans": true,
         "conditionals": true,
@@ -15,8 +14,7 @@
         "warnings": false,
         "ecma": 5
     },
-    "mangle": {
-    },
+    "mangle": {},
     "sourceMap": {
         "includeSources": true
     }

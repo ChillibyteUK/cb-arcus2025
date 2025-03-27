@@ -10,7 +10,6 @@
         background-size: 75%;
     }
 
-
     &__parallax {
         position: absolute;
         height: 100%;
@@ -34,18 +33,17 @@
     .container {
         position: relative;
     }
-    
+
     &:not(:has(.text_text__background)) {
         .container {
             background-color: white;
         }
         .text_text__right {
             border-top: 1px solid var(--col-grey-400);
-            @media (min-width:768px) {
+            @media (min-width: 768px) {
                 border-top: none;
                 border-left: 1px solid var(--col-grey-400);
             }
         }
     }
-
 }

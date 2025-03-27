@@ -1,5 +1,4 @@
 .two_col_text_feature {
-
     .container {
         background-color: white;
         position: relative;
@@ -10,7 +9,7 @@
         padding: 3rem 3rem 4rem 3rem;
         position: relative;
 
-        @media (min-width:768px) {
+        @media (min-width: 768px) {
             border-top: none;
             border-left: 1px solid var(--col-grey-400);
         }

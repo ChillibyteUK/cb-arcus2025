@@ -24,7 +24,7 @@
         position: relative;
 
         border-top: 1px solid var(--col-grey-400);
-        @media (min-width:768px) {
+        @media (min-width: 768px) {
             border-top: none;
             border-left: 1px solid var(--col-grey-400);
         }
@@ -88,5 +88,3 @@
         padding-bottom: 1rem;
     }
 }
-
-

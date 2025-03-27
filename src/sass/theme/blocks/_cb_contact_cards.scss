@@ -2,7 +2,6 @@
     &__card {
         display: grid;
 
-
         grid-template-columns: 180px 1fr;
         gap: 2rem;
     }
@@ -22,14 +21,13 @@
         font-weight: var(--fw-800);
     }
     &__role {
-
     }
     &__email {
         margin-bottom: 1rem;
         position: relative;
         &::before {
             position: relative;
-            content: "x";
+            content: 'x';
             width: 1rem;
             height: 1rem;
             background-color: var(--color-primary);

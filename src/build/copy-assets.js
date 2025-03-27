@@ -1,5 +1,5 @@
-const { promises: fs } = require("fs")
-const path = require("path")
+const { promises: fs } = require('fs');
+const path = require('path');
 
 async function copyDir(src, dest) {
     await fs.mkdir(dest, { recursive: true });
@@ -9,9 +9,9 @@ async function copyDir(src, dest) {
         let srcPath = path.join(src, entry.name);
         let destPath = path.join(dest, entry.name);
 
-        entry.isDirectory() ?
-            await copyDir(srcPath, destPath) :
-            await fs.copyFile(srcPath, destPath);
+        entry.isDirectory()
+            ? await copyDir(srcPath, destPath)
+            : await fs.copyFile(srcPath, destPath);
     }
 }
 
