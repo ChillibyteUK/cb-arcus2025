@@ -21804,6 +21804,9 @@ header.wrapper-navbar.fixed {
   /* background-color: white; Change if needed */
   z-index: 1020;
 }
+header.wrapper-navbar.fixed .navbar-logo {
+  opacity: 1;
+}
 header.wrapper-navbar.fixed .navbar-icon {
   opacity: 0;
 }
@@ -21824,6 +21827,31 @@ header .navbar-icon {
   transition: opacity var(--transition);
   text-align: center;
   padding: 10px;
+  z-index: 1;
+}
+header .navbar-logo {
+  background-color: #fff;
+  display: grid;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: -116px;
+  transition: opacity 0;
+  opacity: 0;
+  z-index: 9999;
+  padding-block: 0.95rem;
+  padding-inline-end: 1rem;
+}
+header .navbar-logo .logo {
+  background-image: url(../img/arcus-logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  aspect-ratio: 141/34;
+  width: 100px;
+  max-width: 100px;
 }
 header a.nav-link {
   color: var(--col-dark);

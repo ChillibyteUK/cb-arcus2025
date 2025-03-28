@@ -129,6 +129,7 @@ if (!is_user_logged_in()) {
 
     <header class="wrapper-navbar">
         <div class="container px-0">
+            <div class="navbar-logo"><a href="/" class="logo" aria-label=""></a></div>
             <div class="navbar-icon">
             <?php
         $icons = [
