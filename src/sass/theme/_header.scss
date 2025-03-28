@@ -63,7 +63,7 @@ header {
             /* background-color: white; Change if needed */
             z-index: 1020;
             .navbar-logo {
-                opacity: 1;
+                display: grid;
             }
             .navbar-icon {
                 opacity: 0;
@@ -97,14 +97,13 @@ header {
 
     .navbar-logo {
         background-color: #fff;
-        display: grid;
         justify-content: end;
         align-items: center;
         position: absolute;
         top: 0;
         left: -116px;
         transition: opacity 0;
-        opacity: 0;
+        display: none;
         z-index: 9999;
         padding-block: 0.95rem;
         padding-inline-end: 1rem;
