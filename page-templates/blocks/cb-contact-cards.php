@@ -32,7 +32,6 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <div class="contact_cards__inner">
                         <div class="contact_cards__name"><?= esc_html( get_sub_field( 'name' ) ); ?></div>
                         <div class="contact_cards__role"><?= esc_html( get_sub_field( 'role' ) ); ?></div>
-                        <div class="contact_cards__email"><?= esc_html( get_sub_field( 'email' ) ); ?></div>
 						<a href="mailto:<?= esc_attr( antispambot( get_sub_field( 'email' ) ) ); ?>" class="button">Contact</a>
                     </div>
                 </div>
