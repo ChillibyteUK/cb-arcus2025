@@ -22556,16 +22556,11 @@ header .dropdown.current-menu-item::after {
   font-size: var(--fs-600);
   font-weight: var(--fw-800);
 }
+.contact_cards__role {
+  color: var(--col-gold-400);
+}
 .contact_cards__email {
   margin-bottom: 1rem;
-  position: relative;
-}
-.contact_cards__email::before {
-  position: relative;
-  content: "x";
-  width: 1rem;
-  height: 1rem;
-  background-color: var(--color-primary);
 }
 
 body {
