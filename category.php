@@ -15,7 +15,7 @@ get_header();
 <div class="container-xl pb-5">
     <div class="row g-4 mb-4">
         <?php
-    while (have_posts()) {
+    while ( have_posts() ) {
         the_post();
         ?>
         <div class="col-lg-3">
@@ -30,7 +30,7 @@ get_header();
     }
     ?>
     </div>
-    <?=numeric_posts_nav()?>
+    <?= understrap_pagination() ?>
 </div>
 </main>
 <?php

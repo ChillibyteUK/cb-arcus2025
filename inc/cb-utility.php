@@ -29,13 +29,13 @@ add_shortcode('contact_phone', function () {
 });
 add_shortcode('contact_email', function () {
     if (get_field('contact_email', 'option')) {
-        return '<a href="mailto:' . get_field('contact_email', 'option') . '">' . get_field('contact_email', 'option') . '</a>';
+        return '<a href="mailto:' . esc_attr( antispambot( get_field( 'contact_email', 'option' ) ) ) . '">' . get_field('contact_email', 'option') . '</a>';
     }
     return;
 });
 add_shortcode('contact_email_icon', function () {
     if (get_field('contact_email', 'option')) {
-        return '<a href="mailto:' . get_field('contact_email', 'option') . '"><i class="fas fa-envelope"></i></a>';
+        return '<a href="mailto:' . esc_attr( antispambot( get_field( 'contact_email', 'option' ) ) ) . '"><i class="fas fa-envelope"></i></a>';
     }
     return;
 });

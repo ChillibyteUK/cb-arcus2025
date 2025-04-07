@@ -6,6 +6,7 @@
     width: max-content;
     border: 1px solid var(--col-red-400);
     text-decoration: none;
+    font-family: var(--ff-body);
     font-weight: var(--fw-700);
     font-size: var(--fs-300);
     color: var(--col-dark);
@@ -62,6 +63,7 @@
     min-width: 200px;
     border: 1px solid white;
     text-decoration: none;
+    font-family: var(--ff-body);
     font-weight: var(--fw-700);
     font-size: var(--fs-300);
     color: white;

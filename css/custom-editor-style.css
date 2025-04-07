@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-  /* Colours */
+  /* === Colours === */
   --hsl-dark: 0 0% 14%;
   --col-dark: hsl(var(--hsl-dark));
   --hsl-light: 0 0% 98%;
@@ -19,8 +19,7 @@
   --col-grey-400: hsl(var(--hsl-grey-400));
   --hsl-grey-100: 60 3% 93%;
   --col-grey-100: hsl(var(--hsl-grey-100));
-  /* Font Sizes */
-  /* Larger sizes */
+  /* === Font Sizes === */
   --fs-999: 3.583rem;
   --fs-900: 2.986rem;
   --fs-800: 2.488rem;
@@ -31,19 +30,16 @@
   --fs-400: 1rem;
   --fs-300: 0.833rem;
   --fs-200: 0.694rem;
-  /* Highlights */
-  /* Normal & small text */
-  /* Font Families */
+  /* === Font Families === */
   --ff-body: "Barlow", Tahoma, Geneva, Verdana, sans-serif;
   --ff-heading: "MetaSerif", Tahoma, Geneva, Verdana, sans-serif;
-  /* Font Weights */
+  /* === Font Weights === */
   --fw-400: 400;
   --fw-500: 500;
   --fw-700: 700;
   --fw-800: 800;
-  /* Effects */
+  /* === Utilities === */
   --transition: 250ms ease-out;
-  /* Site General */
   --h-top: 90px;
   --h-top-desktop: 125px;
   --nav-height: 54.3px;

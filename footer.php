@@ -17,7 +17,7 @@ defined('ABSPATH') || exit;
                 <div class="row footer__addresses">
                     <div class="col-md-4 footer__office mb-4">
                         <?php
-                        if ($uk = get_field('uk_address', 'option')) {
+                        if ( $uk = get_field('uk_address', 'option') ) {
                         ?>
                             <div class="footer__title"><?= $uk['office_name'] ?></div>
                             <div class="footer__address"><?= $uk['office_address'] ?></div>
@@ -28,7 +28,7 @@ defined('ABSPATH') || exit;
                     </div>
                     <div class="col-md-4 footer__office mb-4">
                         <?php
-                        if ($jp = get_field('jp_address', 'option')) {
+                        if ( $jp = get_field('jp_address', 'option') ) {
                         ?>
                             <div class="footer__title"><?= $jp['office_name'] ?></div>
                             <div class="footer__address"><?= $jp['office_address'] ?></div>
@@ -39,7 +39,7 @@ defined('ABSPATH') || exit;
                     </div>
                     <div class="col-md-4 footer__office mb-4">
                         <?php
-                        if ($my = get_field('my_address', 'option')) {
+                        if ( $my = get_field('my_address', 'option') ) {
                         ?>
                             <div class="footer__title"><?= $my['office_name'] ?></div>
                             <div class="footer__address"><?= $my['office_address'] ?></div>

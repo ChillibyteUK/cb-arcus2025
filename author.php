@@ -14,7 +14,7 @@ get_header();
 	<section class="translucent_text--light">
 		<div class="container p-5">
 			<h1 class="insights-title"><?php
-                if (get_query_var('author_name')) {
+                if ( get_query_var('author_name') ) {
                     $curauth = get_user_by('slug', get_query_var('author_name'));
                 } else {
                     $curauth = get_userdata(intval($author));
@@ -28,11 +28,11 @@ echo $curauth->display_name;
 			<div class="col-md-8">
 				<div class="row">
 				<?php
-                    if (have_posts()) {
-                        while (have_posts()) {
+                    if ( have_posts() ) {
+                        while ( have_posts() ) {
                             the_post();
                             $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                            if (!$img) {
+                            if ( ! $img ) {
                                 $img = get_stylesheet_directory_uri() . '/img/default-blog.jpg';
                             }
                             ?>
@@ -65,7 +65,7 @@ $people_query = new WP_Query([
 ]);
 
 // Check if we found a matching People post
-if ($people_query->have_posts()) {
+if ( $people_query->have_posts() ) {
     $people_query->the_post();
     $people_post_id = get_the_ID();
     wp_reset_postdata();
@@ -73,7 +73,7 @@ if ($people_query->have_posts()) {
     $people_post_id = null; // No associated people post
 }
 
-if ($people_post_id ?? null) {
+if ( $people_post_id ?? null ) {
     ?>
 				<div class="person_panel">
 					<?=get_the_post_thumbnail($people_post_id, 'large', ['class' => 'person_panel__image'])?>

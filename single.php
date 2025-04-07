@@ -12,7 +12,7 @@ $img = get_the_post_thumbnail(get_the_ID(), 'full');
         <div class="container p-5">
             <div class="insights-title">Insights</div>
             <?php
-            if (function_exists('yoast_breadcrumb')) {
+            if ( function_exists('yoast_breadcrumb') ) {
                 yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
             }
 ?>
@@ -29,7 +29,7 @@ $after;
             <div class="col-md-8">
                 <h1 class="h2"><?=get_the_title()?></h1>
                 <?php
-                if (get_field('post_excerpt')) {
+                if ( get_field('post_excerpt') ) {
                     ?>
                     <p class="fs-500"><?=get_field('post_excerpt')?></p>
                     <?php
@@ -45,7 +45,7 @@ $after;
                     <span class="post_meta__date"><?=get_the_date('jS F Y')?></span>
                 </div>
                 <?php
-foreach ($blocks as $block) {
+foreach ( $blocks as $block ) {
     echo render_block($block);
 }
 ?>
@@ -63,7 +63,7 @@ foreach ($blocks as $block) {
 'posts_per_page' => 3,
 'post__not_in' => array(get_the_ID())
             ));
-while ($r->have_posts()) {
+while ( $r->have_posts() ) {
     $r->the_post();
     ?>
             <div class="col-md-4">

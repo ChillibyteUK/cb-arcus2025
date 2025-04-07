@@ -21,10 +21,10 @@ get_header();
         <div class="container bg--white p-5">
             <div class="row g-5 w-100">
             <?php
-                while (have_posts()) {
+                while ( have_posts() ) {
                     the_post();
                     $img = get_the_post_thumbnail_url(get_the_ID(), 'large');
-                    if (!$img) {
+                    if ( ! $img ) {
                         $img = get_stylesheet_directory_uri() . '/img/default-blog.jpg';
                     }
                     ?>
