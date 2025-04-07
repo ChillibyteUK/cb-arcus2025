@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="container-xl bg-white p-5">
         <div class="row">
             <div class="col-md-6">
-                <?= esc_html( get_field( 'text' ) ); ?>
+                <?= wp_kses_post( get_field( 'text' ) ); ?>
             </div>
             <div class="col-md-6">
                 <div class="ratio ratio-16x9 mb-3">

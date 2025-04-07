@@ -50,9 +50,9 @@
     }
 
     &.quote_image_bg__gold {
-        // .quote_image_bg__quote {
-        //     color: var(--col-red-400);
-        // }
+        .quote_image_bg__quote {
+            color: var(--col-gold-400);
+        }
         .quote_image_bg__quote-container {
             &::before,
             &::after {
