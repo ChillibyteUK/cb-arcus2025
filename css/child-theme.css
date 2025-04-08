@@ -21601,6 +21601,10 @@ strong,
   color: var(--col-red-400);
 }
 
+.has-gold-400-color {
+  color: var(--col-gold-400);
+}
+
 .button {
   position: relative;
   display: inline-flex;

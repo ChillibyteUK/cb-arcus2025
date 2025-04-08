@@ -1,14 +1,29 @@
 <?php
-// Exit if accessed directly.
-defined('ABSPATH') || exit;
+/**
+ * Footer template for the CB Arcus 2025 theme.
+ *
+ * This file contains the footer section of the theme, including navigation menus,
+ * office addresses, and colophon information.
+ *
+ * @package cb-arcus2025
+ */
+
+defined( 'ABSPATH' ) || exit;
 ?>
 <div id="footer-top"></div>
 <footer class="footer py-5">
     <div class="container-xl">
-        <img src="<?=get_stylesheet_directory_uri()?>/img/arcus-logo--wo.svg" alt="Arcus Invest" class="footer__logo">
+        <img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/arcus-logo--wo.svg' ); ?>" alt="Arcus Invest" class="footer__logo">
         <div class="row pb-5">
             <div class="col-lg-3">
-                <?= wp_nav_menu(array('theme_location' => 'footer_menu1', 'container_class' => 'footer__menu')) ?>
+                <?=
+				wp_nav_menu(
+					array(
+						'theme_location'  => 'footer_menu1',
+						'container_class' => 'footer__menu',
+					)
+				);
+				?>
             </div>
             <div class="col-lg-9">
                 <div class="footer__addresses--label">
@@ -17,34 +32,37 @@ defined('ABSPATH') || exit;
                 <div class="row footer__addresses">
                     <div class="col-md-4 footer__office mb-4">
                         <?php
-                        if ( $uk = get_field('uk_address', 'option') ) {
-                        ?>
-                            <div class="footer__title"><?= $uk['office_name'] ?></div>
-                            <div class="footer__address"><?= $uk['office_address'] ?></div>
-                            <div class="footer__phone"><?= $uk['office_phone'] ?></div>
-                        <?php
+                        $uk = get_field( 'uk_address', 'option' );
+                        if ( $uk ) {
+                        	?>
+                            <div class="footer__title"><?= esc_html( $uk['office_name'] ); ?></div>
+                            <div class="footer__address"><?= wp_kses_post( $uk['office_address'] ); ?></div>
+                            <div class="footer__phone"><?= esc_html( $uk['office_phone'] ); ?></div>
+                        	<?php
                         }
                         ?>
                     </div>
                     <div class="col-md-4 footer__office mb-4">
-                        <?php
-                        if ( $jp = get_field('jp_address', 'option') ) {
-                        ?>
-                            <div class="footer__title"><?= $jp['office_name'] ?></div>
-                            <div class="footer__address"><?= $jp['office_address'] ?></div>
-                            <div class="footer__phone"><?= $jp['office_phone'] ?></div>
-                        <?php
+						<?php
+                        $jp = get_field( 'jp_address', 'option' );
+                        if ( $jp ) {
+                        	?>
+                            <div class="footer__title"><?= esc_html( $jp['office_name'] ); ?></div>
+                            <div class="footer__address"><?= wp_kses_post( $jp['office_address'] ); ?></div>
+                            <div class="footer__phone"><?= esc_html( $jp['office_phone'] ); ?></div>
+                        	<?php
                         }
                         ?>
                     </div>
-                    <div class="col-md-4 footer__office mb-4">
-                        <?php
-                        if ( $my = get_field('my_address', 'option') ) {
-                        ?>
-                            <div class="footer__title"><?= $my['office_name'] ?></div>
-                            <div class="footer__address"><?= $my['office_address'] ?></div>
-                            <div class="footer__phone"><?= $my['office_phone'] ?></div>
-                        <?php
+					<div class="col-md-4 footer__office mb-4">
+						<?php
+                        $my = get_field( 'my_address', 'option' );
+                        if ( $my ) {
+	                        ?>
+                            <div class="footer__title"><?= esc_html( $my['office_name'] ); ?></div>
+                            <div class="footer__address"><?= wp_kses_post( $my['office_address'] ); ?></div>
+                            <div class="footer__phone"><?= esc_html( $my['office_phone'] ); ?></div>
+    	                    <?php
                         }
                         ?>
                     </div>
@@ -54,7 +72,7 @@ defined('ABSPATH') || exit;
 
         <div class="colophon d-flex justify-content-between align-items-center flex-wrap">
             <div>
-                &copy; <?= date('Y') ?> Arcus Investment Limited. Authorised and regulated by the <a href="https://www.fca.org.uk/" target="_blank">Financial Conduct Authority</a> in the United Kingdom.
+                &copy; <?= esc_html( gmdate( 'Y' ) ); ?> Arcus Investment Limited. Authorised and regulated by the <a href="https://www.fca.org.uk/" target="_blank">Financial Conduct Authority</a> in the United Kingdom.
             </div>
             <div>
                 <a href="https://www.chillibyte.co.uk/" rel="nofollow noopener" target="_blank" class="cb"
