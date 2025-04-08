@@ -85,8 +85,17 @@ get_header();
 										</a>
 										<?php
 									} elseif ( $yt ) {
+										// Normalize YouTube URL to embed format.
+										if ( preg_match( '/^(https?:\/\/)?(www\.)?(youtube\.com\/watch\?v=|youtube\.com\/embed\/|youtu\.be\/)?([a-zA-Z0-9_-]{11})$/', $yt, $matches ) ) {
+											$video_id  = $matches[4];
+											$embed_url = 'https://www.youtube.com/embed/' . $video_id;
+										} else {
+											$embed_url = esc_url( $yt ); // Fallback if format is unexpected.
+										}
 										?>
-										<iframe width="560" height="315" src="<?= esc_url( $yt ); ?>" frameborder="0" allowfullscreen></iframe>
+										<div class="ratio ratio-16x9">
+											<iframe src="<?= esc_url( $embed_url ); ?>" frameborder="0" allowfullscreen></iframe>
+										</div>
 										<?php
 									} elseif ( $img ) {
 										echo wp_get_attachment_image( $img, 'full' );
