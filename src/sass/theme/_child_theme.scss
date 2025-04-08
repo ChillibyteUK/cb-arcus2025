@@ -124,3 +124,30 @@ for (; i < all.length; i++) {
 // 	font-size: $min-value; // Fallback for older browsers
 // 	font-size: clamp(#{if($min-value > $max-value, $max-value, $min-value)}, #{$calc-value}, #{if($min-value > $max-value, $min-value, $max-value)});
 // }
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 4rem auto;
+    width: min(90vw, 75%);
+    height: 2.5rem;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Isolation_Mode' data-name='Isolation Mode' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26.82 33.83'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23af3023; %7D .cls-2 %7B fill: %230d2444; %7D %3C/style%3E%3C/defs%3E%3Cpath id='Fill-7' class='cls-2' d='M12.82,19.15c1.24,5.23,1.29,10.32.39,14.67h3.3c.54-3.92.35-8.32-.71-12.84C13.7,12.15,6.25,3.25.39,0c5.51,3.05,10.34,10.33,12.42,19.15'/%3E%3Cpolyline id='Fill-9' class='cls-1' points='26.82 11.06 20.32 11.39 22.92 12.34 0 19.6 1.61 23.59 23.13 12.86 21.94 15.37 26.82 11.06'/%3E%3C/svg%3E");
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    &::before,
+    &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background-color: var(--col-blue-100);
+    }
+    &::before {
+        margin-right: 2rem;
+    }
+    &::after {
+        margin-left: 2rem;
+    }
+}

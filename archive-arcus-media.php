@@ -104,15 +104,13 @@ get_header();
 								</div>
 							</div>
 						</article>
-						<hr class="my-5" />
+						<div class="divider"></div>
 						<?php
 					}
 					?>
 				</div>
 
-				<div class="pagination">
-					<?php the_posts_pagination(); ?>
-				</div>
+				<?php understrap_pagination(); ?>
 				<?php
 			} else {
 				?>
