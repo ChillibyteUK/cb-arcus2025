@@ -22700,6 +22700,10 @@ for (; i < all.length; i++) {
   margin-left: 2rem;
 }
 
+.form-control {
+  border-radius: 0;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;
