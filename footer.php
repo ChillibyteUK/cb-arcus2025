@@ -72,7 +72,7 @@ defined( 'ABSPATH' ) || exit;
 
         <div class="colophon d-flex justify-content-between align-items-center flex-wrap">
             <div>
-                &copy; <?= esc_html( gmdate( 'Y' ) ); ?> Arcus Investment Limited. Authorised and regulated by the <a href="https://www.fca.org.uk/" target="_blank">Financial Conduct Authority</a> in the United Kingdom.
+                &copy; <?= esc_html( gmdate( 'Y' ) ); ?> Arcus Investment Limited. All rights reserved. Authorised and regulated by the <a href="https://www.fca.org.uk/" target="_blank">Financial Conduct Authority</a> in the United Kingdom.
             </div>
             <div>
                 <a href="https://www.chillibyte.co.uk/" rel="nofollow noopener" target="_blank" class="cb"
