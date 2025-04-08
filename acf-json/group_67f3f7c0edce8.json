@@ -66,9 +66,27 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_67f3fbe064d95",
-            "label": "Video File (MOV)",
-            "name": "video_mov",
+            "key": "field_67f53e526c994",
+            "label": "Video Files",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "WebM is preferred. MP4 is acceptable.\r\nIf both WebM and MP4 are provided, is used as a fallback.\r\n\r\nApple MOV format files will be shown as a download link as they are generally unsupported for embedding.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_67f4d7f596761",
+            "label": "Video File (WebM)",
+            "name": "video_webm",
             "aria-label": "",
             "type": "file",
             "instructions": "",
@@ -108,9 +126,9 @@
             "allow_in_bindings": 0
         },
         {
-            "key": "field_67f4d7f596761",
-            "label": "Video File (WebM)",
-            "name": "video_webm",
+            "key": "field_67f3fbe064d95",
+            "label": "Video File (MOV)",
+            "name": "video_mov",
             "aria-label": "",
             "type": "file",
             "instructions": "",
@@ -134,7 +152,7 @@
             "name": "featured_image",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Used as fallback if no video embed is present (YouTube, WebM, MP4).",
             "required": 0,
             "conditional_logic": [
                 [
@@ -159,7 +177,7 @@
             "max_size": "",
             "mime_types": "",
             "allow_in_bindings": 0,
-            "preview_size": "medium"
+            "preview_size": "thumbnail"
         }
     ],
     "location": [
@@ -180,5 +198,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744099330
+    "modified": 1744127030
 }
