@@ -163,7 +163,7 @@ if ( check_page_permissions() === false ) {
                 echo '<img src="' . esc_url( $factsheet_thumbnail ) . '" class="card-img-top" alt="' . esc_attr( $factsheet_title ) . '">';
                 echo '<div class="factsheet_card-body">';
                 echo '<div class="factsheet_card-title">Download ' . esc_html( $factsheet_title ) . '</div>';
-                echo '<a href="' . esc_url( $factsheet_url ) . '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Factsheet</a>';
+                echo '<a href="' . esc_url( $factsheet_url ) . '" class="button" target="_blank" rel="noopener noreferrer">Download Factsheet</a>';
                 echo '</div>';
                 echo '</div>';
             }
