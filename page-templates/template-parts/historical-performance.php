@@ -14,14 +14,19 @@ $performance_history_id            = get_field( 'performance_data' );
 $historical_performance_disclaimer = get_field( 'historical_performance_disclaimer' );
 
 if ( empty( $performance_history_id ) ) {
-    error_log( 'Performance history file attachment ID is empty or unavailable.' );
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( 'Performance history file attachment ID is empty or unavailable.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+    }
+
     return;
 }
 
 $file_path = get_attached_file( $performance_history_id );
 
 if ( ! file_exists( $file_path ) ) {
-    error_log( 'Performance history file does not exist at the specified path: ' . $file_path );
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( 'Performance history file does not exist at the specified path: ' . $file_path ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+    }
     return;
 }
 
@@ -32,13 +37,17 @@ file_put_contents( $file_path, $contents ); // Overwrite clean file.
 
 $fp = fopen( $file_path, 'r' );
 if ( false === $fp ) {
-    error_log( 'Failed to open performance history file.' );
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( 'Failed to open performance history file.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+    }
     return;
 }
 
 $headers = fgetcsv( $fp );
 if ( false === $headers ) {
-    error_log( 'Failed to read headers. Check CSV format.' );
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( 'Failed to read headers. Check CSV format.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+    }
     fclose( $fp );
     return;
 }
@@ -63,13 +72,15 @@ $row_count = count( $_rows );
 for ( $i = 0; $i < $row_count; $i++ ) {
     $date = DateTime::createFromFormat( 'M-y d', $_rows[ $i ]['Month'] . ' 1' );
     if ( ! $date ) {
-        error_log( 'Invalid date format in row: ' . print_r( $_rows[ $i ], true ) );
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            error_log( 'Invalid date format in row: ' . print_r( $_rows[ $i ], true ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions
+        }
         continue; // Skip rows with invalid dates.
     }
 
     $_rows[ $i ]['timestamp'] = floatval( $date->format( 'U' ) );
-    $current_year = $date->format( 'Y' );
-    $month = $date->format( 'n' );
+    $current_year             = $date->format( 'Y' );
+    $month                    = $date->format( 'n' );
     if ( ! isset( $_years[ $current_year ] ) ) {
         $_years[ $current_year ] = array();
     }
@@ -97,7 +108,9 @@ function format_num( $num_string ) {
  */
 function percentage_year( $current_year, $data, $field, $initial_start_val ) {
     if ( ! isset( $data[ $current_year ] ) || ! is_array( $data[ $current_year ] ) ) {
-        error_log( "Missing or invalid data for year: $current_year" );
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            error_log( "Missing or invalid data for year: $current_year" ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+        }
         return ''; // Return an empty string or a default value.
     }
 

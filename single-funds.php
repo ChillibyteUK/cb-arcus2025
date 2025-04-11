@@ -106,8 +106,6 @@ if ( check_page_permissions() === false ) {
             <?php
             get_template_part( 'page-templates/template-parts/business-classification' );
             ?>
-            <?php
-            ?>
         </div>
     </section>
     <section id="key_facts">
@@ -159,7 +157,7 @@ if ( check_page_permissions() === false ) {
             if ( $factsheet ) {
                 $factsheet_url       = $factsheet['url'];
                 $factsheet_title     = $factsheet['title'];
-                $factsheet_thumbnail = $factsheet['thumbnail'] ?? ''; // Assuming thumbnail is part of the factsheet field.
+                $factsheet_thumbnail = wp_get_attachment_image_url( $factsheet['ID'], 'medium' ); // Get WordPress-generated PDF thumbnail.
 
                 echo '<div class="card d-flex gap-4">';
                 if ( $factsheet_thumbnail ) {

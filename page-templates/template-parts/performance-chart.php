@@ -14,14 +14,18 @@ $performance_chart_disclaimer = get_field( 'performance_chart_disclaimer' );
 $performance_history_id       = get_field( 'performance_data' );
 
 if ( empty( $performance_history_id ) ) {
-	error_log( 'Performance history file attachment ID is empty or unavailable.' );
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		error_log( 'Performance history file attachment ID is empty or unavailable.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+	}
 	return;
 }
 
 $file_path = get_attached_file( $performance_history_id );
 
 if ( ! file_exists( $file_path ) ) {
-	error_log( 'Performance history file does not exist at the specified path: ' . $file_path );
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		error_log( 'Performance history file does not exist at the specified path: ' . $file_path ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+	}
 	return;
 }
 
@@ -32,13 +36,17 @@ file_put_contents( $file_path, $contents ); // Overwrite clean file.
 
 $fp = fopen( $file_path, 'r' );
 if ( false === $fp ) {
-	error_log( 'Failed to open performance history file.' );
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		error_log( 'Failed to open performance history file.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+	}
 	return;
 }
 
 $headers = fgetcsv( $fp );
 if ( false === $headers ) {
-	error_log( 'Failed to read headers. Check CSV format.' );
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		error_log( 'Failed to read headers. Check CSV format.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+	}
 	fclose( $fp );
 	return;
 }
@@ -46,7 +54,9 @@ if ( false === $headers ) {
 $_rows = array();
 while ( ( $row = fgetcsv( $fp ) ) !== false ) {
 	if ( count( $row ) !== count( $headers ) ) {
-		error_log( 'Header/row column mismatch: ' . print_r( $row, true ) );
+		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+			error_log( 'Header/row column mismatch: ' . print_r( $row, true ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions
+		}
 		continue;
 	}
 	$_rows[] = array_combine( $headers, $row );
@@ -72,13 +82,20 @@ foreach ( $filtered as $row ) {
   	array_push( $topix_data, array( $date, floatval( $row['TOPIX TR Index'] ) ) );
 }
 
-// Sort the data arrays by date
-usort($ajf_data, function ($a, $b) {
-    return strtotime($a[0]) <=> strtotime($b[0]);
-});
-usort($topix_data, function ($a, $b) {
-    return strtotime($a[0]) <=> strtotime($b[0]);
-});
+// Sort the data arrays by date.
+usort(
+	$ajf_data,
+	function ( $a, $b ) {
+    	return strtotime( $a[0] ) <=> strtotime( $b[0] );
+	}
+);
+
+usort(
+	$topix_data,
+	function ( $a, $b ) {
+	    return strtotime( $a[0] ) <=> strtotime( $b[0] );
+	}
+);
 
 /**
  * Converts a string to a float, removing any commas.

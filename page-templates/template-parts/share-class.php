@@ -1,4 +1,10 @@
 <?php
+/**
+ * Template part for displaying the Share Class table.
+ *
+ * @package cb-arcus2025
+ */
+
 $share_class = get_field( 'share_class_table' );
 
 if ( ! empty( $share_class ) ) {
@@ -21,18 +27,22 @@ if ( ! empty( $share_class ) ) {
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach ($share_class as $row) : ?>
-					<tr <?= !empty($row["minimum_initial_investment_fee_%"]) ? ' class="split"' : '' ?>>
-						<td><?= $row["share_class"] ?>&nbsp;</td>
-						<td><?= $row["currency"] ?>&nbsp;</td>
-						<td><?= $row["type"] ?>&nbsp;</td>
-						<td><?= $row["hedging"] ?>&nbsp;</td>
-						<td><?= $row["isin_code"] ?>&nbsp;</td>
-						<td><?= $row["minimum_initial_investment_fee_%"] ?>&nbsp;</td>
-						<td><?= $row["current_management"] ?>&nbsp;</td>
-						<td><?= $row["performance_fee_%"] ?>&nbsp;</td>
+				<?php
+				foreach ( $share_class as $row ) {
+					?>
+					<tr <?= ! empty( $row['minimum_initial_investment_fee_%'] ) ? ' class="split"' : ''; ?>>
+						<td><?= esc_html( $row['share_class'] ); ?>&nbsp;</td>
+						<td><?= esc_html( $row['currency'] ); ?>&nbsp;</td>
+						<td><?= esc_html( $row['type'] ); ?>&nbsp;</td>
+						<td><?= esc_html( $row['hedging'] ); ?>&nbsp;</td>
+						<td><?= esc_html( $row['isin_code'] ); ?>&nbsp;</td>
+						<td><?= esc_html( $row['minimum_initial_investment_fee_%'] ); ?>&nbsp;</td>
+						<td><?= esc_html( $row['current_management'] ); ?>&nbsp;</td>
+						<td><?= esc_html( $row['performance_fee_%'] ); ?>&nbsp;</td>
 					</tr>
-				<?php endforeach; ?>
+					<?php
+				}
+				?>
 			</tbody>
 		</table>
 	</div>

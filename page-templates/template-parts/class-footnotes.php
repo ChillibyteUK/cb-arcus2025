@@ -1,21 +1,35 @@
 <?php
 /**
- * Class Footnotes
+ * Footnotes Class File
  *
- * Provides functionality for managing and displaying footnotes within a section of content.
- *
- * This file defines the Footnotes class, which provides functionality
+ * This file contains the definition of the Footnotes class, which provides functionality
  * for managing and displaying footnotes within a section of content.
+ *
+ * @package cb-arcus2025
+ * @since 1.0.0
  */
 
+/**
+ * Footnotes class for managing and displaying footnotes.
+ *
+ * This class provides functionality to add, extract, and display footnotes
+ * within a section of content.
+ *
+ * @package cb-arcus2025
+ * @since 1.0.0
+ */
 class Footnotes {
     /**
-     * @var array Stores the footnotes for different sections.
+     * Stores the footnotes for different sections.
+     *
+     * @var array
      */
     private $footnotes;
 
     /**
-     * @var int Counter to assign unique indices to footnotes.
+     * Counter to assign unique indices to footnotes.
+     *
+     * @var int
      */
     private $index;
 

@@ -1,17 +1,23 @@
 <?php
+/**
+ * Template part for displaying key facts.
+ *
+ * @package cb-arcus2025
+ */
 
 defined( 'ABSPATH' ) || exit;
 
 global $footnotes; // Use the global $footnotes object.
 
 if ( ! class_exists( 'Footnotes' ) ) {
-	error_log( 'Footnotes class not found. Ensure it is included before this template.' );
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( 'Footnotes class not found. Ensure it is included before this template.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+    }
 	return;
 }
 
-$key_facts = get_field( 'key_facts' );
 $managerial_positions = get_field( 'managerial_positions' );
-$facts = get_field( 'facts' );
+$facts                = get_field( 'facts' );
 ?>
 <div id="key-facts">
     <div class="container">
@@ -38,7 +44,7 @@ $facts = get_field( 'facts' );
 							}
 							?>
                         </p>
-                	<?php
+                	    <?php
 					}
                 }
 				?>
@@ -57,7 +63,7 @@ $facts = get_field( 'facts' );
                             }
                             ?>
                         </dt>
-                        <dd><?= $fact['description']; ?></dd>
+                        <dd><?= wp_kses_post( $fact['description'] ); ?></dd>
                     	<?php
 					}
 					?>

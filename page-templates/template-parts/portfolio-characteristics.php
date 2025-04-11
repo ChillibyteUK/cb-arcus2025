@@ -13,7 +13,9 @@ defined( 'ABSPATH' ) || exit;
 global $footnotes; // Use the global $footnotes object.
 
 if ( ! class_exists( 'Footnotes' ) ) {
-	error_log( 'Footnotes class not found. Ensure it is included before this template.' );
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+		error_log( 'Footnotes class not found. Ensure it is included before this template.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+	}
 	return;
 }
 

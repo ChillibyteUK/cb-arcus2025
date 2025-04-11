@@ -13,14 +13,18 @@ defined( 'ABSPATH' ) || exit;
 $positions_id = get_field( 'position_data' );
 
 if ( empty( $positions_id ) ) {
-    error_log( 'Positions file attachment ID is empty or unavailable.' );
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( 'Positions file attachment ID is empty or unavailable.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+    }
     return;
 }
 
 $file_path = get_attached_file( $positions_id );
 
 if ( ! file_exists( $file_path ) ) {
-    error_log( 'Positions file does not exist at the specified path: ' . $file_path );
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( 'Positions file does not exist at the specified path: ' . $file_path ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+    }
     return;
 }
 
@@ -31,13 +35,17 @@ file_put_contents( $file_path, $contents ); // Overwrite clean file.
 
 $fp = fopen( $file_path, 'r' );
 if ( false === $fp ) {
-    error_log( 'Failed to open positions file.' );
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( 'Failed to open positions file.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+    }
     return;
 }
 
 $headers = fgetcsv( $fp );
 if ( false === $headers ) {
-    error_log( 'Failed to read headers. Check CSV format.' );
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        error_log( 'Failed to read headers. Check CSV format.' ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log
+    }
     fclose( $fp );
     return;
 }
@@ -46,7 +54,9 @@ $_rows = array();
 
 while ( ( $row = fgetcsv( $fp ) ) !== false ) {
     if ( count( $row ) !== count( $headers ) ) {
-        error_log( 'Header/row column mismatch: ' . print_r( $row, true ) );
+        if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+            error_log( 'Header/row column mismatch: ' . print_r( $row, true ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions
+        }
         continue;
     }
     $_rows[] = array_combine( $headers, $row );
