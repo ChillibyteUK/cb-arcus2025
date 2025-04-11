@@ -239,8 +239,11 @@ if ( ! empty( $performance_chart_disclaimer ) ) {
 	</div>
 	<?php
 }
-?>
 
+add_action(
+	'wp_footer',
+	function () use ( $ajf_data, $topix_data ) {
+		?>
 <script>
 	const ajf = <?= wp_json_encode( $ajf_data ); ?>;
 	const topix = <?= wp_json_encode( $topix_data ); ?>;
@@ -307,3 +310,7 @@ if ( ! empty( $performance_chart_disclaimer ) ) {
 		}
 	);
 </script>
+		<?php
+	},
+	9999
+);

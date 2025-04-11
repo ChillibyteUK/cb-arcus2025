@@ -5,9 +5,7 @@
  * @package cb-arcus2025
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 ?>
 <section class="two_col_people">
     <div class="container">

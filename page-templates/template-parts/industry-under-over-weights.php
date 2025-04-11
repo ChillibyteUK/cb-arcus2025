@@ -8,6 +8,8 @@
  * @package cb-arcus2025
  */
 
+defined( 'ABSPATH' ) || exit;
+
 $weighting_data_id = get_field( 'weighting_data' );
 
 if ( empty( $weighting_data_id ) ) {

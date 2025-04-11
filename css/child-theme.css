@@ -21675,6 +21675,18 @@ strong,
 .button:hover::after {
   letter-spacing: 0.15em;
 }
+.button[disabled] {
+  pointer-events: none;
+  color: var(--col-grey-400);
+  background-color: var(--col-grey-100);
+  border-color: var(--col-grey-400);
+}
+.button[disabled]::before {
+  background-color: var(--col-grey-400);
+}
+.button[disabled]::after {
+  color: var(--col-grey-400);
+}
 
 .button--wo {
   position: relative;

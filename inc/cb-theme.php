@@ -412,3 +412,19 @@ add_filter(
 	10,
 	3
 );
+
+
+/**
+ * Enqueues Highcharts scripts for specific post types.
+ *
+ * This function checks if the current page is a singular 'funds' post type
+ * and enqueues the Highcharts library along with its modules.
+ */
+function cb_arcus2025_enqueue_highcharts() {
+    if ( is_singular( 'funds' ) ) {
+        wp_enqueue_script( 'highcharts', 'https://code.highcharts.com/highcharts.js', array(), null, true );
+        wp_enqueue_script( 'highcharts-series-label', 'https://code.highcharts.com/modules/series-label.js', array( 'highcharts' ), null, true );
+        wp_enqueue_script( 'highcharts-accessibility', 'https://code.highcharts.com/modules/accessibility.js', array( 'highcharts' ), null, true );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'cb_arcus2025_enqueue_highcharts' );

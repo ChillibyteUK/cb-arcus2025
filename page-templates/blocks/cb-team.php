@@ -6,9 +6,7 @@
  * @package cb-arcus2025
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+defined( 'ABSPATH' ) || exit;
 ?>
 <section class="team">
     <div class="container">

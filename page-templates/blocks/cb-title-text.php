@@ -5,9 +5,8 @@
  * @package cb-arcus2025
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+defined( 'ABSPATH' ) || exit;
+
 if ( ! is_block_region_applicable() ) {
     return;
 }

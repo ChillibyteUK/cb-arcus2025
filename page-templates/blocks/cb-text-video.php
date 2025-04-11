@@ -5,9 +5,7 @@
  * @package cb-arcus2025
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 ?>
 <section class="text_video">
     <div class="container-xl bg-white p-5">

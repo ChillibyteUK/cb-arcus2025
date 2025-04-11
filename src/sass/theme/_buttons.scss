@@ -54,6 +54,20 @@
             letter-spacing: 0.15em;
         }
     }
+
+    // disabled state
+    &[disabled] {
+        pointer-events: none;
+        color: var(--col-grey-400);
+        background-color: var(--col-grey-100);
+        border-color: var(--col-grey-400);
+        &::before {
+            background-color: var(--col-grey-400);
+        }
+        &::after {
+            color: var(--col-grey-400);
+        }
+    }
 }
 
 .button--wo {

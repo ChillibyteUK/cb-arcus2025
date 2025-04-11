@@ -5,6 +5,7 @@
  * @package cb-arcus2025
  */
 
+defined( 'ABSPATH' ) || exit;
 ?>
 <section class="latest_insights">
     <div class="container pt-2 pb-5 px-0">

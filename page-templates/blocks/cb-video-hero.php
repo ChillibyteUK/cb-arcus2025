@@ -8,9 +8,7 @@
  * @package CB_Arcus2025
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+defined( 'ABSPATH' ) || exit;
 
 $mp4   = get_field( 'video_mp4' ) ? get_field( 'video_mp4' ) : null;
 $webm  = get_field( 'video_webm' ) ? get_field( 'video_webm' ) : null;

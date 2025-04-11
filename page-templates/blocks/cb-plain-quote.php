@@ -5,9 +5,7 @@
  * @package cb-arcus2025
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 $colour_field = get_field( 'colour' );
 $colour       = ( 'Red' === $colour_field || null === $colour_field ) ? 'plain_quote__red' : 'plain_quote__gold';

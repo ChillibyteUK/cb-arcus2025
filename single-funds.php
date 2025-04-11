@@ -71,12 +71,6 @@ if ( check_page_permissions() === false ) {
     <section id="performance">
         <div class="container bg--white p-5">
             <h2>Performance Data</h2>
-            <script src="https://code.highcharts.com/highcharts.js"></script>
-            <script src="https://code.highcharts.com/modules/series-label.js"></script>
-            <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-            <!-- <script src="https://code.highcharts.com/modules/exporting.js"></script>
-            <script src="https://code.highcharts.com/modules/export-data.js"></script> -->
-
             <?php
             get_template_part( 'page-templates/template-parts/performance-chart' );
             get_template_part( 'page-templates/template-parts/historical-performance' );

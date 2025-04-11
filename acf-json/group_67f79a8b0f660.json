@@ -1134,7 +1134,7 @@
             "library": "all",
             "min_size": "",
             "max_size": "",
-            "mime_types": "",
+            "mime_types": "pdf",
             "allow_in_bindings": 0
         },
         {
@@ -1491,5 +1491,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744374335
+    "modified": 1744376938
 }

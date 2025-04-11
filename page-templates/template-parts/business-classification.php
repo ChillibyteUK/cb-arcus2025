@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 $chart = get_field( 'pie_chart' );
 
-if ( ! empty( $chart ) ) :
+if ( ! empty( $chart ) ) {
 
     $disclaimer = get_field( 'position_disclaimer' );
 
@@ -56,77 +56,84 @@ if ( ! empty( $chart ) ) :
 		}
 		?>
     </div>
+    <?php
+    add_action(
+	    'wp_footer',
+	    function () use ( $fund, $topix ) {
+		    ?>
+<script>
+    function createChart(id, data, color) {
+        const colors = new Array(12).fill(1).map((c, i, a) => {
+            return Highcharts.color(color)
+                .brighten(i / a.length * 0.8)
+                .get();
+        });
 
-    <script>
-        function createChart(id, data, color) {
-            const colors = new Array(12).fill(1).map((c, i, a) => {
-                return Highcharts.color(color)
-                    .brighten(i / a.length * 0.8)
-                    .get();
-            });
-
-            Highcharts.chart(id, {
-                chart: {
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false,
-                    type: 'pie',
-                    size: '100%',
-                },
-                title: null,
-                credits: {
-                    enabled: false
-                },
-                tooltip: {
-                    pointFormat: '{point.percentage:.1f}%'
-                },
-                plotOptions: {
-                    pie: {
-                        allowPointSelect: false,
-                        colors,
-                        dataLabels: {
-                            enabled: false,
-                        },
-                        shadow: false,
-                        showInLegend: true
-                    }
-                },
-                legend: {
-                    align: 'right',
-                    verticalAlign: 'middle',
-                    layout: 'vertical',
-                    symbolRadius: 2,
-                    symbolWidth: 8,
-                    symbolHeight: 8,
-                    labelFormatter: function() {
-                        return this.name + ': ' + this.y + '%';
-                    }
-                },
-                series: [{
-                    name: 'TOPIX % Business Clarification',
-                    colorByPoint: true,
-                    size: '80%',
-                    innerSize: '70%',
-                    data
-                }],
-                responsive: {
-                    rules: [{
-                        condition: {
-                            maxWidth: 500
-                        },
-                        chartOptions: {
-                            legend: {
-                                align: 'center',
-                                verticalAlign: 'bottom',
-                                layout: 'vertical',
-                            }
-                        }
-                    }],
+        Highcharts.chart(id, {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie',
+                size: '100%',
+            },
+            title: null,
+            credits: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: '{point.percentage:.1f}%'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: false,
+                    colors,
+                    dataLabels: {
+                        enabled: false,
+                    },
+                    shadow: false,
+                    showInLegend: true
                 }
-            });
-        }
-        createChart("business-classification-fund", <?= wp_json_encode( $fund ); ?>, "#535770");
-        createChart('business-classification-topix', <?= wp_json_encode( $topix ); ?>, "#5f5e5e");
-    </script>
-
-<?php endif; ?>
+            },
+            legend: {
+                align: 'right',
+                verticalAlign: 'middle',
+                layout: 'vertical',
+                symbolRadius: 2,
+                symbolWidth: 8,
+                symbolHeight: 8,
+                labelFormatter: function() {
+                    return this.name + ': ' + this.y + '%';
+                }
+            },
+            series: [{
+                name: 'TOPIX % Business Clarification',
+                colorByPoint: true,
+                size: '80%',
+                innerSize: '70%',
+                data
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            align: 'center',
+                            verticalAlign: 'bottom',
+                            layout: 'vertical',
+                        }
+                    }
+                }],
+            }
+        });
+    }
+    createChart("business-classification-fund", <?= wp_json_encode( $fund ); ?>, "#535770");
+    createChart('business-classification-topix', <?= wp_json_encode( $topix ); ?>, "#5f5e5e");
+</script>
+            <?php
+        },
+        9999
+    );
+}

@@ -5,6 +5,8 @@
  * @package cb-arcus2025
  */
 
+defined( 'ABSPATH' ) || exit;
+
 $share_class = get_field( 'share_class_table' );
 
 if ( ! empty( $share_class ) ) {

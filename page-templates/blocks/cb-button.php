@@ -7,9 +7,7 @@
  * @package cb-arcus2025
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 $l     = get_field( 'link' );
 $f     = get_field( 'file' );
