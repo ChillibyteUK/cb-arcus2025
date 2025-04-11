@@ -157,7 +157,7 @@ if ( check_page_permissions() === false ) {
             if ( $factsheet ) {
                 $factsheet_url       = $factsheet['url'];
                 $factsheet_title     = $factsheet['title'];
-                $factsheet_thumbnail = wp_get_attachment_image_url( $factsheet['ID'], 'medium' ); // Get WordPress-generated PDF thumbnail.
+                $factsheet_thumbnail = wp_get_attachment_image_url( $factsheet['ID'], 'large' ); // Get WordPress-generated PDF thumbnail.
 
                 echo '<div class="factsheet_card">';
                 echo '<img src="' . esc_url( $factsheet_thumbnail ) . '" class="card-img-top" alt="' . esc_attr( $factsheet_title ) . '">';
@@ -189,7 +189,7 @@ if ( check_page_permissions() === false ) {
                 <p>
                     <?= esc_html( get_sub_field( 'name' ) ); ?><br>
                     <?= esc_html( get_sub_field( 'role' ) ); ?><br>
-                    <a href="mailto:<?= esc_attr( get_sub_field( 'email' ) ); ?>">E: <?= esc_html( get_sub_field( 'email' ) ); ?></a><br>
+                    <a href="mailto:<?= esc_attr( get_sub_field( 'email' ) ); ?>" class="d-block text--white">E: <?= esc_html( get_sub_field( 'email' ) ); ?></a><br>
                     <a class="button" href="mailto:<?= esc_attr( get_sub_field( 'email' ) ); ?>">Contact</a>
                 </p>
             </div>
