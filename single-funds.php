@@ -128,7 +128,7 @@ if ( check_page_permissions() === false ) {
         ?>
     </section>
     <section id="risks_rewards">
-        <div class="container bg--white p-5">
+        <div class="container bg--grey-100 p-5">
             <h2>Risks and Rewards</h2>
             <?php
             if ( have_rows( 'rr_links' ) ) {
