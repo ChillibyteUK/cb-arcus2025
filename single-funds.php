@@ -159,12 +159,10 @@ if ( check_page_permissions() === false ) {
                 $factsheet_title     = $factsheet['title'];
                 $factsheet_thumbnail = wp_get_attachment_image_url( $factsheet['ID'], 'medium' ); // Get WordPress-generated PDF thumbnail.
 
-                echo '<div class="card d-flex gap-4">';
-                if ( $factsheet_thumbnail ) {
-                    echo '<img src="' . esc_url( $factsheet_thumbnail ) . '" class="card-img-top" alt="' . esc_attr( $factsheet_title ) . '">';
-                }
-                echo '<div class="card-body">';
-                echo '<h5 class="card-title">' . esc_html( $factsheet_title ) . '</h5>';
+                echo '<div class="factsheet_card">';
+                echo '<img src="' . esc_url( $factsheet_thumbnail ) . '" class="card-img-top" alt="' . esc_attr( $factsheet_title ) . '">';
+                echo '<div class="factsheet_card-body">';
+                echo '<div class="factsheet_card-title">' . esc_html( $factsheet_title ) . '</div>';
                 echo '<a href="' . esc_url( $factsheet_url ) . '" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Download Factsheet</a>';
                 echo '</div>';
                 echo '</div>';

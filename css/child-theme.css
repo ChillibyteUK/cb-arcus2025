@@ -22763,6 +22763,24 @@ for (; i < all.length; i++) {
   max-height: 26px;
 }
 
+#factsheet .factsheet_card {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 992px) {
+  #factsheet .factsheet_card {
+    grid-template-columns: 140px auto;
+  }
+}
+#factsheet .factsheet_card-body {
+  min-width: 300px;
+}
+#factsheet .factsheet_card-title {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-700);
+  margin-bottom: 1rem;
+}
+
 #contact .contact-image {
   aspect-ratio: 1;
   border-radius: 100%;
