@@ -11,14 +11,14 @@ $col-light: #f2f2f2;
     --hsl-light: 0 0% 98%; // light grey
     --col-light: hsl(var(--hsl-light));
 
-    --hsl-blue-400: 215 68% 16%; // #0d2444
-    --col-blue-400: hsl(var(--hsl-blue-400));
+    --hsl-primary-400: 215 68% 16%; // #0d2444
+    --col-primary-400: hsl(var(--hsl-primary-400));
 
-    --hsl-blue-200: 213 17% 41%; // #57677b
-    --col-blue-200: hsl(var(--hsl-blue-200));
+    --hsl-primary-200: 213 17% 41%; // #57677b
+    --col-primary-200: hsl(var(--hsl-primary-200));
 
-    --hsl-blue-100: 205 14% 68%; // #a3b0b9
-    --col-blue-100: hsl(var(--hsl-blue-100));
+    --hsl-primary-100: 205 14% 68%; // #a3b0b9
+    --col-primary-100: hsl(var(--hsl-primary-100));
 
     --hsl-red-400: 3 63% 45%; // #bb322a
     --col-red-400: hsl(var(--hsl-red-400));

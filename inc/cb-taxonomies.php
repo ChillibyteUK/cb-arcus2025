@@ -7,6 +7,8 @@
  * @package cb-arcus2025
  */
 
+use function Avifinfo\read;
+
 /**
  * Register custom taxonomies for the theme.
  *
@@ -51,5 +53,23 @@ function cb_register_taxes() {
 		'show_in_quick_edit' => true,
 	);
     register_taxonomy( 'office', array( 'people' ), $args );
+
+	$args = array(
+		'labels'             => array(
+			'name'          => 'Regions',
+			'singular_name' => 'Region',
+		),
+		'public'             => false,
+		'publicly_queryable' => false,
+		'hierarchical'       => true,
+		'show_ui'            => true,
+		'show_in_nav_menus'  => true,
+		'show_tagcloud'      => false,
+		'show_in_quick_edit' => true,
+		'show_admin_column'  => false,
+		'show_in_rest'       => true,
+		'rewrite'            => false,
+	);
+	register_taxonomy( 'region', array( 'page', 'funds' ), $args );
 }
 add_action( 'init', 'cb_register_taxes' );

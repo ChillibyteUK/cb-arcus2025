@@ -104,8 +104,11 @@ strong,
     text-wrap: balance;
 }
 
-.w-constrained {
+.w-constrained--sm {
     max-width: 65ch;
+}
+.w-constrained--lg {
+    max-width: 92ch;
 }
 
 // p:not([class]) {

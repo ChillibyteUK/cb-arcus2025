@@ -76,5 +76,36 @@ function cb_register_post_types() {
 	);
 
 	register_post_type( 'arcus-media', $args );
+
+	$args = array(
+		'labels'                => array(
+			'name'          => 'Arcus Funds',
+			'singular_name' => 'Funds',
+		),
+		'public'                => true,
+		'publicly_queryable'    => true,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'rest_base'             => 'funds',
+		'rest_controller_class' => 'WP_REST_Posts_Controller',
+		'has_archive'           => true,
+		'show_in_menu'          => true,
+		'show_in_nav_menus'     => false,
+		'menu_icon'             => 'dashicons-chart-line',
+		'delete_with_user'      => false,
+		'exclude_from_search'   => true,
+		'capability_type'       => 'post',
+		'map_meta_cap'          => true,
+		'hierarchical'          => false,
+		'rewrite'               => array(
+			'slug'       => 'funds',
+			'with_front' => false,
+		),
+		'query_var'             => true,
+		'supports'              => array( 'title', 'thumbnail' ),
+		'show_in_graphql'       => false,
+	);
+
+	register_post_type( 'funds', $args );
 }
 add_action( 'init', 'cb_register_post_types' );

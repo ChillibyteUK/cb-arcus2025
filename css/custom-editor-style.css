@@ -5,12 +5,12 @@
   --col-dark: hsl(var(--hsl-dark));
   --hsl-light: 0 0% 98%;
   --col-light: hsl(var(--hsl-light));
-  --hsl-blue-400: 215 68% 16%;
-  --col-blue-400: hsl(var(--hsl-blue-400));
-  --hsl-blue-200: 213 17% 41%;
-  --col-blue-200: hsl(var(--hsl-blue-200));
-  --hsl-blue-100: 205 14% 68%;
-  --col-blue-100: hsl(var(--hsl-blue-100));
+  --hsl-primary-400: 215 68% 16%;
+  --col-primary-400: hsl(var(--hsl-primary-400));
+  --hsl-primary-200: 213 17% 41%;
+  --col-primary-200: hsl(var(--hsl-primary-200));
+  --hsl-primary-100: 205 14% 68%;
+  --col-primary-100: hsl(var(--hsl-primary-100));
   --hsl-red-400: 3 63% 45%;
   --col-red-400: hsl(var(--hsl-red-400));
   --hsl-gold-400: 32 42% 61%;

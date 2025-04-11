@@ -95,7 +95,7 @@
         bottom: 0;
         width: 56px;
         font-size: 1.2em;
-        color: var(--col-blue-400);
+        color: var(--col-primary-400);
         text-align: center;
         letter-spacing: 0; /* No extra space at the end */
         line-height: 1;
@@ -103,7 +103,7 @@
         transition: letter-spacing 0.3s ease-in-out;
     }
     &:hover {
-        color: var(--col-blue-400);
+        color: var(--col-primary-400);
         &::before {
             width: 100%;
         }

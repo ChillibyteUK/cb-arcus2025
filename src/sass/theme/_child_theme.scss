@@ -142,7 +142,7 @@ for (; i < all.length; i++) {
         content: '';
         flex: 1;
         height: 1px;
-        background-color: var(--col-blue-100);
+        background-color: var(--col-primary-100);
     }
     &::before {
         margin-right: 2rem;
@@ -154,4 +154,62 @@ for (; i < all.length; i++) {
 
 .form-control {
     border-radius: 0;
+}
+
+// Performance page
+
+.jump_nav {
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 9999;
+    &__list {
+        list-style: none;
+        margin-bottom: 0;
+        row-gap: 0.5rem;
+        column-gap: 1.5rem;
+        padding-inline: 0;
+    }
+    a {
+        text-decoration: none;
+        font-weight: var(--fw-700);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--col-red-400);
+    }
+}
+
+#key_facts {
+    dl {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    dt,
+    dd {
+        flex: 1 1 100%;
+        border-bottom: 1px solid var(--col-light);
+    }
+    @media (min-width: 768px) {
+        dt,
+        dd {
+            flex: 1 1 50%;
+            margin: 0;
+            padding: 0.5rem 0;
+        }
+        dd {
+            text-align: end;
+        }
+    }
+    .citywire-rating {
+        margin-top: 0.25rem;
+        max-height: 26px;
+    }
+}
+
+#contact {
+    .contact-image {
+        aspect-ratio: 1;
+        border-radius: 100%;
+        object-fit: cover;
+        max-width: 160px;
+    }
 }
