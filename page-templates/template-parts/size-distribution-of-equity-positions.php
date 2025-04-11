@@ -121,38 +121,38 @@ function percent_of_nav( $nav_array ) {
 		<thead>
 			<tr>
 				<th scope="col">Market Capitalisation (USD Billion)</th>
-				<th scope="col">Number of holdings</th>
-				<th scope="col">% of NAV</th>
+				<th class="text-end" scope="col">Number of holdings</th>
+				<th class="text-end" scope="col">% of NAV</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<th scope="row">> 10</th>
-				<td><?= esc_html( count( $over10 ) ); ?>&nbsp;</td>
-				<td><?= esc_html( percent_of_nav( $over10 ) ); ?>&nbsp;</td>
+				<td class="text-end"><?= esc_html( count( $over10 ) ); ?>&nbsp;</td>
+				<td class="text-end"><?= esc_html( percent_of_nav( $over10 ) ); ?>&nbsp;</td>
 			</tr>
 			<tr>
 				<th scope="row">5 - 10</th>
-				<td><?= esc_html( count( $between5and10 ) ); ?>&nbsp;</td>
-				<td><?= esc_html( percent_of_nav( $between5and10 ) ); ?>&nbsp;</td>
+				<td class="text-end"><?= esc_html( count( $between5and10 ) ); ?>&nbsp;</td>
+				<td class="text-end"><?= esc_html( percent_of_nav( $between5and10 ) ); ?>&nbsp;</td>
 			</tr>
 			<tr>
 				<th scope="row">1 - 5</th>
-				<td><?= esc_html( count( $between1and5 ) ); ?>&nbsp;</td>
-				<td><?= esc_html( percent_of_nav( $between1and5 ) ); ?>&nbsp;</td>
+				<td class="text-end"><?= esc_html( count( $between1and5 ) ); ?>&nbsp;</td>
+				<td class="text-end"><?= esc_html( percent_of_nav( $between1and5 ) ); ?>&nbsp;</td>
 			</tr>
 			<tr>
 				<th scope="row">
 					< 1</th>
-				<td><?= esc_html( count( $under1 ) ); ?>&nbsp;</td>
-				<td><?= esc_html( percent_of_nav( $under1 ) ); ?>&nbsp;</td>
+				<td class="text-end"><?= esc_html( count( $under1 ) ); ?>&nbsp;</td>
+				<td class="text-end"><?= esc_html( percent_of_nav( $under1 ) ); ?>&nbsp;</td>
 			</tr>
 		</tbody>
 		<tfoot>
 			<tr>
 				<th scope="row">TOTAL</th>
-				<td><?= esc_html( count( $_rows ) ); ?>&nbsp;</td>
-				<td><?= esc_html( percent_of_nav( $_rows ) ); ?>&nbsp;</td>
+				<td class="text-end"><?= esc_html( count( $_rows ) ); ?>&nbsp;</td>
+				<td class="text-end"><?= esc_html( percent_of_nav( $_rows ) ); ?>&nbsp;</td>
 			</tr>
 		</tfoot>
 	</table>

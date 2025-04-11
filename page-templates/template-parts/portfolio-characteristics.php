@@ -44,7 +44,7 @@ $characteristics = get_field( 'portfolio_characteristics' );
 						}
 						?>
 					</th>
-					<td><?= esc_html( $characteristic['value'] ); ?>&nbsp;</td>
+					<td class="text-end"><?= esc_html( $characteristic['value'] ); ?>&nbsp;</td>
 				</tr>
 				<?php
 			}

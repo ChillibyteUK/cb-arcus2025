@@ -78,7 +78,7 @@ usort(
                 <thead>
                     <tr>
                         <td class="fw-bold">Top 5 Industry Overweights</td>
-                        <th scope="col">Relative Exposure</th>
+                        <th class="text-end" scope="col">Relative Exposure</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -86,8 +86,8 @@ usort(
 					foreach ( array_slice( $_rows, 0, 5 ) as $row ) {
 						?>
                         <tr>
-                            <th scope="row"><?= esc_html( $row['Industry Group'] ); ?>&nbsp;</th>
-                            <td><?= esc_html( $row['Difference %'] ); ?>&nbsp;</td>
+                            <th scope="row"><?= esc_html( $row['Industry Group'] ); ?>%</th>
+                            <td class="text-end"><?= esc_html( round( $row['Difference %'], 1 ) ); ?>%</td>
                         </tr>
                     	<?php
 					}
@@ -102,7 +102,7 @@ usort(
                 <thead>
                     <tr>
                         <td class="fw-bold">Top 5 Industry Underweights</td>
-                        <th scope="col">Relative Exposure</th>
+                        <th class="text-end" scope="col">Relative Exposure</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -110,8 +110,8 @@ usort(
 					foreach ( array_reverse( array_slice( $_rows, -5 ) ) as $row ) {
 						?>
                         <tr>
-                            <th scope="row"><?= esc_html( $row['Industry Group'] ); ?>&nbsp;</th>
-                            <td><?= esc_html( $row['Difference %'] ); ?>&nbsp;</td>
+                            <th scope="row"><?= esc_html( $row['Industry Group'] ); ?></th>
+                            <td class="text-end"><?= esc_html( round( $row['Difference %'], 1 ) ); ?>%</td>
                         </tr>
                     	<?php
 					}
