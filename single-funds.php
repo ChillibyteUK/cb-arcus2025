@@ -187,7 +187,7 @@ if ( check_page_permissions() === false ) {
                     ?>
                 </div>
                 <p>
-                    <?= esc_html( get_sub_field( 'name' ) ); ?><br>
+                    <div class="fw-bold"><?= esc_html( get_sub_field( 'name' ) ); ?></div>
                     <?= esc_html( get_sub_field( 'role' ) ); ?><br>
                     <a href="mailto:<?= esc_attr( get_sub_field( 'email' ) ); ?>" class="d-block text--white">E: <?= esc_html( get_sub_field( 'email' ) ); ?></a><br>
                     <a class="button" href="mailto:<?= esc_attr( get_sub_field( 'email' ) ); ?>">Contact</a>
