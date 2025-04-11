@@ -139,6 +139,7 @@ if ( session_status() === PHP_SESSION_NONE ) {
 				'about'    => 'icon--team.svg',
 				'contact'  => 'icon--team.svg',
 				'strategy' => 'icon--strategy.svg',
+				'fund'     => 'icon--strategy.svg',
 			);
 
             $current_page = '';
@@ -158,6 +159,10 @@ if ( session_status() === PHP_SESSION_NONE ) {
 
 				case str_starts_with( $current_page, 'media' ): // Insights page and sub-pages.
 					$icon = $icons['insight'];
+					break;
+
+                case str_starts_with( $current_page, 'fund' ): // Fund page and sub-pages.
+					$icon = $icons['fund'];
 					break;
 
                 case 'team' === $current_page: // Team Page.

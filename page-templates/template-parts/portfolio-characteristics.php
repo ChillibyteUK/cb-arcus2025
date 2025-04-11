@@ -22,7 +22,7 @@ if ( ! class_exists( 'Footnotes' ) ) {
 $characteristics = get_field( 'portfolio_characteristics' );
 ?>
 <h3>Porfolio Characteristics</h3>
-<div class="performance-data-wrapper">
+<div class="table-responsive">
 	<table class="table table-striped table-sm performance-data">
 		<thead>
 			<tr>

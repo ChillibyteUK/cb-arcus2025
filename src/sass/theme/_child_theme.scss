@@ -159,9 +159,11 @@ for (; i < all.length; i++) {
 // Performance page
 
 .jump_nav {
-    position: sticky;
-    top: var(--nav-height);
-    z-index: 9999;
+    @media (min-width: 992px) {
+        position: sticky;
+        top: var(--nav-height);
+        z-index: 9999;
+    }
     &__list {
         list-style: none;
         margin-bottom: 0;
@@ -186,6 +188,8 @@ for (; i < all.length; i++) {
     dt,
     dd {
         flex: 1 1 100%;
+    }
+    dd {
         border-bottom: 1px solid var(--col-light);
     }
     @media (min-width: 768px) {
@@ -194,6 +198,7 @@ for (; i < all.length; i++) {
             flex: 1 1 50%;
             margin: 0;
             padding: 0.5rem 0;
+            border-bottom: 1px solid var(--col-light);
         }
         dd {
             text-align: end;

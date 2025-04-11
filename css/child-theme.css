@@ -22747,10 +22747,12 @@ for (; i < all.length; i++) {
   border-radius: 0;
 }
 
-.jump_nav {
-  position: sticky;
-  top: var(--nav-height);
-  z-index: 9999;
+@media (min-width: 992px) {
+  .jump_nav {
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 9999;
+  }
 }
 .jump_nav__list {
   list-style: none;
@@ -22775,6 +22777,8 @@ for (; i < all.length; i++) {
 #key_facts dt,
 #key_facts dd {
   flex: 1 1 100%;
+}
+#key_facts dd {
   border-bottom: 1px solid var(--col-light);
 }
 @media (min-width: 768px) {
@@ -22783,6 +22787,7 @@ for (; i < all.length; i++) {
     flex: 1 1 50%;
     margin: 0;
     padding: 0.5rem 0;
+    border-bottom: 1px solid var(--col-light);
   }
   #key_facts dd {
     text-align: end;

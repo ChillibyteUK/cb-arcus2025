@@ -159,43 +159,79 @@ function find_first_row_of_month( array $rows, int $month ) {
 	<div id="performance-chart"></div>
 </div>
 <div class="mb-5">
-	<div class="performance-data-wrapper">
+	<div class="table-responsive">
 		<table class="table table-striped table-sm performance-data">
 			<thead>
 				<tr>
 					<th>Performance</th>
-					<th scope="col"><?= esc_html( to_month_year( $_rows[0]['Month'] ) ); ?></th>
-					<th scope="col">YTD</th>
-					<th scope="col">1 Year</th>
-					<th scope="col">3 Year</th>
-					<th scope="col">5 Year</th>
-					<th scope="col">Since Launch</th>
+					<th class="text-end" scope="col"><?= esc_html( to_month_year( $_rows[0]['Month'] ) ); ?></th>
+					<th class="text-end" scope="col">YTD</th>
+					<th class="text-end" scope="col">1 Year</th>
+					<th class="text-end" scope="col">3 Year</th>
+					<th class="text-end" scope="col">5 Year</th>
+					<th class="text-end" scope="col">Since Launch</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
 					<th scope="row">Arcus Japan Fund - A ACC Unhedged JPY</th>
-					<td><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], $_rows[1]['Rel Inst NAV (Y) (3)'] ) ); ?>%</td>
-					<td><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], find_first_row_of_month( $_rows, 12 )['Rel Inst NAV (Y) (3)'] ) ); ?>%</td>
-					<td><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], $_rows[12]['Rel Inst NAV (Y) (3)'] ) ); ?>%</td>
-					<td><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], $_rows[36]['Rel Inst NAV (Y) (3)'] ) ); ?>%</td>
-					<td><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], $_rows[60]['Rel Inst NAV (Y) (3)'] ) ); ?>%</td>
-					<td><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], '10000' ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], $_rows[1]['Rel Inst NAV (Y) (3)'] ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], find_first_row_of_month( $_rows, 12 )['Rel Inst NAV (Y) (3)'] ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], $_rows[12]['Rel Inst NAV (Y) (3)'] ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], $_rows[36]['Rel Inst NAV (Y) (3)'] ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], $_rows[60]['Rel Inst NAV (Y) (3)'] ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['Rel Inst NAV (Y) (3)'], '10000' ) ); ?>%</td>
 				</tr>
 				<tr>
 					<th scope="row">TOPIX TR</th>
-					<td><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], $_rows[1]['TOPIX DV'] ) ); ?>%</td>
-					<td><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], find_first_row_of_month( $_rows, 12 )['TOPIX DV'] ) ); ?>%</td>
-					<td><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], $_rows[12]['TOPIX DV'] ) ); ?>%</td>
-					<td><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], $_rows[36]['TOPIX DV'] ) ); ?>%</td>
-					<td><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], $_rows[60]['TOPIX DV'] ) ); ?>%</td>
-					<td><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], '1800.47' ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], $_rows[1]['TOPIX DV'] ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], find_first_row_of_month( $_rows, 12 )['TOPIX DV'] ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], $_rows[12]['TOPIX DV'] ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], $_rows[36]['TOPIX DV'] ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], $_rows[60]['TOPIX DV'] ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( x_to_date( $_rows[0]['TOPIX DV'], '1800.47' ) ); ?>%</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 </div>
 <?php
+if ( have_rows( 'annualised_performance_data' ) ) {
+	?>
+<div class="mb-5">
+	<div class="table-responsive">
+		<table class="table table-striped table-sm performance-data">
+			<thead>
+				<tr>
+					<th>Annualised Performance</th>
+					<th class="text-end" scope="col">1 Year</th>
+					<th class="text-end" scope="col">3 Year</th>
+					<th class="text-end" scope="col">5 Year</th>
+					<th class="text-end" scope="col">Since Launch</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+				while ( have_rows( 'annualised_performance_data' ) ) {
+					the_row();
+					?>
+				<tr>
+					<th scope="row"><?= esc_html( get_sub_field( 'metric' ) ); ?></th>
+					<td class="text-end"><?= esc_html( get_sub_field( '1_year' ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( get_sub_field( '3_year' ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( get_sub_field( '5_year' ) ); ?>%</td>
+					<td class="text-end"><?= esc_html( get_sub_field( 'since_launch' ) ); ?>%</td>
+				</tr>
+					<?php
+				}
+				?>
+			</tbody>
+		</table>
+	</div>
+</div>
+	<?php
+}
+
 if ( ! empty( $performance_chart_disclaimer ) ) {
 	?>
 	<div class="fs-300">

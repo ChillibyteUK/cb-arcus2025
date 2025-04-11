@@ -12,7 +12,7 @@ if ( ! empty( $share_class ) ) {
 	?>
 <div class="container bg--white p-5">
 	<h2>Share Class</h2>
-	<div class="performance-data-wrapper pb-5">
+	<div class="table-responsive pb-5">
 		<table class="table table-striped table-sm performance-data share-class-table">
 			<thead>
 				<tr>

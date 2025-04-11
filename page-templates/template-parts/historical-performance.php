@@ -132,7 +132,7 @@ function percentage_year( $current_year, $data, $field, $initial_start_val ) {
 ?>
 <div class="py-5">
     <h3>Historical Performance Data<br>(Arcus Japan Fund - A ACC Unhedged JPY; values in %)</h3>
-    <div class="performance-data-wrapper">
+    <div class="table-responsive">
         <table class="table table-striped table-sm performance-data historical table-layout-fixed">
             <thead>
                 <tr>

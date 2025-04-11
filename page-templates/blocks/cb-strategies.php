@@ -34,11 +34,21 @@ if ( have_rows( 'strategies' ) ) {
 				?>
 				<div class="accordion-item">
 					<h3 class="accordion-header" id="heading<?= esc_attr( $index ); ?>">
-						<button class="accordion-button <?php echo $index > 1 ? 'collapsed' : ''; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $index; ?>" aria-expanded="<?php echo $index === 1 ? 'true' : 'false'; ?>" aria-controls="collapse<?php echo $index; ?>">
+						<button
+							class="accordion-button <?= esc_attr( $index > 1 ? 'collapsed' : '' ); ?>"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#collapse<?= esc_attr( $index ); ?>"
+							aria-expanded="<?= esc_attr( 1 === $index ? 'true' : 'false' ); ?>"
+							aria-controls="collapse<?= esc_attr( $index ); ?>">
 							<?= esc_html( $strategy_name ); ?>
 						</button>
 					</h3>
-					<div id="collapse<?php echo $index; ?>" class="accordion-collapse collapse <?php echo $index === 1 ? 'show' : ''; ?>" aria-labelledby="heading<?php echo $index; ?>" data-bs-parent="#cbStrategiesAccordion">
+					<div 
+						id="collapse<?= esc_attr( $index ); ?>" 
+						class="accordion-collapse collapse <?= esc_attr( 1 === $index ? 'show' : '' ); ?>"
+						aria-labelledby="heading<?= esc_attr( $index ); ?>"
+						data-bs-parent="#cbStrategiesAccordion">
 						<div class="accordion-body">
 							<?php
 							if ( $contacts ) {
