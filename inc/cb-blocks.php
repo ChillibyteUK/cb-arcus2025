@@ -18,6 +18,23 @@ function acf_blocks() {
 		// INSERT NEW BLOCKS HERE.
 
         acf_register_block_type(
+            array(
+                'name'            => 'cb_stat_spinner',
+                'title'           => __( 'CB Stat Spinner' ),
+                'category'        => 'layout',
+                'icon'            => 'cover-image',
+                'render_template' => 'page-templates/blocks/cb-stat-spinner.php',
+                'mode'            => 'edit',
+                'supports'        => array(
+                    'mode'      => false,
+                    'anchor'    => true,
+                    'className' => true,
+                    'align'     => true,
+                ),
+            )
+        );
+
+        acf_register_block_type(
 			array(
 				'name'            => 'cb_strategies',
 				'title'           => __( 'CB Strategies' ),

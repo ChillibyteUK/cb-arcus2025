@@ -21614,6 +21614,10 @@ strong,
   color: var(--col-red-400);
 }
 
+.has-red-400-background-color {
+  background-color: var(--col-red-400);
+}
+
 .has-gold-400-color {
   color: var(--col-gold-400);
 }
@@ -22620,6 +22624,41 @@ header .dropdown.current-menu-item::after {
   font-style: normal;
   font-size: var(--fs-600);
   font-weight: var(--fw-700);
+}
+
+.stat_spinner__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.stat_spinner__stat {
+  margin-inline: auto;
+  min-width: 300px;
+  display: flex;
+  align-items: end;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.stat_spinner__stat .prefix {
+  align-content: end;
+  font-size: var(--fs-700);
+}
+.stat_spinner__stat .number {
+  font-size: var(--fs-900);
+  font-weight: var(--fw-700);
+  align-content: end;
+  line-height: 1.4;
+}
+.stat_spinner__stat .suffix {
+  font-size: var(--fs-700);
+  align-content: start;
+}
+.stat_spinner__text {
+  font-size: var(--fs-500);
+  text-align: center;
 }
 
 body {
