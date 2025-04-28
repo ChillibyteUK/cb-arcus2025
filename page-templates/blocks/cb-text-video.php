@@ -15,11 +15,16 @@ defined( 'ABSPATH' ) || exit;
             </div>
             <div class="col-md-6">
                 <div class="ratio ratio-16x9 mb-3">
-                    <iframe src="<?= esc_url( 'https://www.youtube.com/embed/' . get_field( 'video_id' ) . '?rel=0&modestbranding=1&autoplay=0&mute=0' ); ?>"
+                <iframe src="<?= esc_url( 'https://player.vimeo.com/video/' . get_field( 'video_id' ) . '?title=0&byline=0&portrait=0' ); ?>"
+                    title="Vimeo video"
+                    allowfullscreen
+                    allow="autoplay; fullscreen; picture-in-picture">
+                </iframe>
+                    <!-- <iframe src="<?= esc_url( 'https://www.youtube.com/embed/' . get_field( 'video_id' ) . '?rel=0&modestbranding=1&autoplay=0&mute=0' ); ?>"
                         title="YouTube video"
                         allowfullscreen
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                    </iframe>
+                    </iframe> -->
                 </div>
 
                 <?php
