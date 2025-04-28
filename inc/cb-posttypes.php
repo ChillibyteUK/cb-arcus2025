@@ -88,7 +88,7 @@ function cb_register_post_types() {
 		'show_in_rest'          => true,
 		'rest_base'             => 'funds',
 		'rest_controller_class' => 'WP_REST_Posts_Controller',
-		'has_archive'           => true,
+		'has_archive'           => false,
 		'show_in_menu'          => true,
 		'show_in_nav_menus'     => false,
 		'menu_icon'             => 'dashicons-chart-line',
