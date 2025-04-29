@@ -21826,6 +21826,7 @@ header.wrapper-navbar {
   left: 0;
   right: 0;
   top: var(--_nav-offset);
+  transition: background-color var(--transition);
 }
 header.wrapper-navbar.fixed {
   position: fixed;

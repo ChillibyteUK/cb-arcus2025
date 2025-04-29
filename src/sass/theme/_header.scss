@@ -55,6 +55,7 @@ header {
         left: 0;
         right: 0;
         top: var(--_nav-offset);
+        transition: background-color var(--transition);
         &.fixed {
             position: fixed;
             top: 0;
