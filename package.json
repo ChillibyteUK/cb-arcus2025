@@ -20,14 +20,14 @@
         "dist-clean": "node src/build/dist-clean.js",
         "postinstall": "mv node_modules/understrap/phpcs.xml.dist node_modules/understrap/phpcs.xml.dist.bak || true",
         "format": "npm-run-all format:*",
-        "format:js": "prettier --write 'src/js/**/*.js'",
-        "format:scss": "prettier --write 'src/sass/**/*.scss'",
-        "format:json": "prettier --write './**/*.json' --ignore-path .prettierignore",
-        "format:md": "prettier --write '**/*.md'",
+        "format:js": "prettier --write src/js/**/*.js",
+        "format:scss": "prettier --write src/sass/**/*.scss",
+        "format:json": "prettier --write ./**/*.json --ignore-path .prettierignore",
+        "format:md": "prettier --write **/*.md",
         "lint:php": "phpcs .",
         "fix:php": "phpcbf .",
-        "watch-run-js": "nodemon --watch src/js/ --ext js --exec \"npm-run-all format:js js\"",
-        "watch-run-css": "nodemon --watch src/sass/ --ext scss --exec \"npm-run-all format:scss css\""
+        "watch-run-js": "nodemon --watch src/js/ --ext js --exec \"npm run js\"",
+        "watch-run-css": "nodemon --watch src/sass/ --ext scss --exec \"npm run css\""
     },
     "engines": {
         "node": ">=14"

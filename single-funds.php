@@ -32,7 +32,7 @@ if ( check_page_permissions() === false ) {
             <div class="translucent_text__content fs-500"><?= wp_kses_post( get_field( 'excerpt' ) ); ?></div>
         </div>
     </section>
-    <section class="jump_nav">
+    <!-- <section class="jump_nav">
         <div class="container has-grey-100-background-color px-5 py-3">
             <ul class="jump_nav__list d-flex flex-column flex-lg-row">
                 <li><a href="#objective">Objective</a></li>
@@ -43,7 +43,7 @@ if ( check_page_permissions() === false ) {
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-    </section>
+    </section> -->
     <section id="objective">
         <?php
         $investment_objective = get_field( 'investment_objective' );

@@ -21833,6 +21833,7 @@ header.wrapper-navbar.fixed {
   left: 0;
   width: 100%;
   z-index: 1020;
+  background-color: #fff;
 }
 header.wrapper-navbar.fixed .navbar-logo {
   display: grid;
@@ -22649,10 +22650,10 @@ header .dropdown.current-menu-item::after {
   font-size: var(--fs-700);
 }
 .stat_spinner__stat .number {
-  font-size: var(--fs-900);
+  font-size: var(--fs-999);
   font-weight: var(--fw-700);
   align-content: end;
-  line-height: 1.4;
+  line-height: 1;
 }
 .stat_spinner__stat .suffix {
   font-size: var(--fs-700);
