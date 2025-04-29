@@ -110,6 +110,11 @@ function widgets_init() {
                 'slug'  => 'light',
                 'color' => '#f9f9f9',
             ),
+            array(
+                'name'  => 'White',
+                'slug'  => 'white',
+                'color' => '#ffffff',
+            ),
         )
     );
 }
