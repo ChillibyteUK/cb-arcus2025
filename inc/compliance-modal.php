@@ -21,10 +21,12 @@ add_action(
 add_action(
     'wp_footer',
     function () {
-        echo '<div class="container-xl"><hr><div class="fw-bold mb-2">DEBUG INFO</div>';
-        echo '<pre>SESSION: ' . print_r($_SESSION, true) . '</pre>'; // phpcs:ignore
-        echo '<button id="clear-session-button" class="btn btn-secondary">Clear Session & Reload</button>';
-        echo '</div>';
+        if ( defined('WP_ENV') && WP_ENV === 'development' ) {
+            echo '<div class="container-xl"><hr><div class="fw-bold mb-2">DEBUG INFO</div>';
+            echo '<pre>SESSION: ' . print_r($_SESSION, true) . '</pre>'; // phpcs:ignore
+            echo '<button id="clear-session-button" class="btn btn-secondary">Clear Session & Reload</button>';
+            echo '</div>';
+        }
     }
 );
 
