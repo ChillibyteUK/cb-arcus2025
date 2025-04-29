@@ -57,6 +57,14 @@ if ( check_page_permissions() === false ) {
         }
         ?>
     </section>
+    <section id="performance">
+        <div class="container bg--white p-5">
+            <h2>Performance Data</h2>
+            <?php
+            get_template_part( 'page-templates/template-parts/performance-chart' );
+            get_template_part( 'page-templates/template-parts/historical-performance' );
+            ?>
+    </section>
     <section id="commentary">
         <?php
         $commentary = get_field( 'commentary' );
@@ -67,14 +75,6 @@ if ( check_page_permissions() === false ) {
             echo '</div>';
         }
         ?>
-    </section>
-    <section id="performance">
-        <div class="container bg--white p-5">
-            <h2>Performance Data</h2>
-            <?php
-            get_template_part( 'page-templates/template-parts/performance-chart' );
-            get_template_part( 'page-templates/template-parts/historical-performance' );
-            ?>
     </section>
     <section id="positioning">
         <div class="container bg--white p-5">

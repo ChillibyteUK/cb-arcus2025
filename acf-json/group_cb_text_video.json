@@ -43,7 +43,7 @@
         },
         {
             "key": "field_67d93fe40d25b",
-            "label": "YouTube Video ID",
+            "label": "Vimeo Video ID",
             "name": "video_id",
             "aria-label": "",
             "type": "text",
