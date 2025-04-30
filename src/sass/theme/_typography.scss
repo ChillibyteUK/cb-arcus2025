@@ -65,6 +65,10 @@ h3,
 h1,
 .h1 {
     font-size: var(--fs-900);
+    font-family: var(--ff-body);
+    font-weight: var(--fw-800);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 h2,
 .h2 {
