@@ -11,6 +11,9 @@ if ( ! have_rows( 'stats' ) ) {
     return;
 }
 
+require_once __DIR__ . '../../template-parts/class-footnotes.php';
+$footnotes = new Footnotes();
+
 $background = get_field( 'background' );
 
 $text = ( 'red-400' === $background || 'primary-400' === $background ) ? 'text--white' : 'text--dark';
@@ -19,8 +22,8 @@ $background = 'has-' . $background . '-background-color';
 
 ?>
 <section class="stat_spinner">      
-    <div class="container <?= esc_attr( trim( "$background $text" ) ); ?> p-5">
-        <div class="stat_spinner__content">
+    <div class="container <?= esc_attr( trim( "$background $text" ) ); ?> pt-5 px-5">
+        <div class="stat_spinner__content pb-3">
             <?php
             $index = 0; // Counter to create unique IDs for each stat.
             while ( have_rows( 'stats' ) ) {
@@ -29,6 +32,7 @@ $background = 'has-' . $background . '-background-color';
                 $prefix     = get_sub_field( 'prefix' );
                 $suffix     = get_sub_field( 'suffix' );
                 $stat_title = get_sub_field( 'stat_title' );
+                $footnote   = get_sub_field( 'footnote' );
                 ?>
                 <div class="stat_spinner__item">
                     <div class="stat_spinner__stat">
@@ -41,13 +45,29 @@ $background = 'has-' . $background . '-background-color';
                         <?php endif; ?>
                     </div>
                     <div class="stat_spinner__text">
-                        <span><?= esc_html( $stat_title ); ?></span>
+                        <?php
+                        if ( $footnote ) {
+                            $stat_title .= '[FOOTNOTE]' . $footnote . '[/FOOTNOTE]';
+                            $content = $footnotes->extract_footnote( 'footnote', $stat_title );
+                            echo '<span>' . wp_kses_post( $content['content'] ) . '</span>';
+                        }
+                        else {
+                            echo '<span>' . wp_kses_post( $stat_title ) . '</span>';
+                        }
+                        ?>
                     </div>
                 </div>
                 <?php
                 ++$index;
             }
+
             ?>
+        </div>
+        <div class="stat_spinner__footnotes">
+        <?php
+        // Display the footnotes if any exist.
+        $footnotes->display_footnotes( 'footnote' );
+        ?>
         </div>
     </div>
 </section>

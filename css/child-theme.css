@@ -22672,6 +22672,17 @@ header .dropdown.current-menu-item::after {
   font-size: var(--fs-500);
   text-align: center;
 }
+.stat_spinner__footnotes {
+  padding-bottom: 2rem;
+}
+.stat_spinner ol.footnotes-section {
+  font-size: var(--fs-300);
+  margin-bottom: 0;
+}
+.stat_spinner .footnote-link {
+  color: white;
+  text-decoration: none;
+}
 
 body {
   background-color: #f6f6f6;
