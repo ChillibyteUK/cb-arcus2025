@@ -43,6 +43,13 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "arcus-media"
+            }
         ]
     ],
     "menu_order": 0,
@@ -54,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733937806
+    "modified": 1746201368
 }

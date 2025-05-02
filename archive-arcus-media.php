@@ -10,6 +10,8 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header();
+
+error_log( 'Session Region: ' . ( $_SESSION['region'] ?? 'not set' ) );
 ?>
 <main id="main">
     <div class="page_hero">
@@ -32,6 +34,13 @@ get_header();
 					$row_count = 0; // Initialize a counter for rows.
 					while ( have_posts() ) {
 						the_post();
+
+						error_log( 'Post ID: ' . get_the_ID() . ' - Permissions: ' . ( check_page_permissions() ? 'true' : 'false' ) );
+
+						if ( ! check_page_permissions() ) {
+							continue;
+						}
+
 						++$row_count;
 						$yt   = get_field( 'youtube_url' );
 						$mp3  = get_field( 'audio' );

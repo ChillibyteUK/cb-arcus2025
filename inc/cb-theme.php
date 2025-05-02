@@ -327,7 +327,7 @@ function is_block_region_applicable() {
  *
  * @return bool True if the user has permission, false otherwise.
  */
-function check_page_permissions() {
+function check_page_permissions( $post_id = null ) {
     // Ensure the session is started.
     if ( session_status() === PHP_SESSION_NONE ) {
         session_start();
@@ -341,8 +341,10 @@ function check_page_permissions() {
         return false;
     }
 
+    $post_id = $post_id ?: get_the_ID();
+
     // get list of allowed region IDs.
-    $areas = get_field( 'region', get_the_ID() );
+    $areas = get_field( 'region', $post_id );
 
     // Bail early if no regions are assigned to the page/post.
     if ( empty( $areas ) ) {
