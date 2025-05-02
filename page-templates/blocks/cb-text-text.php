@@ -7,6 +7,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+global $footnotes;
+
 if ( ! is_block_region_applicable() ) {
     return;
 }
@@ -17,6 +19,9 @@ if ( ! empty( $has_bg ) && is_array( $has_bg ) ) {
 } else {
     $bg = '';
 }
+
+$content_left  = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content', get_field( 'content_left' ) ) );
+$content_right = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content', get_field( 'content_right' ) ) );
 ?>
 <section class="text_text">
     <div class="container <?= esc_attr( $bg ); ?>">
@@ -41,7 +46,7 @@ if ( ! empty( $has_bg ) && is_array( $has_bg ) ) {
                     echo '<h2>' . esc_html( $title_left ) . '</h2>';
                 }
 				?>
-                <div class="mb-5"><?= wp_kses_post( get_field( 'content_left' ) ); ?></div>
+                <div class="mb-5"><?= wp_kses_post( $content_left['content'] ); ?></div>
                 <?php
 				$link_left = get_field( 'link_left' );
 				if ( ! empty( $link_left ) ) {
@@ -58,7 +63,7 @@ if ( ! empty( $has_bg ) && is_array( $has_bg ) ) {
 					echo '<h2>' . esc_html( $title_right ) . '</h2>';
 				}
 				?>
-                <div class="mb-5"><?= wp_kses_post( get_field( 'content_right' ) ); ?></div>
+                <div class="mb-5"><?= wp_kses_post( $content_right['content'] ); ?></div>
                 <?php
 				$link_right = get_field( 'link_right' );
 				if ( ! empty( $link_right ) ) {

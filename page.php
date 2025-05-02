@@ -26,8 +26,7 @@ $footnotes = new Footnotes();
     <?php
     the_post();
     $content = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content', get_the_content() ) );
-    echo $content['content'];
-    // the_content();
+    echo $content['content']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	// phpcs:disable
     // $block_names = get_all_block_names_from_content(get_the_ID());
     // print_r($block_names);

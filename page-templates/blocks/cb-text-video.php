@@ -6,12 +6,16 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+global $footnotes;
+
+$content = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content', get_field( 'text' ) ) );
 ?>
 <section class="text_video">
     <div class="container-xl bg-white p-5">
         <div class="row">
             <div class="col-md-6">
-                <?= wp_kses_post( get_field( 'text' ) ); ?>
+                <?= wp_kses_post( $content['content'] ); ?>
             </div>
             <div class="col-md-6">
                 <div class="ratio ratio-16x9 mb-3">

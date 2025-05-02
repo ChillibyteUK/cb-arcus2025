@@ -10,6 +10,9 @@ defined( 'ABSPATH' ) || exit;
 if ( ! is_block_region_applicable() ) {
     return;
 }
+
+global $footnotes;
+$content = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content', get_field( 'content' ) ) );
 ?>
 <section class="title_text">
     <div class="container">
@@ -31,7 +34,7 @@ if ( ! is_block_region_applicable() ) {
                 <h2><?= esc_html( get_field( 'title' ) ); ?></h2>
             </div>
             <div class="col-md-6 p-5">
-                <div class="mb-5"><?= wp_kses_post( get_field( 'content' ) ); ?></div>
+                <div class="mb-5"><?= wp_kses_post( $content['content'] ); ?></div>
                 <?php
 				$l = get_field( 'cta' );
                 if ( ! empty( $l ) ) {

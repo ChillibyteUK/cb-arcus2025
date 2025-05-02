@@ -10,12 +10,15 @@ defined( 'ABSPATH' ) || exit;
 if ( ! is_block_region_applicable() ) {
     return;
 }
+
+global $footnotes;
+$content = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content', get_field( 'left_content' ) ) );
 ?>
 <section class="two_col_text_feature">
     <div class="container">
         <div class="row">
             <div class="col-md-7 p-5">
-                <?= wp_kses_post( get_field( 'left_content' ) ); ?>
+                <?= wp_kses_post( $content['content'] ); ?>
             </div>
             <div class="col-md-5 p-5">
                 <?php
