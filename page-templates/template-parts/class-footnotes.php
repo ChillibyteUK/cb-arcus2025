@@ -123,6 +123,17 @@ class Footnotes {
             <?php
         }
     }
+
+    /**
+     * Checks if there are any footnotes for a given section.
+     *
+     * @param string $section The section to check for footnotes.
+     * @return bool True if footnotes exist, false otherwise.
+     */
+    public function has_footnotes( $section ) {
+        return ! empty( $this->footnotes[ $section ] );
+    }
+    
 }
 
 $footnotes = new Footnotes();

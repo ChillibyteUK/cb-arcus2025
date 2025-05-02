@@ -16,15 +16,32 @@ if ( check_page_permissions() === false ) {
     get_footer();
     exit;
 }
+
+require_once __DIR__ . '/page-templates/template-parts/class-footnotes.php';
+
+$footnotes = new Footnotes();
+
 ?>
 <main id="main">
     <?php
     the_post();
-    the_content();
+    $content = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content', get_the_content() ) );
+    echo $content['content'];
+    // the_content();
 	// phpcs:disable
     // $block_names = get_all_block_names_from_content(get_the_ID());
     // print_r($block_names);
 	// phpcs:enable
+    if ( $footnotes->has_footnotes( 'footnote' ) ) {
+        ?>
+        <div class="container has-grey-100-background-color p-5">
+            <h2 class="h3">Footnotes</h2>
+            <?php
+            $footnotes->display_footnotes( 'footnote' );
+            ?>
+        </div>
+        <?php
+    }
     ?>
 </main>
 <?php

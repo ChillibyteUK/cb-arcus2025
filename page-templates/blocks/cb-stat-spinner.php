@@ -11,8 +11,7 @@ if ( ! have_rows( 'stats' ) ) {
     return;
 }
 
-require_once __DIR__ . '../../template-parts/class-footnotes.php';
-$footnotes = new Footnotes();
+global $footnotes;
 
 $background = get_field( 'background' );
 
@@ -22,7 +21,7 @@ $background = 'has-' . $background . '-background-color';
 
 ?>
 <section class="stat_spinner">      
-    <div class="container <?= esc_attr( trim( "$background $text" ) ); ?> pt-5 px-5">
+    <div class="container <?= esc_attr( trim( "$background $text" ) ); ?> p-5">
         <div class="stat_spinner__content pb-3">
             <?php
             $index = 0; // Counter to create unique IDs for each stat.
@@ -48,10 +47,9 @@ $background = 'has-' . $background . '-background-color';
                         <?php
                         if ( $footnote ) {
                             $stat_title .= '[FOOTNOTE]' . $footnote . '[/FOOTNOTE]';
-                            $content = $footnotes->extract_footnote( 'footnote', $stat_title );
+                            $content     = $footnotes->extract_footnote( 'footnote', $stat_title );
                             echo '<span>' . wp_kses_post( $content['content'] ) . '</span>';
-                        }
-                        else {
+                        } else {
                             echo '<span>' . wp_kses_post( $stat_title ) . '</span>';
                         }
                         ?>
@@ -62,12 +60,6 @@ $background = 'has-' . $background . '-background-color';
             }
 
             ?>
-        </div>
-        <div class="stat_spinner__footnotes">
-        <?php
-        // Display the footnotes if any exist.
-        $footnotes->display_footnotes( 'footnote' );
-        ?>
         </div>
     </div>
 </section>
