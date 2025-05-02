@@ -27,6 +27,9 @@ $content = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content
                 <?= wp_kses_post( $content['content'] ); ?>
             </div>
             <div class="col-md-6">
+                <?php
+                if ( get_field( 'video_id' ) ?? null ) {
+                    ?>
                 <div class="ratio ratio-16x9 mb-3">
                 <iframe src="<?= esc_url( 'https://player.vimeo.com/video/' . get_field( 'video_id' ) . '?title=0&byline=0&portrait=0' ); ?>"
                     title="Vimeo video"
@@ -39,12 +42,12 @@ $content = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
                     </iframe> -->
                 </div>
-
-                <?php
-                if ( get_field( 'video_caption' ) ?? null ) {
-                    ?>
-                <div class="fs-300"><?= esc_html( get_field( 'video_caption' ) ); ?></div>
                     <?php
+                    if ( get_field( 'video_caption' ) ?? null ) {
+                        ?>
+                <div class="fs-300"><?= esc_html( get_field( 'video_caption' ) ); ?></div>
+                        <?php
+                    }
                 }
                 ?>
             </div>
