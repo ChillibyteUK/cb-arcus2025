@@ -9,6 +9,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
+if ( ! is_block_region_applicable() ) {
+    return;
+}
+
 if ( have_rows( 'strategies' ) ) {
 	?>
 <section class="strategies">
