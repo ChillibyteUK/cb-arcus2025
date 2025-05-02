@@ -24,6 +24,7 @@ $utilities: map-merge(
     )
 );
 
+$quote-fill-white: '%23ffffff'; // URL-encoded #ffffff
 $quote-fill-red: '%23bb322a'; // URL-encoded #bb322a
 $quote-fill-gold: '%23c59e70'; // URL-encoded #c59e70
 @mixin quote-icon($fill) {

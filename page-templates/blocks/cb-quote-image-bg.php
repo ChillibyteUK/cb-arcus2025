@@ -11,7 +11,17 @@ if ( ! is_block_region_applicable() ) {
     return;
 }
 $colour_field = get_field( 'colour' );
-$colour       = ( 'Gold' === $colour_field || null === $colour_field ) ? 'quote_image_bg__gold' : 'quote_image_bg__red';
+
+if ( 'Gold' === $colour_field || null === $colour_field ) {
+	$colour = 'quote_image_bg__gold';
+} elseif ( 'Red' === $colour_field ) {
+	$colour = 'quote_image_bg__red';
+} elseif ( 'White' === $colour_field ) {
+	$colour = 'quote_image_bg__white';
+} else {
+	$colour = 'quote_image_bg__gold'; // fallback if an unexpected value
+}
+
 ?>
 <section class="quote_image_bg <?= esc_attr( $colour ); ?>">
     <div class="container px-0">
