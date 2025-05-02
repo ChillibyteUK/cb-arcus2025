@@ -45,7 +45,7 @@ get_header();
                     <span class="post_meta__date"><?= esc_html( get_the_date( 'jS F Y' ) ); ?></span>
                 </div>
                 <?php
-				echo wp_kses_post( get_the_content() );
+				the_content();
 				?>
             </div>
             <div class="col-md-4">
