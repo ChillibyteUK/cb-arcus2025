@@ -10,21 +10,11 @@ defined( 'ABSPATH' ) || exit;
 ?>
 <section class="team">
     <div class="container">
-        <ul class="filters mb-4">
-            <li class="filter-btn" data-filter="all">All</li>
+		<ul class="filters mb-2">
+			<li class="filter-btn" data-filter="all">All Teams and Offices</li>
+		</ul>
+		<ul class="filters mb-2">
 				<?php
-				$otax = get_terms(
-					array(
-						'taxonomy'   => 'office',
-						'hide_empty' => false,
-					)
-				);
-
-				if ( ! empty( $otax ) && ! is_wp_error( $otax ) ) {
-					foreach ( $otax as $office ) {
-						echo '<li class="filter-btn" data-filter=".office-' . esc_attr( $office->slug ) . '">' . esc_html( $office->name ) . '</li>';
-					}
-				}
 
 				$excluded_team = get_term_by( 'slug', 'leadership', 'team' );
 
@@ -43,6 +33,23 @@ defined( 'ABSPATH' ) || exit;
 				}
 				?>
 			</ul>
+			<ul class="filters mb-4">
+				<?php
+				$otax = get_terms(
+					array(
+						'taxonomy'   => 'office',
+						'hide_empty' => false,
+					)
+				);
+
+				if ( ! empty( $otax ) && ! is_wp_error( $otax ) ) {
+					foreach ( $otax as $office ) {
+						echo '<li class="filter-btn" data-filter=".office-' . esc_attr( $office->slug ) . '">' . esc_html( $office->name ) . '</li>';
+					}
+				}
+				?>
+			</ul>
+
 		<?php
 		$people = new WP_Query(
 			array(
