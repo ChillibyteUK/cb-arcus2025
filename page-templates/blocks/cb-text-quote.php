@@ -9,6 +9,12 @@ defined( 'ABSPATH' ) || exit;
 
 global $footnotes;
 
+// Ensure the Footnotes class is instantiated if not already.
+if ( ! isset( $footnotes ) || ! $footnotes instanceof Footnotes ) {
+    require_once __DIR__ . '/../template-parts/class-footnotes.php';
+    $footnotes = new Footnotes();
+}
+
 $colour_field = get_field( 'colour' );
 $colour       = ( 'Red' === $colour_field || null === $colour_field ) ? 'text_quote__red' : 'text_quote__gold';
 $content      = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content', get_field( 'content' ) ) );

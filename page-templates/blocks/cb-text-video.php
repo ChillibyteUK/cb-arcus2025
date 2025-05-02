@@ -8,6 +8,11 @@
 defined( 'ABSPATH' ) || exit;
 
 global $footnotes;
+// Ensure the Footnotes class is instantiated if not already.
+if ( ! isset( $footnotes ) || ! $footnotes instanceof Footnotes ) {
+    require_once __DIR__ . '/../template-parts/class-footnotes.php';
+    $footnotes = new Footnotes();
+}
 
 $content = $footnotes->extract_footnote( 'footnote', apply_filters( 'the_content', get_field( 'text' ) ) );
 ?>

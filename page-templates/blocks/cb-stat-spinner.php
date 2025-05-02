@@ -16,6 +16,11 @@ if ( ! have_rows( 'stats' ) ) {
 }
 
 global $footnotes;
+// Ensure the Footnotes class is instantiated if not already.
+if ( ! isset( $footnotes ) || ! $footnotes instanceof Footnotes ) {
+    require_once __DIR__ . '/../template-parts/class-footnotes.php';
+    $footnotes = new Footnotes();
+}
 
 $background = get_field( 'background' );
 
