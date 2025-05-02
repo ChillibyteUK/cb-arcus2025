@@ -7,6 +7,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
+if ( ! is_block_region_applicable() ) {
+    return;
+}
+
 global $footnotes;
 // Ensure the Footnotes class is instantiated if not already.
 if ( ! isset( $footnotes ) || ! $footnotes instanceof Footnotes ) {

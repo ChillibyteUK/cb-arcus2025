@@ -21,6 +21,32 @@
             "new_lines": "wpautop"
         },
         {
+            "key": "field_6814e6c8caf79",
+            "label": "Region",
+            "name": "region",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "region",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "checkbox",
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
             "key": "field_67d93fcc0d25a",
             "label": "Text",
             "name": "text",
@@ -43,7 +69,7 @@
         },
         {
             "key": "field_67d93fe40d25b",
-            "label": "Vimeo Video ID",
+            "label": "YouTube Video ID",
             "name": "video_id",
             "aria-label": "",
             "type": "text",
@@ -123,5 +149,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1744129682
+    "modified": 1746200295
 }
