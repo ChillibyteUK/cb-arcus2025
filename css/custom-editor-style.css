@@ -49,7 +49,8 @@
   --page-offset-top--hp: 270px;
 }
 
-#complianceModal {
+#complianceModal,
+#usComplianceModal {
   --bs-modal-width: min(800px, 90vw);
   --bs-modal-margin: 6rem;
 }

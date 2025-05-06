@@ -175,6 +175,23 @@ function display_compliance_modal() {
             opacity: 1 !important;
         }
     </style>
+    <!-- US-specific compliance modal -->
+    <div class="modal fade" id="usComplianceModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/arcus-logo.svg' ); ?>" width=141 height=34>
+                </div>
+                <div class="modal-body">
+                    <h2 class="h3">Important Notice for US Visitors</h2>
+                    <p>This site is not accessible to visitors from the USA. Please contact us directly for more information.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="mailto:<?= esc_attr( antispambot( 'info@arcusinvest.com' ) ); ?>" class="button" id="usContactButton">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="complianceModal" tabindex="-1" aria-labelledby="complianceModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -183,11 +200,15 @@ function display_compliance_modal() {
                 </div>
                 <div class="modal-body">
                     <div id="step1">
-                        <p>Please confirm:</p>
-                        <div class="form-check">
+                        <p>Please select your investor type:</p>
+                        <div class="d-flex gap-3 mt-3">
+                            <button id="btnProfessional" class="btn btn-primary">Professional</button>
+                            <button id="btnRetail" class="btn btn-outline-secondary">Non-Professional</button>
+                        </div>
+                        <!-- <div class="form-check">
                             <label for="investorCheckbox" class="form-check-label">I am a professional or institutional investor</label>
                             <input type="checkbox" class="form-check-input" id="investorCheckbox">
-                        </div>
+                        </div> -->
                     </div>
                     <div id="step2" class="d-none">
                         <label for="regionSelect" class="form-label">Select your country</label>
@@ -228,16 +249,31 @@ function display_compliance_modal() {
 <script>
     document.addEventListener('DOMContentLoaded', function () {
     const complianceModal = document.getElementById('complianceModal');
+    const usComplianceModal = document.getElementById('usComplianceModal');
 
-    complianceModal.addEventListener('show.bs.modal', function () {
-        setTimeout(() => {
-            document.querySelector('.modal-backdrop').classList.add('compliance-backdrop');
-        }, 10);
-    });
+    if (complianceModal) {
+        complianceModal.addEventListener('show.bs.modal', function () {
+            setTimeout(() => {
+                document.querySelector('.modal-backdrop').classList.add('compliance-backdrop');
+            }, 10);
+        });
 
-    complianceModal.addEventListener('hidden.bs.modal', function () {
-        document.querySelector('.modal-backdrop')?.classList.remove('compliance-backdrop');
-    });
+        complianceModal.addEventListener('hidden.bs.modal', function () {
+            document.querySelector('.modal-backdrop')?.classList.remove('compliance-backdrop');
+        });
+    }
+
+    if (usComplianceModal) {
+		usComplianceModal.addEventListener('show.bs.modal', function () {
+			setTimeout(() => {
+				document.querySelector('.modal-backdrop')?.classList.add('compliance-backdrop');
+			}, 10);
+		});
+
+		usComplianceModal.addEventListener('hidden.bs.modal', function () {
+			document.querySelector('.modal-backdrop')?.classList.remove('compliance-backdrop');
+		});
+	}
 });
 </script>
     <?php
