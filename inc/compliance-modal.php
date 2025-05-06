@@ -202,8 +202,8 @@ function display_compliance_modal() {
                     <div id="step1">
                         <p>Please select your investor type:</p>
                         <div class="d-flex gap-3 mt-3">
-                            <button id="btnProfessional" class="btn btn-primary">Professional</button>
-                            <button id="btnRetail" class="btn btn-outline-secondary">Non-Professional</button>
+                            <button id="btnProfessional" class="button">Professional</button>
+                            <button id="btnRetail" class="button">Non-Professional</button>
                         </div>
                         <!-- <div class="form-check">
                             <label for="investorCheckbox" class="form-check-label">I am a professional or institutional investor</label>
