@@ -257,7 +257,7 @@ function display_compliance_modal() {
                         <div id="disclaimerText">
                             <p>Select a country to view the disclaimer.</p>
                         </div>
-                        <button id="acceptButton" class="button mt-3" disabled>Accept</button>
+                        <button type="button" id="acceptButton" class="button mt-3" disabled>Accept</button>
                     </div>
                 </div>
             </div>
