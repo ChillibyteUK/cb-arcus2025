@@ -186,7 +186,7 @@ function display_compliance_modal() {
                     <?= wp_kses_post( get_field( 'usa_disclaimer', 'options' ) ); ?>
                 </div>
                 <div class="modal-footer">
-                    <button id="acceptButton" class="button mt-3">Access Strategy Website</button>
+                    <a href="mailto:<?= esc_attr( antispambot( 'info@arcusinvest.com' ) ); ?>" class="button" id="usContactButton">Contact</a>
                 </div>
             </div>
         </div>
@@ -281,7 +281,6 @@ function display_compliance_modal() {
     }
 
     if (usComplianceModal) {
-        
 		usComplianceModal.addEventListener('show.bs.modal', function () {
 			setTimeout(() => {
 				document.querySelector('.modal-backdrop')?.classList.add('compliance-backdrop');
