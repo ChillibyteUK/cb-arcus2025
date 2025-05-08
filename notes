@@ -1,5 +1,6 @@
 $regions = [
 'Austria' => 'europe-eu',
+'Belgium' => 'europe-eu',
 'Finland' => 'europe-eu',
 'France' => 'europe-eu',
 'Germany' => 'europe-eu',

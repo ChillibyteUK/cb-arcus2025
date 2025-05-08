@@ -183,8 +183,7 @@ function display_compliance_modal() {
                     <img src="<?= esc_url( get_stylesheet_directory_uri() . '/img/arcus-logo.svg' ); ?>" width=141 height=34>
                 </div>
                 <div class="modal-body">
-                    <h2 class="h3">Important Notice for US Visitors</h2>
-                    <p>This site is not accessible to visitors from the USA. Please contact us directly for more information.</p>
+                    <?= wp_kses_post( get_field( 'usa_disclaimer', 'options' ) ); ?>
                 </div>
                 <div class="modal-footer">
                     <a href="mailto:<?= esc_attr( antispambot( 'info@arcusinvest.com' ) ); ?>" class="button" id="usContactButton">Contact</a>
