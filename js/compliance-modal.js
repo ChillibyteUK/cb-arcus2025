@@ -147,6 +147,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     return;
                 }
 
+                // Set the appropriate region slug - use 'rest-of-world' if user selected USA
+                let regionSlugToSet = selectedRegionSlug;
+
+                // Check if the selected country is USA - you can modify this check based on how USA is stored in your regions
+                const selectedCountry = regionSelect.options[regionSelect.selectedIndex].text.trim();
+                if (selectedCountry === 'United States of America' || selectedRegionSlug === 'usa') {
+                    regionSlugToSet = 'rest-of-world';
+                }
+
                 // Set session variable via AJAX
                 fetch('/wp-admin/admin-ajax.php', {
                     method: 'POST',
