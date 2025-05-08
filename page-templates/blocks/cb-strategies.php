@@ -87,7 +87,7 @@ if ( have_rows( 'strategies' ) ) {
 								<?php
 							} elseif ( $factsheet_link ) {
 								?>
-								<p><a href="<?= esc_url( $factsheet_link ); ?>" class="button">Request Factsheet</a></p>
+								<p><a href="<?= esc_url( 'mailto:' . antispambot( $factsheet_link ) ); ?>" class="button">Request Factsheet</a></p>
 								<?php
 							}
 							?>
