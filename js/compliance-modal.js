@@ -195,4 +195,58 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
+
+        const complianceModal = document.getElementById('complianceModal');
+        const usComplianceModal = document.getElementById('usComplianceModal');
+    
+        if (complianceModal) {
+            complianceModal.addEventListener('show.bs.modal', function () {
+                setTimeout(() => {
+                    document.querySelector('.modal-backdrop').classList.add('compliance-backdrop');
+                }, 10);
+            });
+    
+            complianceModal.addEventListener('hidden.bs.modal', function () {
+                document.querySelector('.modal-backdrop')?.classList.remove('compliance-backdrop');
+            });
+        }
+    
+        if (usComplianceModal) {
+            usComplianceModal.addEventListener('show.bs.modal', function () {
+                setTimeout(() => {
+                    document.querySelector('.modal-backdrop')?.classList.add('compliance-backdrop');
+                }, 10);
+            });
+    
+            usComplianceModal.addEventListener('hidden.bs.modal', function () {
+                document.querySelector('.modal-backdrop')?.classList.remove('compliance-backdrop');
+            });
+        }
+    
+        const usAcceptButton = document.getElementById('usAcceptButton');
+    
+        if (usAcceptButton) {
+            usAcceptButton.addEventListener('click', function () {
+                fetch('/wp-admin/admin-ajax.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'action=set_region_session&region_slug=rest-of-world'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const usModalInstance = bootstrap.Modal.getInstance(usComplianceModal);
+                        usModalInstance.hide();
+                        setTimeout(() => {
+                            location.reload();
+                        }, 300);
+                    } else {
+                        console.error('Failed to set session:', data.data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('AJAX error:', error);
+                });
+            });
+        }
 });

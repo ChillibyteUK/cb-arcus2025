@@ -126,6 +126,9 @@ if ( session_status() === PHP_SESSION_NONE ) {
         <div class="header-end"></div>
     </div>
 
+    <?php
+    if ( isset( $_SESSION['region'] ) ) {
+        ?>
     <header class="wrapper-navbar">
         <div class="container px-0">
             <div class="navbar-logo"><a href="/" class="logo" aria-label=""></a></div>
@@ -234,3 +237,5 @@ if ( session_status() === PHP_SESSION_NONE ) {
             });
         });
     </script>
+    <?php
+    }
