@@ -45,27 +45,6 @@
             "append": ""
         },
         {
-            "key": "field_67f3f7f81e598",
-            "label": "Audio File",
-            "name": "audio",
-            "aria-label": "",
-            "type": "file",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "library": "all",
-            "min_size": "",
-            "max_size": 50,
-            "mime_types": "mp3",
-            "allow_in_bindings": 0
-        },
-        {
             "key": "field_681cd749623ed",
             "label": "Audio Files",
             "name": "audio_files",
@@ -266,5 +245,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1746720810
+    "modified": 1746721397
 }

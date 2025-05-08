@@ -65,7 +65,7 @@ error_log( 'Session Region: ' . ( $_SESSION['region'] ?? 'not set' ) );
 											if ( $audio_file ) {
 												if ( $title ) {
 													?>
-									<div><?= esc_html( $title ); ?></div>
+									<div class="mb-3"><?= esc_html( $title ); ?></div>
 													<?php
 												}
 												?>
@@ -73,13 +73,6 @@ error_log( 'Session Region: ' . ( $_SESSION['region'] ?? 'not set' ) );
 												<?php
 											}
 										}
-									}
-
-
-									if ( $mp3 ) {
-										?>
-									<figure class="wp-block-audio"><audio src="<?= esc_url( $mp3 ); ?>" controls="controls" draggable="true"></audio></figure>
-										<?php
 									}
 									?>
 								</div>
