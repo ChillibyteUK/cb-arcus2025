@@ -57,9 +57,27 @@ error_log( 'Session Region: ' . ( $_SESSION['region'] ?? 'not set' ) );
 									<div class="mb-2 has-gold-400-color"><?= esc_html( get_the_date( 'jS F, Y' ) ); ?></div>
 									<div class="mb-4"><?= wp_kses_post( get_field( 'intro' ) ); ?></div>
 									<?php
+									if ( have_rows( 'audio_files' ) ) {
+										while ( have_rows( 'audio_files' ) ) {
+											the_row();
+											$audio_file = get_sub_field( 'audio_file' );
+											$title    = get_sub_field( 'title' );
+											if ( $audio_file ) {
+												if ( $title ) {
+													?>
+													<div><?= esc_html( $title ); ?></div>
+													<?php
+												}
+												?>
+												<audio src="<?= esc_url( $audio_file ); ?>" controls="controls" draggable="true"></audio>
+												<?php
+											}
+										}
+									}
+
+
 									if ( $mp3 ) {
 										?>
-									<strong>Listen</strong>
 									<figure class="wp-block-audio"><audio src="<?= esc_url( $mp3 ); ?>" controls="controls" draggable="true"></audio></figure>
 										<?php
 									}
