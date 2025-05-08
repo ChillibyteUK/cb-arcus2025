@@ -88,7 +88,7 @@ usort(
 					foreach ( array_slice( $_rows, 0, 5 ) as $row ) {
 						?>
                         <tr>
-                            <th scope="row"><?= esc_html( $row['Industry Group'] ); ?>%</th>
+                            <th scope="row"><?= esc_html( $row['Industry Group'] ); ?></th>
                             <td class="text-end"><?= esc_html( round( $row['Difference %'], 1 ) ); ?>%</td>
                         </tr>
                     	<?php
