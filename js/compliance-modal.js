@@ -7,7 +7,7 @@ function getQueryParam(key) {
 const forceUS = getQueryParam('forceUS') === '1';
 
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('https://ip-api.com/json/')
+    fetch('http://ip-api.com/json/')
         .then(res => res.json())
         .then(data => {
             if (data.countryCode === 'US' || forceUS) {
@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Check if the selected country is USA - you can modify this check based on how USA is stored in your regions
                 const selectedCountry = regionSelect.options[regionSelect.selectedIndex].text.trim();
+                console.log('Selected country:', selectedCountry); // Debugging line
                 if (selectedCountry === 'United States of America' || selectedRegionSlug === 'usa') {
                     regionSlugToSet = 'rest-of-world';
                 }
@@ -160,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 fetch('/wp-admin/admin-ajax.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: `action=set_region_session&region_slug=${encodeURIComponent(selectedRegionSlug)}`
+                    body: `action=set_region_session&region_slug=${encodeURIComponent(regionSlugToSet)}`
                 })
                     .then(response => response.json())
                     .then(data => {
