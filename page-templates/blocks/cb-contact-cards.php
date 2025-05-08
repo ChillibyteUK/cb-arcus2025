@@ -31,6 +31,7 @@ defined( 'ABSPATH' ) || exit;
                         <div class="contact_cards__name"><?= esc_html( get_sub_field( 'name' ) ); ?></div>
                         <div class="contact_cards__role"><?= esc_html( get_sub_field( 'role' ) ); ?></div>
                         <div class="contact_cards__email">E: <a href="mailto:<?= esc_attr( antispambot( get_sub_field( 'email' ) ) ); ?>"><?= esc_html( get_sub_field( 'email' ) ); ?></a></div>
+                        <div class="contact_cards__phone">T: <a href="tel:<?= esc_attr( parse_phone( get_sub_field( 'phone' ) ) ); ?>"><?= esc_html( get_sub_field( 'phone' ) ); ?></a></div>
 						<a href="mailto:<?= esc_attr( antispambot( get_sub_field( 'email' ) ) ); ?>" class="button">Contact</a>
                     </div>
                 </div>

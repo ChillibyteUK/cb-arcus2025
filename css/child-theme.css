@@ -22609,7 +22609,7 @@ header .dropdown.current-menu-item::after {
 .contact_cards__role {
   color: var(--col-gold-400);
 }
-.contact_cards__email {
+.contact_cards__phone {
   margin-bottom: 1rem;
 }
 
