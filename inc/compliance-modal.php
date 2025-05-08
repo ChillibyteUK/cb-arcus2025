@@ -186,7 +186,7 @@ function display_compliance_modal() {
                     <?= wp_kses_post( get_field( 'usa_disclaimer', 'options' ) ); ?>
                 </div>
                 <div class="modal-footer">
-                    <a href="mailto:<?= esc_attr( antispambot( 'info@arcusinvest.com' ) ); ?>" class="button" id="usContactButton">Contact</a>
+                    <button id="acceptButton" class="button mt-3">Access Strategy Website</button>
                 </div>
             </div>
         </div>
@@ -281,6 +281,32 @@ function display_compliance_modal() {
     }
 
     if (usComplianceModal) {
+
+        const usAcceptButton = usComplianceModal.querySelector('#acceptButton');
+		usAcceptButton.addEventListener('click', function () {
+			fetch(ajax_object.ajax_url, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded',
+				},
+				body: new URLSearchParams({
+					action: 'set_region_session',
+					region_slug: 'rest-of-world',
+				}),
+			})
+			.then(response => response.json())
+			.then(data => {
+				if (data.success) {
+					window.location.reload(); // or redirect to another page if needed
+				} else {
+					alert('Failed to set session: ' + data.message);
+				}
+			})
+			.catch(error => {
+				console.error('Error setting session:', error);
+			});
+		});
+        
 		usComplianceModal.addEventListener('show.bs.modal', function () {
 			setTimeout(() => {
 				document.querySelector('.modal-backdrop')?.classList.add('compliance-backdrop');
