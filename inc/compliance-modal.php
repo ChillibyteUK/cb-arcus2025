@@ -186,7 +186,7 @@ function display_compliance_modal() {
                     <?= wp_kses_post( get_field( 'usa_disclaimer', 'options' ) ); ?>
                 </div>
                 <div class="modal-footer">
-                    <a href="mailto:<?= esc_attr( antispambot( 'info@arcusinvest.com' ) ); ?>" class="button" id="usContactButton">Contact</a>
+                    <button type="button" id="acceptButton" class="button mt-3">Access Strategy Website</button>
                 </div>
             </div>
         </div>
