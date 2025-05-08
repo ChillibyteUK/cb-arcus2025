@@ -7,7 +7,7 @@ function getQueryParam(key) {
 const forceUS = getQueryParam('forceUS') === '1';
 
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('http://ip-api.com/json/')
+    fetch('https://ip-api.com/json/')
         .then(res => res.json())
         .then(data => {
             if (data.countryCode === 'US' || forceUS) {
