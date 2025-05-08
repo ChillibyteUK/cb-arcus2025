@@ -84,15 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Observe the scrollTarget
             observer.observe(scrollTarget);
 
-            // Checkbox: Show Step 2 when checked
-            // investorCheckbox.addEventListener('change', function () {
-            //     if (this.checked) {
-            //         showStep(step2); // Show Step 2 (select a region)
-            //     } else {
-            //         showStep(step1); // Reset to Step 1
-            //     }
-            // });
-
             btnProfessional.addEventListener('click', function () {
                 showStep(step2); // Proceed to region selection
             });
@@ -150,12 +141,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Set the appropriate region slug - use 'rest-of-world' if user selected USA
                 let regionSlugToSet = selectedRegionSlug;
 
-                // Check if the selected country is USA - you can modify this check based on how USA is stored in your regions
-                const selectedCountry = regionSelect.options[regionSelect.selectedIndex].text.trim();
-                console.log('Selected country:', selectedCountry); // Debugging line
-                if (selectedCountry === 'United States of America' || selectedRegionSlug === 'usa') {
-                    regionSlugToSet = 'rest-of-world';
-                }
+                // // Check if the selected country is USA - you can modify this check based on how USA is stored in your regions
+                // const selectedCountry = regionSelect.options[regionSelect.selectedIndex].text.trim();
+                // console.log('Selected country:', selectedCountry); // Debugging line
+                // if (selectedCountry === 'United States of America' || selectedRegionSlug === 'usa') {
+                //     regionSlugToSet = 'rest-of-world';
+                // }
 
                 // Set session variable via AJAX
                 fetch('/wp-admin/admin-ajax.php', {
@@ -240,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 fetch('/wp-admin/admin-ajax.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: 'action=set_region_session&region_slug=rest-of-world'
+                    body: 'action=set_region_session&region_slug=usa'
                 })
                 .then(response => response.json())
                 .then(data => {
