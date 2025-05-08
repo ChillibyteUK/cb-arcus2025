@@ -281,31 +281,6 @@ function display_compliance_modal() {
     }
 
     if (usComplianceModal) {
-
-        const usAcceptButton = usComplianceModal.querySelector('#acceptButton');
-		usAcceptButton.addEventListener('click', function () {
-			fetch(ajax_object.ajax_url, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded',
-				},
-				body: new URLSearchParams({
-					action: 'set_region_session',
-					region_slug: 'rest-of-world',
-				}),
-			})
-			.then(response => response.json())
-			.then(data => {
-				if (data.success) {
-					window.location.reload(); // or redirect to another page if needed
-				} else {
-					alert('Failed to set session: ' + data.message);
-				}
-			})
-			.catch(error => {
-				console.error('Error setting session:', error);
-			});
-		});
         
 		usComplianceModal.addEventListener('show.bs.modal', function () {
 			setTimeout(() => {
