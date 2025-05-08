@@ -220,6 +220,9 @@ function display_compliance_modal() {
                                     'hide_empty' => false,
                                 )
                             );
+
+                            $country_options = array();
+
                             foreach ( $regions as $region ) {
                                 // Fetch the 'countries' ACF field for the current term.
                                 $countries = get_field( 'countries', 'region_' . $region->term_id );
@@ -228,9 +231,24 @@ function display_compliance_modal() {
                                 if ( $countries ) {
                                     $countries_array = explode( "\n", $countries ); // Split lines into an array.
                                     foreach ( $countries_array as $country ) {
-                                        echo '<option data-region="' . esc_attr( $region->slug ) . '">' . esc_html( trim( $country ) ) . '</option>';
+                                        $country = trim( $country );
+                                        if ( ! empty( $country ) ) {
+                                            $country_options[] = array(
+                                                'label' => $country,
+                                                'region'  => $region->slug,
+                                            );
+                                        }
                                     }
                                 }
+                            }
+
+                            usort( $country_options, function ( $a, $b ) {
+                                return strcmp( $a['label'], $b['label'] );
+                            } );
+                            foreach ( $country_options as $option ) {
+                                $country = $option['label'];
+                                $region  = $option['region'];
+                                echo '<option data-region="' . esc_attr( $region ) . '">' . esc_html( trim( $country ) ) . '</option>';
                             }
                             ?>
                         </select>
