@@ -186,7 +186,7 @@ function display_compliance_modal() {
                     <?= wp_kses_post( get_field( 'usa_disclaimer', 'options' ) ); ?>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="acceptButton" class="button mt-3">Access Strategy Website</button>
+                    <button type="button" id="usAcceptButton" class="button mt-3">Access Strategy Website</button>
                 </div>
             </div>
         </div>
@@ -291,6 +291,33 @@ function display_compliance_modal() {
 			document.querySelector('.modal-backdrop')?.classList.remove('compliance-backdrop');
 		});
 	}
+
+    const usAcceptButton = document.getElementById('usAcceptButton');
+
+    if (usAcceptButton) {
+        usAcceptButton.addEventListener('click', function () {
+            fetch('/wp-admin/admin-ajax.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'action=set_region_session&region_slug=rest-of-world'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const usModalInstance = bootstrap.Modal.getInstance(usComplianceModal);
+                    usModalInstance.hide();
+                    setTimeout(() => {
+                        location.reload();
+                    }, 300);
+                } else {
+                    console.error('Failed to set session:', data.data.message);
+                }
+            })
+            .catch(error => {
+                console.error('AJAX error:', error);
+            });
+        });
+    }
 });
 </script>
     <?php
