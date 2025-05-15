@@ -7,7 +7,6 @@
  * @package cb-arcus2025
  */
 
-
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
