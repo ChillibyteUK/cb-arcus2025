@@ -10,6 +10,17 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+session_set_cookie_params(
+	array(
+		'lifetime' => 0,
+		'path'     => '/',
+		'domain'   => 'arcusinvest.com',
+		'secure'   => true,
+		'httponly' => true,
+		'samesite' => 'Lax',
+	)
+);
+
 if ( session_status() === PHP_SESSION_NONE ) {
     session_start();
 }
