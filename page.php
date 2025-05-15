@@ -11,7 +11,7 @@ get_header();
 
 if ( check_page_permissions() === false ) {
     echo '<main id="main" class="pt-5 mt-5">';
-    echo "<div class='container-xl'>INSUFFICIENT PERMISSIONS TO VIEW THIS CONTENT</div>";
+    // echo "<div class='container-xl'>INSUFFICIENT PERMISSIONS TO VIEW THIS CONTENT</div>";
     echo '</main>';
     get_footer();
     exit;
