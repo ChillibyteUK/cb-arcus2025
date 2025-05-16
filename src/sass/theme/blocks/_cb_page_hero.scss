@@ -20,4 +20,20 @@
         width: 100%;
         height: 100%;
     }
+
+    &--top {
+        img {
+            object-position: top;
+        }
+    }
+    &--center {
+        img {
+            object-position: center;
+        }
+    }
+    &--bottom {
+        img {
+            object-position: bottom;
+        }
+    }
 }

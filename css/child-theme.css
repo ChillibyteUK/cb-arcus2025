@@ -22441,6 +22441,18 @@ header .dropdown.current-menu-item::after {
   width: 100%;
   height: 100%;
 }
+.page_hero--top img {
+  -o-object-position: top;
+  object-position: top;
+}
+.page_hero--center img {
+  -o-object-position: center;
+  object-position: center;
+}
+.page_hero--bottom img {
+  -o-object-position: bottom;
+  object-position: bottom;
+}
 
 .translucent_text .container, .translucent_text .wp-block-group {
   background-color: hsla(0, 0%, 0%, 0.6);

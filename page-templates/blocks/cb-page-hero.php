@@ -8,7 +8,10 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+$position = get_field( 'position' ) ?? 'center';
+$bg       = 'page_hero--' . $position;
 ?>
-<div class="page_hero">
+<div class="page_hero <?= esc_attr( $bg ); ?>">
     <?= wp_get_attachment_image( get_field( 'image' ), 'full' ); ?>
 </div>
