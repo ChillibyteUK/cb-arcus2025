@@ -121,7 +121,7 @@ if ( session_status() === PHP_SESSION_NONE ) {
 	}
 	?>
     <div class="header">
-        <div class="logo-container"><a href="/" class="logo" aria-label=""></a></div>
+        <div class="logo-container ps-2"><a href="/" class="logo" aria-label=""></a></div>
         <div class="nav-holder"></div>
         <div class="header-end"></div>
     </div>
