@@ -16,7 +16,7 @@ get_header();
 
 if ( check_page_permissions() === false ) {
     echo '<main id="main" class="pt-5 mt-5">';
-    // echo "<div class='container-xl'>INSUFFICIENT PERMISSIONS TO VIEW THIS CONTENT</div>";
+    // echo "<div class='container-xl'>INSUFFICIENT PERMISSIONS TO VIEW THIS CONTENT</div>";.
     echo '</main>';
     get_footer();
     exit;
@@ -151,7 +151,8 @@ if ( check_page_permissions() === false ) {
             if ( $factsheet ) {
                 $factsheet_url       = $factsheet['url'];
                 $factsheet_title     = $factsheet['title'];
-                $factsheet_thumbnail = wp_get_attachment_image_url( $factsheet['ID'], 'large' ); // Get WordPress-generated PDF thumbnail.
+                $factsheet_thumbnail = wp_get_attachment_image_url( get_field( 'factsheet_thumbnail' ), 'large' ); // Get specified PDF thumbnail.
+                // $factsheet_thumbnail = wp_get_attachment_image_url( $factsheet['ID'], 'large' ); // Get WordPress-generated PDF thumbnail.
 
                 echo '<div class="factsheet_card">';
                 echo '<img src="' . esc_url( $factsheet_thumbnail ) . '" class="card-img-top" alt="' . esc_attr( $factsheet_title ) . '">';
