@@ -24,8 +24,12 @@ if ( ! empty( $share_class ) ) {
 					<th scope="col">Hedging</th>
 					<th scope="col">ISIN Code</th>
 					<th scope="col">Minimum initial investment</th>
+					<?php
+					/*
 					<th scope="col">Current Management&nbsp;fee&nbsp;%</th>
 					<th scope="col">Performance fee&nbsp;%</th>
+					*/
+					?>
 				</tr>
 			</thead>
 			<tbody>
@@ -39,8 +43,12 @@ if ( ! empty( $share_class ) ) {
 						<td><?= esc_html( $row['hedging'] ); ?>&nbsp;</td>
 						<td><?= esc_html( $row['isin_code'] ); ?>&nbsp;</td>
 						<td><?= esc_html( $row['minimum_initial_investment_fee_%'] ); ?>&nbsp;</td>
+						<?php
+						/*
 						<td><?= esc_html( $row['current_management'] ); ?>&nbsp;</td>
 						<td><?= esc_html( $row['performance_fee_%'] ); ?>&nbsp;</td>
+						*/
+						?>
 					</tr>
 					<?php
 				}
